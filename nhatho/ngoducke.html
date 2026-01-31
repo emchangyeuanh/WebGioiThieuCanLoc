@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ngô Đức Kế - Nhà Thơ, Nhà Báo & Chí Sĩ Yêu Nước Việt Nam</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-light": "#f77171",
+                        "primary-dark": "#b91c1c",
+                        "background-light": "#fdfaf6",
+                        "background-dark": "#221010",
+                        "accent-gold": "#d4af37",
+                        "heritage-red": "#b91c1c",
+                        "gray-light": "#f8f6f6",
+                        "gray-dark": "#3d2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "serif": ["Crimson Text", "serif"]
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 10px 40px rgba(0, 0, 0, 0.15)',
+                        'primary-glow': '0 0 20px rgba(236, 19, 19, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .serif-font {
+            font-family: "Crimson Text", serif;
+        }
+        
+        .traditional-pattern {
+            background-image: radial-gradient(#ec1313 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ec1313 0%, #f77171 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* Fade-in on scroll animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #ec1313, #f77171);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 52%;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 52%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-right: 0;
+                padding-left: 60px;
+            }
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #ec1313;
+            border: 4px solid #fdfaf6;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-content {
+            background: #fdfaf6;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid #ec1313;
+        }
+
+        .dark .timeline-content {
+            background: #2a2020;
+            border-left-color: #f77171;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card-hover:hover {
+            border-color: #ec1313;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(236, 19, 19, 0.15);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ec1313, #f77171);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(236, 19, 19, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(236, 19, 19, 0.4);
+            background: linear-gradient(135deg, #d11a1a, #e05f5f);
+        }
+
+        .back-to-top i {
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../homepage/codecanloc.html" class="flex items-center gap-3" style="text-decoration:none;color:inherit;pointer-events:auto;z-index:50" onclick="window.location.href='../homepage/codecanloc.html'">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#biography" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#tradition" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <a href="../homepage/dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative">
+        
+        <!-- ===== HERO SECTION ===== -->
+        <section id="home" class="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
+            <!-- Background with overlay -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in" 
+                 style="background-image: linear-gradient(to bottom, rgba(34, 16, 16, 0.75), rgba(34, 16, 16, 0.95)), url('https://images.unsplash.com/photo-1507842217343-583f20270319?w=1200&q=80'); background-attachment: fixed;">
+            </div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 max-w-4xl px-6 text-center text-white animate-slide-up">
+                <span class="inline-block px-5 py-2 mb-6 border border-primary/50 rounded-full text-sm font-bold tracking-[0.2em] uppercase bg-primary/20 backdrop-blur-sm">
+                    Văn học & Báo chí Việt Nam Đầu Thế Kỷ 20
+                </span>
+                
+                <!-- Main Title -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 drop-shadow-2xl text-balance serif-font px-6 py-8">
+                    Ngô Đức Kế
+                    <br/>
+                    <span class="text-4xl md:text-5xl font-light">(1878–1929)</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-4 text-gray-200 leading-relaxed">
+                    Nhà Thơ, Nhà Báo & Chí Sĩ Yêu Nước Thời Kỳ Phong Trào Cải Cách Xã Hội
+                </p>
+
+                <!-- Famous Quote -->
+                <div class="max-w-2xl mx-auto mb-12 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+                    <p class="text-lg italic font-light text-gray-100 serif-font leading-relaxed">
+                        "Nền quốc văn là nền tảng của một dân tộc<br/>
+                        Văn hóa sáng tạo nên nên một quốc gia"
+                    </p>
+                    <p class="text-sm text-gray-300 mt-3">— Trích từ "Nền Quốc Văn"</p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg hover:shadow-primary-glow flex items-center justify-center gap-2">
+                        <span>Khám phá hành trình</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Tìm hiểu chi tiết</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </div>
+        </section>
+
+        <!-- ===== BIOGRAPHY SECTION ===== -->
+        <section id="biography" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-book-open"></i> Tiểu sử
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Con đường <span class="text-primary">sáng tác</span> của Ngô Đức Kế
+                    </h2>
+                </div>
+
+                <!-- Basic Information -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-16 fade-in-section">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h3 class="text-3xl font-black text-gray-900 dark:text-white serif-font">Thông tin cơ bản</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Info Item 1 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-id-card"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Tên thật</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Ngô Đức Kế (chữ Hán: 吳德繼) – Tên hiệu: Tập Xuyên</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 2 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Năm Sinh-Năm Mất</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Năm 1878 – 10 tháng 12 năm 1929 (51 tuổi)</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 3 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Nơi sinh – Quê quán</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Làng Trảo Nha, huyện Can Lộc, Hà Tĩnh (nay là Ngã Ba Đồng Lộc). Quê gốc: Huyện Thạch Hà, tỉnh Hà Tĩnh</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 4 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Học vấn – Sự nghiệp</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Đỗ Á khoa kỳ thi Đình năm 1901; Nhà thơ, nhà báo, nhà chí sĩ, chủ bút báo Hữu Thanh, nhà xuất bản Giác Quần Thư Xã</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portrait -->
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl transform -rotate-1 transition-transform group-hover:rotate-0 duration-700"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-hard">
+                            <img class="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                                 alt="Chân dung nhà thơ Ngô Đức Kế" 
+                                 src="ngoducke.jpg"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="mt-20 pt-16 border-t border-gray-200 dark:border-gray-800">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-12 serif-font">Dấu mốc cuộc đời</h3>
+                    
+                    <div class="timeline">
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1878 – 1901</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Sinh năm 1878 tại làng Trảo Nha, thuộc tổng Đoài, huyện Thạch Hà, tỉnh Hà Tĩnh. Xuất thân trong gia đình quan lại có truyền thống hiếu học. Cha ông là Tả Tham Tri Bộ Lễ Ngô Huệ Liên (1840–1912), sau đó giữ chức Toản Tu tại Quốc Sử Quán triều Nguyễn. Ông được lớn lên trong môi trường tri thức, tạo nền tảng cho sự phát triển tài năng văn chương của mình.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1901 – 1905</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Năm Tân Sửu (1901), ông Kế dự thi Đình và đỗ Á khoa vào năm Thành Thái thứ 13. Tuy nhiên, sau khi đỗ tứ, ông không ra làm quan mà lựa chọn dạy học và đọc tân thư (sách học phương Tây), bắt đầu liên hệ với các nhân vật cách mạng như Phan Bội Châu. Ông đứng ra đề xướng lối học mới, phê phán lối học từ chương và cử nghiệp truyền thống.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1905 – 1908</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Cùng với Lê Văn Huân và Đặng Nguyên Cẩn, ông Kế lập Triều Dương Thương Điếm ở thành phố Vinh, nhằm góp kinh phí cho phong trào Đông Du – cuộc đi Tây phương để học tập của các trí thức Việt Nam. Đây là giai đoạn ông hoạt động tích cực trong phong trào cải cách xã hội và hiện đại hóa đất nước.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1908 – 1921</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Năm Mậu Thân (1908), ông bị thực dân Pháp bắt giữ vì tội mưu loạn (theo tư liệu thì bị vu cho tội sát Cao Ngọc Lễ). Ông bị đày tại Côn Đảo từ năm 1908 đến năm 1921 – tổng cộng 13 năm tù đày. Trong suốt thời gian ở Côn Đảo, ông vẫn tiếp tục sáng tác và soạn các công trình chính trị lý luận.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 5 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1921 – 1927</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Năm 1921, ông ra tù. Năm 1922, ông làm Chủ bút báo Hữu Thanh – tờ báo của Hội Công Thương Tương Tế ở Hà Nội. Trên báo này, ông đã viết nhiều bài "đả kích thơ văn lãng mạn" và "phê phán nghiêm khắc nhóm Nam Phong". Ông đồng thời sáng tác các bài thơ và bài báo chính trị sâu sắc, thể hiện tư tưởng cách mạng và yêu nước mãnh liệt.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 6 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1927 – 1929</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Năm 1927, báo Hữu Thanh bị đóng cửa. Ông Kế mở Giác Quần Thư Xã – một nhà xuất bản nhằm phát hành các sách tiến bộ và cách mạng. Trong các ấn phẩm của xã, nổi bật có "Phan Tây Hồ Di Thảo" (bản thảo để lại của nhà chí sĩ Phan Chu Trinh) và nhiều công trình khác về chính trị và lịch sử.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 7 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1929</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Ngô Đức Kế qua đời vào ngày 10 tháng 12 năm 1929 tại Hà Nội, hưởng thọ 51 tuổi. Nhân dân gọi ông là "Ngô Nhân Tổ" (người cụ tổ họ Ngô) hoặc "Ngô Việt Hành" (hành tinh đất Ngô–Việt). Ông để lại một di sản to lớn về thơ, báo chí và tư tưởng cách mạng, ảnh hưởng sâu sắc đến các thế hệ sau.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WORKS SECTION ===== -->
+        <section id="works" class="section-padding px-6 bg-gray-light dark:bg-gray-dark">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-pen"></i> Tác phẩm
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Những tác phẩm <span class="text-primary">tiêu biểu</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">
+                        Ngô Đức Kế là nhà thơ, nhà báo đa tài, sáng tác các bài thơ có tính chính trị cao, đồng thời là tác giả của các công trình phê bình văn học và tư tưởng cách mạng.
+                    </p>
+                </div>
+
+                <!-- Works Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    
+                    <!-- Work Card 1 -->
+                    <div class="card-hover bg-white dark:bg-gray-dark rounded-2xl overflow-hidden shadow-soft hover:shadow-hard p-6">
+                        <div class="h-40 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-newspaper text-primary text-6xl opacity-50"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-3 serif-font">Báo Hữu Thanh</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Báo được ông Kế làm chủ bút từ năm 1922–1927. Đây là tờ báo nổi bật trong giới báo chí, nơi ông đã đăng những bài phê bình mạnh mẽ chống lại phong trào Nam Phong và những lối viết văn lãng mạn. Báo Hữu Thanh trở thành một cơ quan ngôn luận quan trọng phục vụ phong trào cải cách xã hội.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <span>1922–1927</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Work Card 2 -->
+                    <div class="card-hover bg-white dark:bg-gray-dark rounded-2xl overflow-hidden shadow-soft hover:shadow-hard p-6">
+                        <div class="h-40 rounded-lg bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-book text-accent-gold text-6xl opacity-50"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-3 serif-font">Giác Quần Thư Xã</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Nhà xuất bản mở năm 1927, chuyên phát hành các sách tiến bộ và cách mạng. Dưới sự điều hành của Ngô Đức Kế, xã này xuất bản các công trình lịch sử, chính trị quan trọng, bao gồm cả "Phan Tây Hồ Di Thảo" – một tác phẩm chính trị lý luận quý giá.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <span>1927–1929</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Work Card 3 -->
+                    <div class="card-hover bg-white dark:bg-gray-dark rounded-2xl overflow-hidden shadow-soft hover:shadow-hard p-6">
+                        <div class="h-40 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-feather text-primary text-6xl opacity-50"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-3 serif-font">Công Trình Thơ & Phê Bình</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Ông sáng tác những bài thơ có tính cách mạng cao như "Nền Quốc Văn" và "Luận về Chánh Học Cùng Tà Thuyết". Ông là tác giả của nhiều công trình phê bình văn học sắc sảo, chỉ trích triết lý sách vở lãng mạn, đặc biệt là công trình "Thái Nguyên Thất Thật Quang Phục Ký" sáng tác khi ở Côn Đảo.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <span>Danh tác</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bg-white dark:bg-gray-dark rounded-2xl shadow-soft p-8 md:p-12 fade-in-section">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-8 serif-font">Các Tác Phẩm Tiêu Biểu Chi Tiết</h3>
+                    
+                    <div class="space-y-8">
+                        <!-- Work 1 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Nền Quốc Văn" (1924)</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Bài báo nổi tiếng được đăng trên báo Hữu Thanh năm 1924 (tháng 4). Đây là bài viết sâu sắc về tầm quan trọng của nền văn hóa quốc gia đối với sự phát triển của một dân tộc. Ông cho rằng "nền quốc văn là nền tảng của một dân tộc", và văn hóa sáng tạo nên nên một quốc gia. Bài viết này phản ánh tư tưởng cần phải hiện đại hóa nền giáo dục và văn hóa Việt Nam.
+                            </p>
+                        </div>
+
+                        <!-- Work 2 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Luận về Chánh Học Cùng Tà Thuyết" (1924)</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Bài viết phê bình theo chủ đề chính trị, được đăng trên báo Hữu Thanh tháng 9 năm 1924. Trong bài viết này, ông đã kịch liệt chống lại chủ trương đề cao "Truyện Kiều" của Nguyễn Du, coi đó là một biểu hiện của chủ nghĩa "lãng mạn thụ động". Ông cho rằng nên ưu tiên những công trình có nội dung chính trị, cách mạng hơn là những tác phẩm thời cổ.
+                            </p>
+                        </div>
+
+                        <!-- Work 3 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Thái Nguyên Thất Thật Quang Phục Ký" (Sáng Tác Ở Côn Đảo)</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Công trình viết lịch sử về 7 ngày chiến sự giành lại Thái Nguyên từ thực dân Pháp. Đây là ghi chép lịch sử của một sự kiện cách mạng quan trọng, thể hiện tư tưởng yêu nước mãnh liệt của Ngô Đức Kế. Công trình này được viết khi ông ở Côn Đảo và lưu giữ những sự kiện lịch sử quý giá.
+                            </p>
+                        </div>
+
+                        <!-- Work 4 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Thiên Nhiên Học Hiệu Ký" (Sáng Tác Ở Côn Đảo)</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Ghi chép về một trường học thiên nhiên. Đây là tác phẩm thể hiện sự quan tâm của ông đến giáo dục hiện đại. Mặc dù ở trong tù đày, ông vẫn tiếp tục suy nghĩ về cách cải tổ nền giáo dục của đất nước.
+                            </p>
+                        </div>
+
+                        <!-- Work 5 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Sở Am Tập" (Sáng Tác Ở Côn Đảo)</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Tập văn về những điều ông am tường và hiểu biết. Đây là công trình tập hợp các suy tư, kinh nghiệm của Ngô Đức Kế, thể hiện nỗ lực nắm bắt tri thức và sáng tạo trong một hoàn cảnh khó khăn.
+                            </p>
+                        </div>
+
+                        <!-- Work 6 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Phan Tây Hồ Di Thảo" (Xuất Bản Qua Giác Quần Thư Xã)</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Bản thảo để lại của nhà chí sĩ Phan Chu Trinh, được Ngô Đức Kế phát hành thông qua nhà xuất bản Giác Quần Thư Xã. Đây là một công trình chính trị lý luận quý giá, thể hiện tư tưởng cải cách của một trong những đại nhân vật Việt Nam.
+                            </p>
+                        </div>
+
+                        <!-- Additional Note -->
+                        <div class="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <span class="font-bold text-primary">Lưu ý học thuật:</span> Các tác phẩm của Ngô Đức Kế mang tính chính trị cao, phản ánh sâu sắc về phong trào cải cách xã hội và yêu nước trong thời kỳ đầu thế kỷ 20. Ông là một nhân vật quan trọng trong lịch sử báo chí và tư tưởng Việt Nam, với vai trò là một người chỉ đạo ý kiến công khai (opinion leader) của thời đại mình.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTRIBUTIONS SECTION ===== -->
+        <section id="contributions" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-lightbulb"></i> Đóng góp
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Đóng góp <span class="text-primary">& Giá trị Lịch sử</span>
+                    </h2>
+                </div>
+
+                <!-- Contributions Grid -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16 fade-in-section">
+                    
+                    <!-- Contribution 1 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-pen"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Phê Bình & Cải Tổ Văn Chương</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Ngô Đức Kế là một trong những nhà phê bình văn học sắc sảo nhất thời đó, dũng cảm chỉ trích các phong trào lãng mạn của thời bấy giờ (như Nam Phong). Ông đề xuất một nền văn chương hiện đại, gần gũi với cuộc sống nhân dân và có tính chính trị cao, thay vì những tác phẩm chỉ độc thoại tình cảm cá nhân.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contribution 2 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Phát Triển Báo Chí Hiện Đại</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Là chủ bút của báo Hữu Thanh, Ngô Đức Kế đã góp phần phát triển nền báo chí Việt Nam hiện đại. Báo trở thành một công cụ của phong trào cải cách xã hội, không chỉ để phê bình mà còn để đấu tranh chính trị trí thức tương ứng.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contribution 3 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-book-open"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Xuất Bản & Phổ Biến Kiến Thức Cách Mạng</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Thông qua Giác Quần Thư Xã, ông đã phát hành các công trình chính trị lý luận quan trọng, giúp phổ biến tư tưởng cách mạng cho các tầng lớp trí thức Việt Nam. Đây là một nỗ lực cấu trúc để nâng cao nhận thức chính trị của xã hội.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contribution 4 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Tư Tưởng Yêu Nước & Cách Mạng</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Dù phải chịu 13 năm tù đày ở Côn Đảo, Ngô Đức Kế vẫn không từ bỏ niềm tin vào cách mạng và độc lập của đất nước. Tư tưởng yêu nước của ông ảnh hưởng sâu sắc đến các trí thức Việt Nam đương thời, truyền cảm hứng cho các thế hệ cách mạng tiếp theo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Position in History -->
+                <div class="bg-gradient-to-r from-primary/10 to-accent-gold/10 rounded-2xl p-12 fade-in-section border border-primary/20">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-6 serif-font">Vị Trí Lịch Sử & Ảnh Hưởng</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Ngô Đức Kế là một trong những nhân vật tiêu biểu của phong trào cải cách xã hội ở Việt Nam đầu thế kỷ 20. Ông không phải là một cách mạng vũ trang, nhưng là một cách mạng trí thức – sử dụng pen và báo chí làm vũ khí để đấu tranh vì nền quốc văn tiến bộ, độc lập của dân tộc.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                        Các đóng góp chính của Ngô Đức Kế:
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-gray-dark rounded-lg p-4">
+                            <p class="font-bold text-primary text-lg mb-2">Chỉ Trích Lãng Mạn Bảo Thủ</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Ông dũng cảm chỉ trích các phong trào văn chương lãng mạn, thụ động, đề xuất một nền văn chương hiện đại, có tính chính trị, phục vụ cho phong trào cải cách và cách mạng.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-dark rounded-lg p-4">
+                            <p class="font-bold text-primary text-lg mb-2">Nhà Báo & Chỉ Đạo Ý Kiến</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Là chủ bút báo Hữu Thanh, ông tạo ra một cơ quan ngôn luận công khai, giúp định hình ý kiến và tư tưởng của các tầng lớp trí thức Việt Nam.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-dark rounded-lg p-4">
+                            <p class="font-bold text-primary text-lg mb-2">Nhà Xuất Bản & Phổ Cập</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Thông qua Giác Quần Thư Xã, ông phát hành các công trình chính trị lý luận, cách mạng, giúp phổ biến tư tưởng tiến bộ cho cộng đồng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LEGACY SECTION ===== -->
+        <section id="legacy" class="section-padding px-6 bg-gray-light dark:bg-gray-dark">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-crown"></i> Di Sản
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Di Sản & <span class="text-primary">Ghi Nhận</span>
+                    </h2>
+                </div>
+
+                <!-- Legacy Items -->
+                <div class="grid md:grid-cols-2 gap-10 mb-16 fade-in-section">
+                    
+                    <!-- Legacy Item 1 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-primary">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Kỷ Niệm Thường Xuyên</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Tên Ngô Đức Kế được ghi nhớ và tôn vinh qua các con đường, phố được đặt tên ông tại các thành phố lớn: Thành Phố Hồ Chí Minh, Nha Trang, Vinh, Cần Thơ, Huế, Bà Rịa và nhiều địa phương khác. Các đường phố mang tên ông là lời công nhân vào những đóng góp của ông cho sự độc lập và phát triển của đất nước.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <i class="fa-solid fa-road"></i>
+                            <span>Kỷ Niệm Địa Danh</span>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Item 2 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-accent-gold">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Trường Học Mang Tên</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Có một số ngôi trường học được đặt theo tên Ngô Đức Kế, đặc biệt là những trường ở quê hương ông – huyện Can Lộc, Hà Tĩnh. Đây là cách truyền tống tinh thần giáo dục và yêu nước của ông cho các thế hệ học sinh hôm nay. Các trường học này mang theo tinh thần hiến hiến cho giáo dục và phát triển đất nước mà Ngô Đức Kế từng vận động.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Di Sản Giáo Dục</span>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Item 3 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-primary">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Ảnh Hưởng Lịch Sử Sâu Sắc</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Nội dung thơ văn của Ngô Đức Kế thường xoay quanh đề tài vận động duy tân đất nước, ca ngợi tinh thần yêu nước, phê phán những lối sống lạc hậu, bộc lộ phấn khởi khi phong trào cách mạng dấy lên mạnh mẽ. Ông dũng cảm chống lại văn hóa nô dịch của thực dân Pháp, phê phán chính sách của các vua quan nhà Nguyễn. Tư tưởng của ông đã góp phần thức tỉnh tinh thần yêu nước trong thanh niên và các tầng lớp khác vào thời đó.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span>Tác Động Lâu Dài</span>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Item 4 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-accent-gold">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Công Trình Nghiên Cứu</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Cuộc đời và sáng tác của Ngô Đức Kế là chủ đề của nhiều công trình nghiên cứu, bài viết học thuật ở các trường đại học và viện nghiên cứu Việt Nam. Các nhà nghiên cứu ghi lại những đóng góp của ông đối với phong trào cải cách xã hội, báo chí và tư tưởng cách mạng của Việt Nam đầu thế kỷ 20.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <i class="fa-solid fa-flask-vial"></i>
+                            <span>Nghiên Cứu Học Thuật</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Key Impact Quote -->
+                <div class="bg-white dark:bg-gray-dark rounded-2xl p-12 shadow-soft border-l-4 border-primary fade-in-section">
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-quote-left text-4xl text-primary/20"></i>
+                        </div>
+                        <div>
+                            <p class="text-lg font-light serif-font text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                                Ngô Đức Kế là biểu tượng của chí sĩ Việt Nam – những người dùng pen, báo chí và lý luận để đấu tranh vì nền quốc văn tiến bộ, độc lập tự do của dân tộc. Dù chịu 13 năm tù đày ở Côn Đảo, ông vẫn không từ bỏ lý tưởng. Ông để lại một di sản to lớn không chỉ trong văn học, báo chí mà còn trong tư tưởng cách mạng, là một lối sáng cho các thế hệ cách mạng Việt Nam sau này.
+                            </p>
+                            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                                <p><span class="font-bold">Từ Wikipedia Tiếng Việt:</span></p>
+                                <p class="italic">
+                                    "Nội dung thơ văn của Ngô Đức Kế thường xoay quanh đề tài vận động duy tân đất nước, ca ngợi khí tiết của người trượng phu, ca ngợi các đồng chí đã hy sinh, và bộc lộ niềm phấn khởi khi nghe tin phong trào yêu nước lại dấy lên mạnh mẽ."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legacy Sites and Monuments -->
+                <div class="mt-12 bg-gradient-to-r from-primary/5 to-transparent rounded-2xl p-8 fade-in-section">
+                    <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-6">Kỷ Niệm & Di Tích</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white mb-1">Quê Hương Trảo Nha</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    Làng Trảo Nha, nơi sinh ra của Ngô Đức Kế, nay là xã Can Lộc, thị trấn Nghèn, huyện Can Lộc, Hà Tĩnh, vẫn còn giữ những dấu tích của quá khứ. Nơi đây là nơi các em nhỏ học hỏi về tinh thần yêu nước và cách mạng qua tên tuổi ông.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white mb-1">Ghi Nhận Ở Côn Đảo</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    Ngô Đức Kế từng bị giam ở Côn Đảo từ 1908–1921. Những năm tháng này, ông vẫn không ngừng sáng tác và góp phần tạo nên khí phách yêu nước ở một trong những địa điểm lịch sử quan trọng của Việt Nam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark text-white pt-16 pb-8 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">CAN LỘC</h2>
+                            <p class="text-xs text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang thông tin văn hóa - lịch sử huyện Can Lộc, tỉnh Hà Tĩnh. Dựa trên dữ liệu từ Wikipedia và cổng thông tin địa phương.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                           <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#introduction">
+                           <i class="fa-solid fa-link"></i>
+                            Giới thiệu chung
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#landmarks">
+                            <i class="fa-solid fa-link"></i>
+                            Danh lam thắng cảnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#personalities">
+                            <i class="fa-solid fa-link"></i>
+                            Danh nhân
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-link"></i>
+                            Cổng thông tin huyện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Địa danh tiêu biểu</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Khu di tích Đồng Lộc
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                           <i class="fa-solid fa-map-pin"></i>
+                            Núi Hồng Lĩnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Sông Nghèn
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Làng Kế Thiện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Xã Can Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">canloc.hatinh.gov.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © Trang Web Được Xây Dựng Nhằm Mục Đích Tham Khảo Văn Hóa - Lịch Sử Huyện Can Lộc.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in sections
+        document.querySelectorAll('.fade-in-section').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-background-dark/95 z-[9999] flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center mb-6">
+                <div class="relative w-16 h-16">
+                    <div class="absolute inset-0 rounded-full border-4 border-primary/20"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary border-r-primary animate-spin" style="animation: spin 1s linear infinite;"></div>
+                </div>
+            </div>
+            <p class="text-white font-bold tracking-widest uppercase text-sm">Đang tải...</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        #loading-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        #loading-overlay.show {
+            opacity: 1;
+        }
+    </style>
+
+    <script src="../homepage/smooth-scroll.js"></script>
+
+    <!-- Chatbot Widget -->
+    <link rel="stylesheet" href="../shared/chatbot.css">
+
+    <div class="chatbox">
+        <div class="chatbox__button">
+            <button class="send__button">
+                <span class="chat-icon">💬</span>
+            </button>
+        </div>
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__header-dragarea">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="chatbox__content--header">
+                        <div class="chatbox__heading--header">Bi Biết Tuốt</div>
+                        <div class="chatbox__description--header">Trợ lý ảo Can Lộc</div>
+                        <div class="chatbox__status">
+                            <span class="status-dot"></span>
+                            <span style="color: white; font-size: 0.8rem;">Trực tuyến</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbox__controls">
+                    <button class="control-btn minimize-btn" title="Thu nhỏ">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="control-btn maximize-btn" title="Phóng to">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                    <button class="control-btn close-btn" title="Đóng">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div class="messages-container"></div>
+            </div>
+            <div class="chatbox__footer">
+                <div class="input-container">
+                    <input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+                    <button class="chatbox__send--footer send__button">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/app.js"></script>
+
+    <!-- Loading overlay script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+
+            // Bắt tất cả link
+            document.querySelectorAll('a[href*=".html"], a[href*="dongloc"], a[href*="huongtich"], a[href*="vidam"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Không show loading nếu là anchor link
+                    if (!this.href.includes('#')) {
+                        if (loadingOverlay) {
+                            loadingOverlay.classList.add('show');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when clicked
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body></html>

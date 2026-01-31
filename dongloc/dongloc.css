@@ -1,0 +1,762 @@
+/* ========== DONGLOC CSS FILE ========== */
+
+/* ========== TAILWIND CONFIG STYLES ========== */
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.traditional-pattern {
+    background-image: radial-gradient(#c62828 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    opacity: 0.05;
+}
+
+.section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #c62828 0%, #ef5350 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-title {
+    background: linear-gradient(135deg, #8e0000 0%, #c62828 50%, #ef5350 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 8px rgba(198, 40, 40, 0.4));
+}
+
+.title-white {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title-red-gradient {
+    background: linear-gradient(180deg, #ef5350 0%, #c62828 50%, #8e0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 12px rgba(198, 40, 40, 0.5));
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: #c62828;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #c62828;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1.5rem;
+    width: 2px;
+    height: calc(100% + 1rem);
+    background: #e5e7eb;
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes parallaxShift {
+    0%, 100% {
+        transform: translateY(0px) scale(1.05);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+@keyframes floatingGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleInDown {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        opacity: 0.5;
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 1;
+        filter: brightness(1.1);
+    }
+    100% {
+        opacity: 0.5;
+        filter: brightness(1);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalBackdropIn {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(6px);
+    }
+}
+
+@keyframes modalBackdropOut {
+    from {
+        opacity: 1;
+        backdrop-filter: blur(6px);
+    }
+    to {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes modalContentIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes modalContentOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+}
+
+/* ========== HERO SECTION ANIMATIONS ========== */
+.hero-badge {
+    animation: fadeInDown 0.8s ease-out 0.2s both;
+}
+
+.hero-title {
+    animation: fadeInDown 0.8s ease-out 0.4s both;
+}
+
+.hero-description {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.hero-buttons a {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-buttons a:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 20px 30px rgba(198, 40, 40, 0.4));
+}
+
+/* ========== HERO BACKGROUND EFFECTS ========== */
+.hero-bg-image {
+    animation: parallaxShift 20s ease-in-out infinite;
+    will-change: transform;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+    .hero-bg-image {
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+/* ========== MODAL STYLES ========== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.modal-overlay.hidden {
+    display: none;
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+.modal-overlay.show {
+    animation: modalBackdropIn 350ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.modal-overlay.closing {
+    animation: modalBackdropOut 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay.show .modal-content {
+    animation: modalContentIn 350ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.modal-overlay.closing .modal-content {
+    animation: modalContentOut 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.dark .modal-content {
+    background-color: #2a2020;
+    color: #f3f4f6;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #c62828 0%, #ef5350 100%);
+    color: white;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1rem;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    flex-grow: 1;
+}
+
+.modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0.25rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 28px;
+    color: #333;
+    line-height: 1.8;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    flex-grow: 1;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.dark .modal-body::-webkit-scrollbar-track {
+    background: #3a3a3a;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #c62828;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #8e0000;
+}
+
+.dark .modal-body {
+    color: #f3f4f6;
+}
+
+.modal-body p {
+    margin: 0 0 1rem 0;
+}
+
+.modal-body > div {
+    margin-bottom: 1.5rem;
+}
+
+.modal-body > div:last-child {
+    margin-bottom: 0;
+}
+
+/* ========== RESPONSIVE MODAL ========== */
+@media (max-width: 768px) {
+    .modal-overlay {
+        padding: 0.75rem;
+    }
+    .modal-content {
+        border-radius: 16px;
+        max-height: calc(100vh - 1.5rem);
+    }
+    .modal-header {
+        padding: 20px;
+    }
+    .modal-header h3 {
+        font-size: 18px;
+    }
+    .modal-body {
+        padding: 20px;
+        max-height: calc(100vh - 100px);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 0.5rem;
+    }
+    .modal-content {
+        border-radius: 14px;
+    }
+    .modal-header {
+        padding: 16px;
+        gap: 0.75rem;
+    }
+    .modal-header h3 {
+        font-size: 16px;
+    }
+    .modal-close {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+    .modal-body {
+        padding: 16px;
+        max-height: calc(100vh - 90px);
+    }
+}
+
+.timeline-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-3px);
+}
+
+/* ========== PROFILE CAROUSEL STYLES ========== */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    min-height: 550px;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 0;
+}
+
+.carousel-profile {
+    flex-shrink: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 25%;
+    min-height: 500px;
+}
+
+.profile-btn {
+    opacity: 0.85;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-btn:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* ========== SECTION BACKGROUNDS ========== */
+.section-timeline {
+    position: relative;
+    background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+}
+
+.dark .section-timeline {
+    background: linear-gradient(135deg, #2a2020 0%, #251a1a 100%);
+}
+
+.section-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(198, 40, 40, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-profile {
+    position: relative;
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.dark .section-profile {
+    background: linear-gradient(135deg, #251a1a 0%, #2a2020 100%);
+}
+
+.section-profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 80% 50%, rgba(198, 40, 40, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-timeline > div,
+.section-profile > div {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== GOOGLE MAPS CONTAINER ========== */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    background: #f5f5f5;
+}
+
+.dark .map-container {
+    background: #2a2020;
+}
+
+.map-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 1rem !important;
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        height: 300px;
+    }
+}
+
+.map-container {
+    overflow: hidden;
+}
+
+/* ========== FONT AWESOME ICONS ========== */
+.fa {
+    transition: all 0.3s ease;
+}
+
+.dark .fa {
+    color: inherit;
+}
+/* ===== COMPREHENSIVE DARK MODE STYLING FOR DONGLOC ===== */
+
+/* Global dark mode */
+html.dark,
+html.dark body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+}
+
+/* Dark mode headings */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+    color: #ffffff;
+}
+
+/* Dark mode text */
+html.dark p,
+html.dark span,
+html.dark li,
+html.dark div {
+    color: #e0e0e0;
+}
+
+/* Dark mode forms */
+html.dark input,
+html.dark textarea,
+html.dark select {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark input:focus,
+html.dark textarea:focus {
+    background-color: #3a3a3a;
+    border-color: #d4af37;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #909090;
+}
+
+/* Dark mode buttons */
+html.dark button {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark button:hover {
+    background-color: #3a3a3a;
+}
+
+/* Dark mode links */
+html.dark a {
+    color: #90caf9;
+}
+
+html.dark a:hover {
+    color: #bbdefb;
+}
+
+/* Dark mode borders */
+html.dark hr,
+html.dark .border {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode tables */
+html.dark table {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+html.dark table th {
+    background-color: #2a2a2a;
+    border-color: #3d3d3d;
+}
+
+html.dark table td {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode header/footer */
+html.dark header {
+    background-color: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+html.dark footer {
+    background-color: #0d0d0d;
+    border-color: #2a2a2a;
+}
+
+/* Dark mode backgrounds */
+html.dark .bg-white,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100 {
+    background-color: #1a1a1a;
+}
+
+html.dark .bg-background-light {
+    background-color: #0d0d0d;
+}
+
+/* Dark mode text colors */
+html.dark .text-gray-700,
+html.dark .text-gray-800,
+html.dark .text-gray-900 {
+    color: #e0e0e0;
+}
+
+html.dark .text-gray-600 {
+    color: #b0b0b0;
+}
+
+html.dark .text-gray-500 {
+    color: #909090;
+}
+
+/* Dark mode scrollbars */
+html.dark ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.8);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+}
+
+/* Dark mode cards */
+html.dark .card {
+    background-color: #1a1a1a;
+    border-color: #3d3d3d;
+}
+
+/* Dark mode modals */
+html.dark .modal {
+    background-color: #1a1a1a;
+}
+
+/* Ensure all text is visible */
+html.dark {
+    color-scheme: dark;
+}

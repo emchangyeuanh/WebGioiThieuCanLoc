@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chùa Hương Tích | Du lịch Tâm linh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="codechuahuong.css">
+<style>
+    body {
+        font-family: "Be Vietnam Pro", sans-serif;
+        scroll-behavior: smooth;
+    }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c62828",
+                        "primary-light": "#ef5350",
+                        "primary-dark": "#8e0000",
+                        "accent-gold": "#d4af37",
+                        "background-light": "#fefefe",
+                        "background-dark": "#1a1212",
+                        "gray-dark": "#2a2020",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="max-w-screen-2xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<a href="../homepage/codecanloc.html" class="flex items-center gap-3">
+<div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">HƯƠNG TÍCH</h1>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Du lịch Tâm linh Hà Tĩnh</p>
+</div>
+</a>
+<nav class="hidden lg:flex items-center gap-1">
+<a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html"><i class="fa-solid fa-house"></i><span class="hidden sm:inline">Trang Chủ</span></a>
+<a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#landmarks"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa Danh</span></a>
+<a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#personalities"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh Nhân</span></a>
+<a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+<a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#festival"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+<div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+<a href="../homepage/dulich.html" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-lg inline-block">
+Khám phá ngay
+</a>
+</nav>
+<button class="lg:hidden text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style='background-image: linear-gradient(to bottom, rgba(26, 18, 18, 0.7), rgba(26, 18, 18, 0.9)), url("nen.webp");'>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up">
+<span class="text-accent-gold text-sm font-bold tracking-[0.3em] uppercase mb-4 block">Danh lam thứ nhất vùng Nam</span>
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
+                Hành trình đến tâm hồn <span class="text-primary">Hồng Lĩnh</span>
+</h1>
+<p class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                Trải nghiệm vẻ đẹp siêu phàm của Chùa Hương Tích, một ngôi chùa tâm linh cổ xưa nơi mây chạm đất và im lặng nói chuyện với trái tim.
+            </p>
+
+</div>
+</section>
+<!-- Legend and History Section -->
+<section class="py-24 px-6 lg:px-40" id="history">
+<div class="max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+<div class="relative p-2 gold-border rounded-xl">
+<img alt="Ancient architectural detail of the pagoda" class="rounded-lg w-full h-[500px] object-cover" data-alt="Ancient wooden carvings of a Vietnamese pagoda" src="congchua.jpg"/>
+<div class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-lg shadow-xl hidden lg:block">
+<p class="text-white text-4xl font-black">Thế kỷ</p>
+<p class="text-white/80 text-xs uppercase tracking-widest font-bold">13 - Nguồn gốc</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="h-px w-12 bg-accent-gold"></div>
+<span class="text-accent-gold font-bold tracking-widest uppercase text-sm">Di sản Thiêng liêng</span>
+</div>
+<h2 class="text-white text-4xl md:text-5xl font-black leading-tight">Truyền thuyết Công chúa Diệu Thiên</h2>
+<p class="text-gray-300 text-lg leading-relaxed">
+                        Được xây dựng trong thời Trần, Chùa Hương Tích gắn liền với truyền thuyết đầm nước mắt của Công chúa Diệu Thiên. Chạy trốn khỏi vị cha tàn bạo, cô tìm thấy nơi trú ẩn ở núi Hồng Lĩnh, cuối cùng trở thành Bồ tát Quán Âm.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+<div class="flex gap-4 p-4 rounded-lg bg-[#331919] border border-[#673232] cursor-pointer transition-all hover:border-accent-gold" data-modal="origin-modal">
+<span class="material-symbols-outlined text-primary text-3xl">history_edu</span>
+<div>
+<h4 class="text-white font-bold">Nguồn gốc Hoàng gia</h4>
+<p class="text-gray-400 text-sm">Được thành lập vào những năm 1300 bằng sắc lệnh hoàng gia.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg bg-[#331919] border border-[#673232] cursor-pointer transition-all hover:border-accent-gold" data-modal="mountain-modal">
+<span class="material-symbols-outlined text-primary text-3xl">landscape</span>
+<div>
+<h4 class="text-white font-bold">99 Đỉnh</h4>
+<p class="text-gray-400 text-sm">Nằm trên đỉnh phong cảnh tuyệt đẹp nhất của Hồng Lĩnh.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Travel Routes Section -->
+<section class="py-24 bg-[#1a0c0c] px-6 lg:px-40" id="routes">
+<div class="max-w-[1280px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-white text-4xl font-black mb-4">Chọn Hành Trình Của Bạn</h2>
+<p class="text-gray-400 max-w-2xl mx-auto">Cho dù bạn tìm kiếm một cuộc leo núi thiền định qua rừng thông hay một chuyến bay trên mây, con đường giác ngộ là của bạn để chọn.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Route 1: Cable Car -->
+<div class="group relative overflow-hidden rounded-xl border border-[#482323] bg-background-dark transition-all hover:border-accent-gold">
+<div class="h-64 overflow-hidden">
+<img alt="Cable car over green mountains" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern cable car moving over lush green mountains" src="captreo.jpg"/>
+<div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Được Khuyên</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-bold text-white">Cáp Treo Dạo Mây</h3>
+<span class="text-accent-gold font-bold">15 Phút</span>
+</div>
+<p class="text-gray-400 mb-6">Thưởng thức chuyến đi 1.2km với toàn cảnh trên những khu rừng thông cổ xưa. Chứng kiến toàn bộ vẻ vĩ đại của '99 đỉnh' từ bầu trời.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary size-5 text-lg">check_circle</span>
+                                Leo lên phức hợp chùa chính mà không gặp khó khăn
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary size-5 text-lg">check_circle</span>
+                                Cơ hội chụp ảnh độ cao lớn
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Đặt vé</button>
+</div>
+</div>
+<!-- Route 2: Hiking -->
+<div class="group relative overflow-hidden rounded-xl border border-[#482323] bg-background-dark transition-all hover:border-accent-gold">
+<div class="h-64 overflow-hidden">
+<img alt="Hiking trail through misty forest" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Stone stairs hiking path through a misty pine forest" src="conduong.webp"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-bold text-white">Con Đường Trăn Thế</h3>
+<span class="text-accent-gold font-bold">2-3 Giờ</span>
+</div>
+<p class="text-gray-400 mb-6">Một cầu thang đá dài 5km uốn lượn qua rừng thông ngàn năm tuổi và các khu grove tre. Dành cho những người tìm kiếm thiền định.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary size-5 text-lg">check_circle</span>
+                                Đi qua cổng Nghi Môn cổ xưa
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary size-5 text-lg">check_circle</span>
+                                Thăm các điểm dừng thánh liêng và các đền thờ nhỏ hơn
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-gray-600 text-gray-300 font-bold hover:border-white hover:text-white transition-all" data-modal="map-modal">Xem Bản đồ Tuyến đường</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-24 px-6 lg:px-40" id="gallery">
+<div class="max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="text-white text-4xl font-black mb-4">Kiến trúc Thánh liêng</h2>
+<p class="text-gray-400">Những cái nhìn vào trái tim tâm linh của ngôi chùa và thiên nhiên tuyệt đẹp của dãy núi Hồng Lĩnh.</p>
+</div>
+<button class="flex items-center gap-2 text-accent-gold font-bold hover:underline" id="viewAllPhotosBtn">
+                    Xem Tất cả Ảnh
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="col-span-2 row-span-2 rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Main Hall Entrance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Traditional Vietnamese pagoda roof architecture" src="chua-huong-tich-ha-tinh.jpeg" data-gallery="architecture"/>
+</div>
+<div class="rounded-xl overflow-hidden group h-64 cursor-pointer">
+<img alt="Pine Forest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Dense pine forest with soft morning light" src="chua-huong-dong-huong-tich-tour-le-hoi-kynghidongduong-vn-03.jpg" data-gallery="architecture"/>
+</div>
+<div class="rounded-xl overflow-hidden group h-64 cursor-pointer">
+<img alt="Incense burner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Golden incense burner in a temple courtyard" src="chua-huong-tich-18-4490.jpg" data-gallery="architecture"/>
+</div>
+<div class="col-span-2 h-80 rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Mountain Peak View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Panoramic view of misty mountains from the summit" src="Chua_Huong_-_Den_trinh.jpg" data-gallery="architecture"/>
+</div>
+<div class="gallery-item hidden h-64 rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Gallery Image 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="1.jpg" data-gallery="architecture"/>
+</div>
+<div class="gallery-item hidden h-64 rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Gallery Image 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="2.jpg" data-gallery="architecture"/>
+</div>
+<div class="gallery-item hidden h-64 rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Gallery Image 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="3.jpg" data-gallery="architecture"/>
+</div>
+<div class="gallery-item hidden h-64 rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Gallery Image 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="4.jpg" data-gallery="architecture"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Festival Information Section -->
+<section class="py-24 px-6 lg:px-40 relative" id="festival">
+<div class="absolute inset-0 bg-primary/5 pattern-dots opacity-20"></div>
+<div class="max-w-[1280px] mx-auto relative z-10">
+<div class="bg-gradient-to-br from-[#331919] to-background-dark border-2 border-accent-gold/30 rounded-3xl p-8 md:p-16 overflow-hidden relative">
+<div class="absolute -top-12 -right-12 size-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="w-full lg:w-3/5">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-gold/20 border border-accent-gold/40 text-accent-gold text-xs font-black uppercase mb-6">
+<span class="material-symbols-outlined text-sm">event</span>
+                            Lễ hội Hàng năm
+                        </div>
+<h2 class="text-white text-4xl md:text-5xl font-black mb-6 leading-tight">Lễ hội Xuân Chùa Hương Tích</h2>
+<p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                            Bắt đầu từ <span class="text-accent-gold font-bold">ngày thứ 6 của tháng Giêng Âm lịch</span>, hàng ngàn trăn thế ùn ùn kéo đến đỉnh Hồng Lĩnh để cầu nguyện cho hòa bình, thịnh vượng và sức khỏe. Lễ hội đánh dấu sự khai mạc của mùa du lịch tâm linh ở Hà Tĩnh.
+                        </p>
+<div class="grid grid-cols-2 gap-8 mb-10">
+<div>
+<h4 class="text-white font-bold text-xl mb-2">Âm lịch 6/1</h4>
+<p class="text-gray-400 text-sm">Lễ khai mạc &amp; Nghi thức</p>
+</div>
+<div>
+<h4 class="text-white font-bold text-xl mb-2">3 Tháng</h4>
+<p class="text-gray-400 text-sm">Thời gian của Mùa Trăn thế</p>
+</div>
+</div>
+<button class="bg-accent-gold text-background-dark font-black px-10 py-4 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1" onclick="window.location.href='../homepage/dulich.html'">Lên kế hoạch Thăm Lễ hội</button>
+</div>
+<div class="w-full lg:w-2/5">
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-1 h-56 rounded-2xl overflow-hidden group cursor-pointer gallery-image" data-image="lehoi1.jpg" data-caption="Lễ hội Xuân Chùa Hương Tích 1">
+<img alt="Lễ hội 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="lehoi1.jpg"/>
+</div>
+<div class="col-span-1 h-56 rounded-2xl overflow-hidden group cursor-pointer gallery-image" data-image="lehoi2.jpg" data-caption="Lễ hội Xuân Chùa Hương Tích 2">
+<img alt="Lễ hội 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="lehoi2.jpg"/>
+</div>
+<div class="col-span-1 h-56 rounded-2xl overflow-hidden group cursor-pointer gallery-image" data-image="lehoi3.jpg" data-caption="Lễ hội Xuân Chùa Hương Tích 3">
+<img alt="Lễ hội 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="lehoi3.jpg"/>
+</div>
+<div class="col-span-1 h-56 rounded-2xl overflow-hidden group cursor-pointer gallery-image" data-image="lehoi4.jpg" data-caption="Lễ hội Xuân Chùa Hương Tích 4">
+<img alt="Lễ hội 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="lehoi4.jpg"/>
+</div>
+<div class="col-span-2 h-56 rounded-2xl overflow-hidden group cursor-pointer gallery-image" data-image="lehoi5.jpg" data-caption="Lễ hội Xuân Chùa Hương Tích 5">
+<img alt="Lễ hội 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="lehoi5.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modal -->
+<div class="modal-overlay" id="originModal">
+<div class="modal-content">
+<button class="modal-close" id="modalClose">×</button>
+<div class="modal-title">Sự tích Quán Âm Diệu Thiện – Chùa Hương Tích</div>
+<div class="modal-text">
+<p style="margin-bottom: 15px;">Sự tích Quán Âm Diệu Thiện gắn liền với chùa Hương Tích (Hà Tĩnh) mang đậm màu sắc huyền sử và tín ngưỡng Phật giáo, lưu truyền rộng rãi ở nhiều vùng, trong đó Hương Tích được xem là nơi tu hành và chứng đạo của Ngài.</p>
+<p style="margin-bottom: 15px;">Theo truyền thuyết, công chúa Diệu Thiện – con vua Diệu Trang – sớm phát tâm tu hành, kiên quyết từ bỏ vinh hoa phú quý để cầu đạo giải thoát và cứu độ chúng sinh. Trải qua nhiều thử thách khắc nghiệt, bị ngược đãi, truy sát nhưng với lòng từ bi, ý chí kiên cường và sự tinh tấn tu tập, Diệu Thiện cuối cùng chứng quả Bồ Tát với danh hiệu Quán Âm Diệu Thiện.</p>
+<p style="margin-bottom: 15px;">Ngài an trú tại động Hương Tích, giáo hóa chúng sinh, khuyến thiện, cứu khổ, làm cho Phật pháp hưng thịnh khắp vùng. Nhân dân lập nhiều đạo tràng, chùa tháp để tưởng niệm công đức của Ngài. Hằng năm, vào ngày 18–19 tháng 2 âm lịch, lễ hội Quán Âm Diệu Thiện được tổ chức long trọng tại chùa Hương Tích, ghi nhớ ân đức và giá trị đạo lý mà Ngài để lại.</p>
+<p>Sự tích tuy có yếu tố huyền thoại, nhưng ẩn chứa bài học sâu sắc về tâm tu bền bỉ, lòng từ bi và hạnh nguyện cứu độ chúng sinh, có giá trị lớn về mặt văn hóa – tinh thần cho nhiều thế hệ.</p>
+</div>
+<div class="modal-images">
+<div class="modal-image">
+<img alt="Hoàng gia" src="hoanggia1.jpg"/>
+</div>
+<div class="modal-image">
+<img alt="Hoàng gia" src="hoanggia.webp"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Mountain Modal -->
+<div class="modal-overlay" id="mountainModal">
+<div class="modal-content">
+<button class="modal-close" id="mountainModalClose">×</button>
+<div class="modal-title">Ngàn Hống – Núi Hồng Lĩnh, vùng đất thiêng của xứ Nghệ Tĩnh</div>
+<div class="modal-text">
+<p style="margin-bottom: 15px;">Hồng Lĩnh (còn gọi là Ngàn Hống) là dãy núi gồm 99 ngọn nằm trên địa bàn các huyện Nghi Xuân, Can Lộc và Đức Thọ (Hà Tĩnh). Đây là một trong 21 danh thắng của nước Nam xưa, được triều Nguyễn khắc lên Cửu Đỉnh hiện đặt tại cố đô Huế, gắn liền với nhiều huyền thoại và giá trị lịch sử – văn hóa đặc sắc.</p>
+<p style="margin-bottom: 15px;">Theo truyền thuyết dân gian, dãy núi 99 ngọn hình thành từ tích ông Đùng – bà Đùng, trong đó ngọn núi thứ 100 bị bỏ lại chính là núi Quyết bên bờ sông Lam. Hồng Lĩnh còn được xem là cái nôi của tổ tiên Hồng Lạc, gắn với truyền thuyết vua Kinh Dương Vương từng tìm nơi định đô tại Ngàn Hống.</p>
+<p style="margin-bottom: 15px;">Không chỉ mang màu sắc huyền sử, Hồng Lĩnh còn là vùng đất địa linh nhân kiệt, từng in dấu chân của nhiều bậc hiền tài và danh nhân như Nguyễn Huệ – Quang Trung, La Sơn Phu Tử Nguyễn Thiếp. Nơi đây cũng được xem là vùng phát tích Phật giáo miền Trung, với nhiều ngôi chùa cổ như chùa Đại Hùng, chùa Hương Tích – được mệnh danh là Hoan Châu đệ nhất danh lam.</p>
+<p>Ngày nay, Hồng Lĩnh – Ngàn Hống không chỉ là biểu tượng văn hóa – tâm linh của Hà Tĩnh mà còn là vùng đất cổ huyền thoại đang tiếp tục vươn mình phát triển trong thời đại mới.</p>
+</div>
+<div class="modal-images">
+<div class="modal-image">
+<img alt="Núi Hồng Lĩnh 1" src="nui1.webp"/>
+</div>
+<div class="modal-image">
+<img alt="Núi Hồng Lĩnh 2" src="nui2.webp"/>
+</div>
+<div class="modal-image">
+<img alt="Núi Hồng Lĩnh 3" src="nui3.webp"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Lightbox Modal for Gallery Images -->
+<div class="modal-overlay" id="lightboxModal">
+<div class="modal-content" style="max-width: 900px; padding: 30px;">
+<button class="modal-close" id="lightboxClose">×</button>
+<img alt="Gallery Image" id="lightboxImage" class="w-full h-auto rounded-lg" src=""/>
+<div class="mt-6 text-center">
+<p id="lightboxCaption" class="text-gray-300 text-sm"></p>
+</div>
+<div class="flex justify-between mt-6">
+<button id="lightboxPrev" class="bg-accent-gold text-background-dark font-bold px-6 py-2 rounded-lg hover:bg-white transition-all">← Trước</button>
+<button id="lightboxNext" class="bg-accent-gold text-background-dark font-bold px-6 py-2 rounded-lg hover:bg-white transition-all">Sau →</button>
+</div>
+</div>
+</div>
+<!-- Map Modal -->
+<div class="modal-overlay" id="mapModal">
+<div class="map-modal-content">
+<button class="map-modal-close" id="mapModalClose">×</button>
+<img alt="Bản đồ tuyến đường" src="bando.webp"/>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-background-dark text-white pt-16 pb-8 px-6">
+<div class="max-w-screen-xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+</svg>
+</div>
+<div>
+<h2 class="text-xl font-black uppercase tracking-tight">HƯƠNG TÍCH</h2>
+<p class="text-xs text-gray-400 font-medium">Du lịch Tâm linh Hà Tĩnh</p>
+</div>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed">
+Chùa Hương Tích - Danh lam thứ nhất vùng Nam, nơi hội tụ vẻ đẹp tâm linh và thiên nhiên tuyệt vời của dãy núi Hồng Lĩnh.
+</p>
+<div class="flex gap-3">
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+<i class="fa-solid fa-people-group"></i>
+</a>
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+<i class="fa-solid fa-envelope"></i>
+</a>
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+<i class="fa-solid fa-share-nodes"></i>
+</a>
+</div>
+</div>
+
+<div>
+<h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+<ul class="space-y-4">
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#history">
+<i class="fa-solid fa-link"></i>
+Truyền thuyết
+</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#routes">
+<i class="fa-solid fa-link"></i>
+Tuyến đường
+</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#gallery">
+<i class="fa-solid fa-link"></i>
+Thư viện ảnh
+</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#festival">
+<i class="fa-solid fa-link"></i>
+Lễ hội
+</a></li>
+</ul>
+</div>
+
+<div>
+<h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Địa danh liên quan</h4>
+<ul class="space-y-4">
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../dongloc/dongloc.html">
+<i class="fa-solid fa-map-pin"></i>
+Ngã ba Đồng Lộc
+</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+<i class="fa-solid fa-map-pin"></i>
+Núi Hồng Lĩnh
+</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+<i class="fa-solid fa-map-pin"></i>
+Sông Lam
+</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html">
+<i class="fa-solid fa-map-pin"></i>
+Can Lộc Homeland
+</a></li>
+</ul>
+</div>
+
+<div>
+<h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+<div class="space-y-5">
+<div class="flex gap-3">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+<i class="fa-solid fa-map"></i>
+</div>
+<p class="text-gray-400 text-sm">Huyện Cẩn Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+</div>
+<div class="flex gap-3">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+<i class="fa-solid fa-phone"></i>
+</div>
+<p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+</div>
+<div class="flex gap-3">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+<i class="fa-solid fa-earth-americas"></i>
+</div>
+<p class="text-gray-400 text-sm">canloc.hatinh.gov.vn</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="pt-8 border-t border-white/5 text-center">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-500 uppercase tracking-widest">
+© Chùa Hương Tích - Du Lịch Tâm Linh Hà Tĩnh. Bản Quyền Được Bảo Vệ.
+</p>
+<div class="flex gap-6 text-xs text-gray-500">
+<a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+<a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+<a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Back to top button -->
+<div class="back-to-top">
+<i class="fa-solid fa-chevron-up"></i>
+</div>
+
+<!-- Chatbot Widget -->
+<link rel="stylesheet" href="../shared/chatbot.css">
+
+<div class="chatbox">
+<div class="chatbox__button">
+<button class="send__button">
+<span class="chat-icon">💬</span>
+</button>
+</div>
+<div class="chatbox__support">
+<div class="chatbox__header">
+<i class="fa-solid fa-robot"></i>
+<div class="chatbox__content--header">
+<div class="chatbox__heading--header">Bi Biết Tuốt</div>
+<div class="chatbox__description--header">Trợ lý ảo Chùa Hương Tích</div>
+<div class="chatbox__status">
+<span class="status-dot"></span>
+<span class="status-text">Trực tuyến</span>
+</div>
+</div>
+<div class="chatbox__controls">
+<button class="control-btn minimize-btn" title="Thu nhỏ">
+<i class="fa-solid fa-minus"></i>
+</button>
+<button class="control-btn maximize-btn" title="Phóng to">
+<i class="fa-solid fa-plus"></i>
+</button>
+<button class="control-btn close-btn" title="Đóng">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+</div>
+<div class="chatbox__messages">
+<div class="messages-container"></div>
+</div>
+<div class="chatbox__footer">
+<div class="input-container">
+<input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+<button class="chatbox__send--footer">
+<i class="fa-solid fa-paper-plane"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<script src="codechuahuong.js"></script>
+<script src="smooth-scroll.js"></script>
+<script src="../shared/app.js"></script>
+</body></html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Phát Nhạc - Can Lộc</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ec1313;
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border-left: 4px solid #d4af37;
+            background: #fffbf0;
+        }
+        audio {
+            width: 100%;
+            margin: 20px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-play {
+            background: #d4af37;
+            color: #222;
+            font-weight: bold;
+        }
+        .btn-play:hover {
+            background: #c49a28;
+            transform: scale(1.05);
+        }
+        .btn-stop {
+            background: #ec1313;
+            color: white;
+        }
+        .btn-stop:hover {
+            background: #b91c1c;
+        }
+        .info-box {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4a90e2;
+            margin: 20px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .file-list {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .file-list ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .file-list li {
+            margin: 5px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Kiểm Tra Chức Năng Phát Nhạc</h1>
+        
+        <div class="status">
+            <strong>✅ Hệ thống:</strong> Trang web đã được cấu hình để phát nhạc MP3
+        </div>
+
+        <h2>📁 Cấu Trúc Tệp</h2>
+        <div class="file-list">
+            <p><strong>Thư mục cần có:</strong></p>
+            <ul>
+                <li>vidam/</li>
+                <li>├── music/</li>
+                <li>│   ├── dan-ca.mp3  <strong>← Thêm file MP3 của bạn ở đây</strong></li>
+                <li>│   └── README.md</li>
+                <li>├── codevidam.html</li>
+                <li>├── script.js</li>
+                <li>└── styles.css</li>
+            </ul>
+        </div>
+
+        <h2>🎧 Test Phát Nhạc Cơ Bản</h2>
+        <div class="info-box">
+            <p>Để test chức năng, đầu tiên bạn cần có file MP3 trong thư mục <code>vidam/music/</code></p>
+        </div>
+
+        <h3>Audio Element:</h3>
+        <audio id="testAudio" controls>
+            <source src="music/dan-ca.mp3" type="audio/mpeg">
+            <source src="music/dan-ca.ogg" type="audio/ogg">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+
+        <div class="button-group">
+            <button class="btn-play" onclick="playAudio()">▶️ Phát Nhạc</button>
+            <button class="btn-stop" onclick="stopAudio()">⏹️ Dừng</button>
+            <button class="btn-play" onclick="pauseAudio()">⏸️ Tạm Dừng</button>
+        </div>
+
+        <h2>✨ Chức Năng Đã Được Thêm</h2>
+        <div class="info-box">
+            <h3>Nút "Nghe Ngay":</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>✅ ID: <code>music-play-btn</code></li>
+                <li>✅ Hiệu ứng: Pulse, Scale, Glow</li>
+                <li>✅ Thông báo khi phát</li>
+            </ul>
+
+            <h3>Mini Player:</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>✅ ID: <code>mini-player</code></li>
+                <li>✅ Điều chỉnh âm lượng</li>
+                <li>✅ Thanh tiến độ</li>
+                <li>✅ Nút Play/Pause/Skip</li>
+                <li>✅ Visualizer hoạt động</li>
+            </ul>
+
+            <h3>Animtion & Effects:</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>✅ Sound waves animation</li>
+                <li>✅ Music glow effect</li>
+                <li>✅ Pulse beat animation</li>
+                <li>✅ Visualizer bars</li>
+            </ul>
+        </div>
+
+        <h2>📋 Các Bước Tiếp Theo</h2>
+        <ol style="line-height: 1.8;">
+            <li><strong>Chuẩn Bị File MP3:</strong>
+                <ul>
+                    <li>Chọn file nhạc dân ca Ví, Giặm</li>
+                    <li>Định dạng: MP3</li>
+                    <li>Kích thước: Tối ưu dưới 10MB</li>
+                    <li>Tên: <code>dan-ca.mp3</code></li>
+                </ul>
+            </li>
+            <li><strong>Thêm File Vào Thư Mục:</strong>
+                <ul>
+                    <li>Mở File Explorer</li>
+                    <li>Đi tới: <code>vidam\music\</code></li>
+                    <li>Paste file MP3</li>
+                </ul>
+            </li>
+            <li><strong>Kiểm Tra:</strong>
+                <ul>
+                    <li>Mở file <code>codevidam.html</code> bằng trình duyệt</li>
+                    <li>Nhấn nút "Nghe Ngay"</li>
+                    <li>Kiểm tra mini player</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>🔍 Ghi Chú Quan Trọng</h2>
+        <div class="status">
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Đảm bảo tên file chính xác: <code>dan-ca.mp3</code></li>
+                <li>File phải ở trong thư mục: <code>vidam/music/</code></li>
+                <li>Hỗ trợ trình duyệt: Chrome, Firefox, Safari, Edge</li>
+                <li>Cần HTTPS trên production (HTTP hoạt động trên localhost)</li>
+            </ul>
+        </div>
+
+        <h2>📞 Hỗ Trợ</h2>
+        <div class="info-box">
+            <p><strong>Nếu gặp vấn đề:</strong></p>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Kiểm tra Developer Console (F12 → Console)</li>
+                <li>Kiểm tra Network tab để xem file có load không</li>
+                <li>Kiểm tra MIME type của file MP3</li>
+                <li>Thử refresh trang (Ctrl+Shift+R)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('testAudio');
+            audio.play().catch(error => {
+                alert('Lỗi: ' + error.message);
+            });
+        }
+
+        function stopAudio() {
+            const audio = document.getElementById('testAudio');
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+        function pauseAudio() {
+            const audio = document.getElementById('testAudio');
+            audio.pause();
+        }
+
+        // Check if file exists on page load
+        window.addEventListener('load', function() {
+            const audio = document.getElementById('testAudio');
+            audio.addEventListener('error', function() {
+                console.error('Audio file not found or cannot be loaded');
+                alert('⚠️ File nhạc không tìm thấy hoặc không thể load!\n\nVui lòng thêm file dan-ca.mp3 vào thư mục vidam/music/');
+            });
+        });
+    </script>
+</body>
+</html>

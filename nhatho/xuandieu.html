@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Xuân Diệu - Ông hoàng thơ tình Việt Nam</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-light": "#f77171",
+                        "primary-dark": "#b91c1c",
+                        "background-light": "#fdfaf6",
+                        "background-dark": "#221010",
+                        "accent-gold": "#d4af37",
+                        "heritage-red": "#b91c1c",
+                        "gray-light": "#f8f6f6",
+                        "gray-dark": "#3d2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "serif": ["Crimson Text", "serif"]
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 10px 40px rgba(0, 0, 0, 0.15)',
+                        'primary-glow': '0 0 20px rgba(198, 40, 40, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .serif-font {
+            font-family: "Crimson Text", serif;
+        }
+        
+        .traditional-pattern {
+            background-image: radial-gradient(#c62828 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #c62828 0%, #ef5350 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* Fade-in on scroll animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #c62828, #ef5350);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 52%;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 52%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-right: 0;
+                padding-left: 60px;
+            }
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #c62828;
+            border: 4px solid #fefefe;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-content {
+            background: #fefefe;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid #c62828;
+        }
+
+        .dark .timeline-content {
+            background: #2a2020;
+            border-left-color: #ef5350;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card-hover:hover {
+            border-color: #c62828;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(198, 40, 40, 0.15);
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #c62828;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+            border: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: #8e0000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
+    <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../homepage/codecanloc.html" class="flex items-center gap-3" style="text-decoration:none;color:inherit;pointer-events:auto;z-index:50" onclick="window.location.href='../homepage/codecanloc.html'">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#introduction" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#tradition" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <a href="../homepage/dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative">
+        
+        <!-- ===== HERO SECTION ===== -->
+        <section id="home" class="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
+            <!-- Background with overlay -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in" 
+                 style="background-image: linear-gradient(to bottom, rgba(26, 18, 18, 0.75), rgba(26, 18, 18, 0.95)), url('https://images.unsplash.com/photo-1507842217343-583f20270319?w=1200&q=80'); background-attachment: fixed;">
+            </div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 max-w-4xl px-6 text-center text-white animate-slide-up">
+                <span class="inline-block px-5 py-2 mb-6 border border-primary/50 rounded-full text-sm font-bold tracking-[0.2em] uppercase bg-primary/20 backdrop-blur-sm">
+                    Văn học Việt Nam hiện đại
+                </span>
+                
+                <!-- Main Title -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 drop-shadow-2xl text-balance serif-font px-6 py-8">
+                    Xuân Diệu
+                    <br/>
+                    <span class="text-4xl md:text-5xl font-light">(1916–1985)</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-4 text-gray-200 leading-relaxed">
+                    Nhà thơ tiêu biểu của phong trào Thơ Mới Việt Nam
+                </p>
+
+                <!-- Famous Quote -->
+                <div class="max-w-2xl mx-auto mb-12 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+                    <p class="text-lg italic font-light text-gray-100 serif-font leading-relaxed">
+                        "Vội vàng thay những chân em xinh<br/>
+                        Những búp tóc quai nón trông thật tình"
+                    </p>
+                    <p class="text-sm text-gray-300 mt-3">— Trích từ "Vội Vàng"</p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg hover:shadow-primary-glow flex items-center justify-center gap-2">
+                        <span>Khám phá hành trình</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Tìm hiểu chi tiết</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </div>
+        </section>
+
+        <!-- ===== BIOGRAPHY SECTION ===== -->
+        <section id="biography" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-book-open"></i> Tiểu sử
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Con đường <span class="text-primary">sáng tác</span> của Xuân Diệu
+                    </h2>
+                </div>
+
+                <!-- Basic Information -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-16 fade-in-section">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h3 class="text-3xl font-black text-gray-900 dark:text-white serif-font">Thông tin cơ bản</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Info Item 1 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-id-card"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Tên thật</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Ngô Xuân Diệu (bút danh: Xuân Diệu, Trảo Nha)</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 2 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Năm Sinh-Năm Mất</p>
+                                    <p class="text-gray-600 dark:text-gray-400">2 tháng 2 năm 1916 – 18 tháng 12 năm 1985 (69 tuổi)</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 3 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Nơi sinh – Quê quán</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Sinh tại Phước Hòa, Tuy Phước, Bình Định; Quê gốc: làng Trảo Nha, huyện Can Lộc, Hà Tĩnh</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 4 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Học vấn – Sự nghiệp</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Cử nhân Luật; Nhà thơ, nhà báo, nhà phê bình văn học, đại biểu Quốc hội khóa I</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portrait -->
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl transform -rotate-1 transition-transform group-hover:rotate-0 duration-700"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-hard">
+                            <img class="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                                 alt="Chân dung nhà thơ Xuân Diệu" 
+                                 src="xd1.jpg"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="mt-20 pt-16 border-t border-gray-200 dark:border-gray-800">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-12 serif-font">Dấu mốc cuộc đời</h3>
+                    
+                    <div class="timeline">
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1916 – 1927</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Sinh ngày 2 tháng 2 năm 1916 tại Phước Hòa, Tuy Phước, Bình Định (quê mẹ). Xuân Diệu sống ở Tuy Phước đến 11 tuổi, sau đó vào Nam học tại Quy Nhơn. Ông được sinh ra trong một gia đình tri thức có truyền thống hiếu học, môi trường lý tưởng cho sự phát triển tài năng văn chương của ông.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1936 – 1937</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Xuân Diệu vào Huế nhập học trường Khải Định (nay là Quốc Học Huế). Tại đây ông gặp được nhà thơ Huy Cận, người sẽ trở thành bạn thân suốt đời. Ông tốt nghiệp tú tài năm 1937 và sau đó ra Hà Nội học trường Luật, bắt đầu bước vào cuộc đời văn chương đầy tính cách mạng.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1936 – 1940</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Tham gia nhóm Tự Lực văn đoàn – một tổ chức văn học gồm các cây bút trẻ Việt Nam thông thạo cả văn học Việt Nam lẫn Phương Tây. Xuân Diệu sống với Huy Cận tại số 40 Hàng Than, Hà Nội từ 1938 đến 1940. Đây là thời kỳ bắt đầu sáng tác và trở thành một cái tên sáng giá trong giới văn chương, với phong cách riêng biệt chịu ảnh hưởng nặng nề của chủ nghĩa tượng trưng Pháp.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2\">1938 – 1945</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Xuất bản hai tập thơ tiêu biểu: \"Thơ thơ\" (1938, 46 bài) và \"Gửi hương cho gió\" (1945, 51 bài). Đây là những tác phẩm đánh dấu sự trưởng thành và thiết lập vị thế của Xuân Diệu trong phong trào Thơ Mới Việt Nam. Năm 1944, ông tham gia Việt Minh và Đảng Dân chủ Việt Nam, bắt đầu giai đoạn mới trong sáng tác với nội dung cách mạng.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 5 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1945 – 1954</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Sau Cách mạng tháng Tám, Xuân Diệu tham gia Hội văn hóa cứu quốc, làm thư ký tạp chí Tiên phong và hoạt động văn nghệ ở Việt Bắc. Ông trở thành một trong những nhà thơ hàng đầu ca ngợi cách mạng, viết báo cho các tờ Ngày Nay và Tiên Phong, đồng thời là một trong những người sáng lập Đoàn báo chí Việt Nam (nay là Hội Nhà báo Việt Nam). Năm 1956, kết hôn với nữ đạo diễn Bạch Diệp nhưng sau đó chia tay.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 6 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1955 – 1985</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Xuân Diệu cư trú tại 24 đường Cột Cờ (Điện Biên Phủ), Hà Nội cho đến lúc qua đời. Tiếp tục xuất bản hàng loạt tập thơ: Dưới sao vàng (1949), Ngôi sao (1955), Riêng chung (1960), Mũi Cà Mau – Cầm tay (1962), v.v. Sáng tác công trình phê bình văn học: Tiếng thơ, Hồ Xuân Hương – Bà chúa thơ Nôm (1961), Trò chuyện với các bạn làm thơ trẻ (1961). Dịch thuật tác phẩm của Pushkin, Nazim Hikmet. Năm 1983, được bầu làm viện sĩ thông tấn Viện Hàn lâm nghệ thuật Cộng hòa Dân chủ Đức.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 7 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1985</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Xuân Diệu qua đời vào ngày 18 tháng 12 năm 1985 tại nhà riêng ở Hà Nội, hưởng thọ 69 tuổi. Ông được an táng tại Nghĩa trang Mai Dịch. Lễ tang có sự tham dự của rất nhiều văn nghệ sĩ Việt Nam nổi tiếng, bao gồm cả vợ cũ Bạch Diệp và nhạc sĩ Văn Cao. Với hơn 450 bài thơ, nhiều công trình phê bình và phân tích văn học, Xuân Diệu để lại một di sản văn học to lớn và ảnh hưởng sâu sắc đến nền văn học Việt Nam hiện đại.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WORKS SECTION ===== -->
+        <section id="works" class="section-padding px-6 bg-gray-light dark:bg-gray-dark">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-pen"></i> Tác phẩm
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Những tập thơ <span class="text-primary">tiêu biểu</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">
+                        Xuân Diệu là một tác giả lưu lạc, với những tập thơ mang đặc trưng tiêu biểu của phong trào Thơ Mới, thể hiện tình yêu đời sống, khát vọng và sợ thời gian trôi đi.
+                    </p>
+                </div>
+
+                <!-- Works Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    
+                    <!-- Work Card 1 -->
+                    <div class="card-hover bg-white dark:bg-gray-dark rounded-2xl overflow-hidden shadow-soft hover:shadow-hard p-6">
+                        <div class="h-40 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-book text-primary text-6xl opacity-50"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-3 serif-font">Thơ thơ</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Tập thơ đầu tiên được xuất bản năm 1938 (tái bản 1939, 1968, 1970), gồm 46 bài thơ. Đây là bản tuyên ngôn của một nhà thơ trẻ, thể hiện sự đam mê yêu đời, những cảm xúc mãnh liệt về tình yêu, và nỗi sợ thời gian trôi đi. Tập thơ này đánh dấu sự xuất hiện của một tiếng nói mới lạ, chịu ảnh hưởng Pháp, trong nền thơ Việt Nam.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <span>Năm 1938</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Work Card 2 -->
+                    <div class="card-hover bg-white dark:bg-gray-dark rounded-2xl overflow-hidden shadow-soft hover:shadow-hard p-6">
+                        <div class="h-40 rounded-lg bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-flower text-accent-gold text-6xl opacity-50"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-3 serif-font">Gửi Hương Cho Gió</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Xuất bản năm 1945 (tái bản 1967), gồm 51 bài thơ. Đây là tập thơ giàu tình cảm, ca ngợi tuổi trẻ và vinh quang của cuộc sống. Ngoài những bài về tình yêu lứa tuổi thanh xuân, tập này cũng chứa những bài thơ về cách mạng và lý tưởng giải phóng, thể hiện sự chuyển biến tư tưởng của ông.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <span>Năm 1945</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Work Card 3 -->
+                    <div class="card-hover bg-white dark:bg-gray-dark rounded-2xl overflow-hidden shadow-soft hover:shadow-hard p-6">
+                        <div class="h-40 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-feather text-primary text-6xl opacity-50"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-3 serif-font">Tác Phẩm Cách Mạng Tiêu Biểu</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Sau Cách mạng tháng Tám, Xuân Diệu xuất bản nhiều tập thơ ca ngợi cách mạng: Ngọn Quốc kỳ (1945), Dưới sao vàng (1949), Ngôi sao (1955), Riêng chung (1960), Mũi Cà Mau – Cầm tay (1962). Những tác phẩm này thể hiện sự "giác ngộ cách mạng" và lý tưởng sống mới của Xuân Diệu.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <span>Danh tác</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bg-white dark:bg-gray-dark rounded-2xl shadow-soft p-8 md:p-12 fade-in-section">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-8 serif-font">Các Bài Thơ Tiêu Biểu Nổi Tiếng</h3>
+                    
+                    <div class="space-y-8">
+                        <!-- Poem 1 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Vội Vàng"</h4>
+                            <p class="text-gray-600 dark:text-gray-400 italic serif-font leading-relaxed mb-3">
+                                "Vội vàng thay những chân em xinh<br/>
+                                Những búp tóc quai nón trông thật tình<br/>
+                                Rồi cái thân dũa dằn còn thơm nước hoa<br/>
+                                Còn cái tay mềm mại trao tặng yêu thương..."
+                            </p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Bài thơ nổi tiếng nhất của Xuân Diệu, được đưa vào chương trình giáo dục phổ thông của Việt Nam. Thể hiện nỗi sợ thời gian trôi đi – một chủ đề xuyên suốt sáng tác của Xuân Diệu. Nhân vật trữ tình trong bài thơ cảm nhận vẻ đẹp của cô gái nhưng cũng bàng hoàng trước sự vô thường của cuộc sống, khát vọng tận hưởng những khoảnh khắc ngắn ngủi của thanh xuân.
+                            </p>
+                        </div>
+
+                        <!-- Poem 2 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Đây Mùa Thu Tới"</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Bài thơ sâu sắc về mùa thu với những hình ảnh tiêu điều, u hoài. Xuân Diệu sử dụng mùa thu làm biểu tượng cho sự vô thường, tàn phai của cuộc sống. Ngoài ý tưởng về sợ thời gian, bài thơ cũng thể hiện một vẻ đẹp buồn bã, sự thương cảm con người khi đối mặt với sự thay đổi của thiên nhiên. Từ sau Cách mạng tháng Tám, bài thơ này cũng được diễn giải với ý nghĩa là sự "trỗi dậy" của cách mạng, sự tái sinh của dân tộc.
+                            </p>
+                        </div>
+
+                        <!-- Poem 3 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Tình Trai"</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Bài thơ nổi tiếng về tình bạn giữa hai nhà thơ Pháp Paul Verlaine và Arthur Rimbaud. Bài thơ này được coi là thể hiện cảm xúc sâu sắc của Xuân Diệu về một mối tình không bình thường. Đây là bài thơ dùng đại từ nhân xưng và cách diễn đạt thường chỉ quan hệ nam nữ, tuy nhiên ông đã sáng tạo ra một tác phẩm văn học có giá trị ngoài bối cảnh cá nhân.
+                            </p>
+                        </div>
+
+                        <!-- Poem 4 -->
+                        <div class="pb-8 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-4 serif-font">"Yêu"</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                                Một trong những bài thơ tiêu biểu khác, thể hiện triết lý của Xuân Diệu về tình yêu. Bài thơ bắt đầu với dòng nổi tiếng: "Yêu là chết ở trong lòng một ít" – câu thơ vay mượn từ thi sĩ Pháp Edmond Haraucourt. Bài thơ diễn tả sự bi quan, nỗi sợ bị phụ tình, nhưng cũng toàn bộ cảm xúc mãnh liệt của con người khi yêu.
+                            </p>
+                        </div>
+
+                        <!-- Additional Note -->
+                        <div class="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <span class="font-bold text-primary">Lưu ý học thuật:</span> Bảng phê bình văn học và các hội thảo đại học coi các bài thơ của Xuân Diệu là những bài thơ có tính biểu tượng cao, sử dụng nhiều biện pháp tu từ tinh tế, thể hiện sự kết hợp độc đáo giữa phong cách Pháp và tinh thần Việt Nam. Các bài thơ này vẫn là chủ đề nghiên cứu sâu rộng trong giảng dạy văn học ở các trường học.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== POETRY STYLE SECTION ===== -->
+        <section id="poetry-style" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-palette"></i> Phong cách
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Phong cách thơ <span class="text-primary">& Giá trị Nghệ thuật</span>
+                    </h2>
+                </div>
+
+                <!-- Characteristics Grid -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16 fade-in-section">
+                    
+                    <!-- Char 1 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Cảm Xúc Mãnh Liệt & Chân Thực</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Xuân Diệu luôn thể hiện những cảm xúc mãnh liệt, sự tình tứ sâu sắc trong các bài thơ. Ông không che giấu hay làm nhạt những cảm xúc của mình, mà thổ lộ chúng một cách trung thực, mạnh mẽ. Đây là một bước ngoặt so với thơ truyền thống, nơi cảm xúc thường được ẩn chứa trong những hình ảnh tuyên truyền.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Char 2 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-hourglass-end"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Nỗi Sợ Thời Gian Trôi</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Một chủ đề quan trọng, thậm chí cốt lõi trong thơ Xuân Diệu là sự sợ hãi trước sự trôi chảy bất thường của thời gian. Ông khát vọng tận hưởng những khoảnh khắc đẹp đẽ, những cảm xúc mãnh liệt trước khi chúng phai nhạt. Đây là một nỗi sợ hiện sinh sâu sắc, phản ánh tâm tưởng của thế hệ trẻ, những người nhận thức được sự ngắn ngủi của thanh xuân.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Char 3 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Tình Yêu Đời Sống & Hy Vọng</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Mặc dù thơ Xuân Diệu mang tính buồn bã, bi quan, ông vẫn thể hiện sự yêu đời sôi nổi, khát vọng sống một cuộc sống đầy ý nghĩa. Ông cảm nhận vẻ đẹp của cuộc sống thông qua những hình ảnh tự nhiên tinh tế: chân em, búp tóc, nước hoa... Cảm xúc bi quan không làm ông mất hy vọng, mà trở thành động lực để sống mãnh liệt hơn.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Char 4 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Sử Dụng Hình Ảnh & Biện Pháp Tu Từ Tinh Tế</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Xuân Diệu sử dụng những hình ảnh thơm ngát, tinh tế để diễn tả tình cảm. Từng chi tiết nhỏ được chọn lọc cẩn thận để tạo nên hiệu ứng cảm xúc mạnh mẽ. Ông áp dụng các biện pháp tu từ như câu vắt (enjambment), tượng trưng, và âm điệu để tạo nên những bài thơ có tính thẩm mỹ cao và ảnh hưởng sâu sắc đến người đọc.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Position in Modern Poetry -->
+                <div class="bg-gradient-to-r from-primary/10 to-accent-gold/10 rounded-2xl p-12 fade-in-section border border-primary/20">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-6 serif-font">Vị Trí & Ảnh Hưởng Trong Phong Trào Thơ Mới</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                        Xuân Diệu được xem là một trong những đại biểu tiêu biểu nhất của phong trào Thơ Mới Việt Nam. Ông cùng với Tú Mỡ, Huy Cận, Thế Lữ và các nhà thơ khác đã tạo nên một bước ngoặt quan trọng trong lịch sử văn học Việt Nam, khi chuyển từ truyền thống thơ Nôm và thơ Hán sang hiện đại, mở ra một kỷ nguyên mới.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                        Những đóng góp chính của Xuân Diệu trong phong trào:
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-gray-dark rounded-lg p-4">
+                            <p class="font-bold text-primary text-lg mb-2">Cải Tổ Ngôn Ngữ & Hình Thức</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Xuân Diệu sử dụng ngôn ngữ tự nhiên, gần gũi với cuộc sống, thoát khỏi cách dùng từ quá quý phái của thơ cổ. Ông áp dụng thủ pháp thơ phương Tây như câu vắt, thơ tự do, không bị ràng buộc hoàn toàn bởi các quy tắc cổ truyền.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-dark rounded-lg p-4">
+                            <p class="font-bold text-primary text-lg mb-2">Chủ Đề & Tâm Lý Con Người</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Chọn những chủ đề gần gũi với cuộc sống, tâm lý con người thời đại ông: tình yêu, sợ thời gian, khát vọng sống. Những chủ đề này nói lên tiếng nói của cả một thế hệ thanh niên Việt Nam.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-dark rounded-lg p-4">
+                            <p class="font-bold text-primary text-lg mb-2">Tác Động Lâu Dài</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Phong cách và cách tiếp cận của Xuân Diệu trở thành một hướng đi mới trong thơ Việt Nam. Ông là tấm gương sáng cho các nhà thơ sau này, ảnh hưởng sâu sắc đến các thế hệ sáng tác tiếp theo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LEGACY SECTION ===== -->
+        <section id="legacy" class="section-padding px-6 bg-gray-light dark:bg-gray-dark">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-crown"></i> Di Sản
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Di Sản & <span class="text-primary">Ảnh Hưởng</span>
+                    </h2>
+                </div>
+
+                <!-- Legacy Items -->
+                <div class="grid md:grid-cols-2 gap-10 mb-16 fade-in-section">
+                    
+                    <!-- Legacy Item 1 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-primary">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Giải Thưởng Hồ Chí Minh</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Xuân Diệu được truy tặng Giải thưởng Hồ Chí Minh đợt I năm 1996 (10 năm sau khi ông qua đời), là một sự công nhân cao nhất từ Nhà nước và từ cộng đồng văn học Việt Nam về đóng góp của ông trong nền văn học. Đây là danh hiệu chỉ dành cho những nhân vật có đóng góp vĩ đại cho sự phát triển của văn học, khoa học và nghệ thuật.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <i class="fa-solid fa-award"></i>
+                            <span>Vinh dự Quốc Gia</span>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Item 2 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-accent-gold">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Ảnh Hưởng Giáo Dục</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Các tác phẩm của Xuân Diệu là một phần quan trọng trong chương trình giáo dục văn học ở Việt Nam. Những bài thơ như "Vội vàng" và "Đây mùa thu tới" được đưa vào chương trình giảng dạy chính thức dành cho học sinh trung học phổ thông nhiều năm liền. Ông là tác giả được học sinh, sinh viên Việt Nam học tập và phân tích sâu sắc.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Tài Liệu Giáo Dục</span>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Item 3 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-primary">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Ảnh Hưởng Đến Các Thế Hệ Sau</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Xuân Diệu là tấm gương sáng cho các nhà thơ sau này. Cách ông sử dụng ngôn ngữ, cách ông thể hiện cảm xúc đã trở thành một hướng đi mới trong văn học Việt Nam. Ông được nhiều nhà thơ trẻ xem như là người dẫn dắt và hướng dẫn. Nhà thơ Trần Đăng Khoa – người được Xuân Diệu chỉ bảo – đã ghi lại những ảnh hưởng sâu sắc của Xuân Diệu đối với con đường sáng tác của mình.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span>Tác Động Lâu Dài</span>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Item 4 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-accent-gold">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Công Trình Nghiên Cứu</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Có rất nhiều công trình nghiên cứu, luận văn học tập được viết về cuộc đời và sáng tác của Xuân Diệu. Ông là chủ đề của hàng loạt công trình khoa học, bài phân tích, tiểu luận phê bình ở các trường đại học và viện nghiên cứu trong nước và ngoài nước. Những công trình này giúp nâng cao nhận thức về giá trị của Xuân Diệu trong lịch sử văn học.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <i class="fa-solid fa-flask-vial"></i>
+                            <span>Nghiên Cứu Học Thuật</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Key Impact Quote -->
+                <div class="bg-white dark:bg-gray-dark rounded-2xl p-12 shadow-soft border-l-4 border-primary fade-in-section">
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-quote-left text-4xl text-primary/20"></i>
+                        </div>
+                        <div>
+                            <p class="text-lg font-light serif-font text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                                Xuân Diệu đã đóng góp vào việc hiện đại hóa thơ Việt Nam, mở ra một kỷ nguyên mới của sáng tác với cảm xúc sâu sắc, ngôn ngữ tự do, những chủ đề gần gũi với cuộc sống của con người. Ông là "ông hoàng thơ tình" – một danh hiệu tôn vinh những đóng góp vĩ đại của ông cho nền văn học Việt Nam.
+                            </p>
+                            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                                <p><span class="font-bold">Hoài Thanh & Hoài Chân</span> (Thi nhân Việt Nam 1932–1941):</p>
+                                <p class="italic">
+                                    "Cái dáng dấp yêu kiều, cái cốt cách phong nhã của điệu thơ, một cái gì rất Việt Nam, đã quyến rũ ta."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legacy Sites and Monuments -->
+                <div class="mt-12 bg-gradient-to-r from-primary/5 to-transparent rounded-2xl p-8 fade-in-section">
+                    <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-6">Kỷ Niệm & Di Tích</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white mb-1">Nhà Tưởng Niệm</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    Một nhà tưởng niệm được xây dựng tại quê ông – làng Trảo Nha, huyện Can Lộc, Hà Tĩnh (nay là xã Can Lộc, bên cạnh đường lên Ngã Ba Đồng Lộc), lưu giữ những hiện vật, tài liệu về cuộc đời và sáng tác của ông.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                    <i class="fa-solid fa-road"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white mb-1">Đường Phố Mang Tên</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    Nhiều tuyến đường, phố được đặt theo tên ông: một đại lộ ở Quy Nhơn, một con phố chạy dọc Hồ Tây ở Hà Nội (nằm trong khu vực các đường mang tên các nghệ sĩ nổi tiếng như Trịnh Công Sơn, Tô Ngọc Vân), và con đường tại Đồng Hới, Quảng Trị.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+        <!-- Footer -->
+    <footer class="bg-background-dark text-white pt-16 pb-8 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">CAN LỘC</h2>
+                            <p class="text-xs text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang thông tin văn hóa - lịch sử huyện Can Lộc, tỉnh Hà Tĩnh. Dựa trên dữ liệu từ Wikipedia và cổng thông tin địa phương.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                           <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#introduction">
+                           <i class="fa-solid fa-link"></i>
+                            Giới thiệu chung
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#landmarks">
+                            <i class="fa-solid fa-link"></i>
+                            Danh lam thắng cảnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#personalities">
+                            <i class="fa-solid fa-link"></i>
+                            Danh nhân
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-link"></i>
+                            Cổng thông tin huyện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Địa danh tiêu biểu</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Khu di tích Đồng Lộc
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                           <i class="fa-solid fa-map-pin"></i>
+                            Núi Hồng Lĩnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Sông Nghèn
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Làng Kế Thiện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Xã Can Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">canloc.hatinh.gov.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © Trang Web Được Xây Dựng Nhằm Mục Đích Tham Khảo Văn Hóa - Lịch Sử Huyện Can Lộc.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in sections
+        document.querySelectorAll('.fade-in-section').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-background-dark/95 z-[9999] flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center mb-6">
+                <div class="relative w-16 h-16">
+                    <div class="absolute inset-0 rounded-full border-4 border-primary/20"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary border-r-primary animate-spin" style="animation: spin 1s linear infinite;"></div>
+                </div>
+            </div>
+            <p class="text-white font-bold tracking-widest uppercase text-sm">Đang tải...</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        #loading-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        #loading-overlay.show {
+            opacity: 1;
+        }
+    </style>
+
+    <script src="../homepage/smooth-scroll.js"></script>
+
+    <!-- Chatbot Widget -->
+    <link rel="stylesheet" href="../shared/chatbot.css">
+
+    <div class="chatbox">
+        <div class="chatbox__button">
+            <button class="send__button">
+                <span class="chat-icon">💬</span>
+            </button>
+        </div>
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__header-dragarea">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="chatbox__content--header">
+                        <div class="chatbox__heading--header">Bi Biết Tuốt</div>
+                        <div class="chatbox__description--header">Trợ lý ảo Can Lộc</div>
+                        <div class="chatbox__status">
+                            <span class="status-dot"></span>
+                            <span style="color: white; font-size: 0.8rem;">Trực tuyến</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbox__controls">
+                    <button class="control-btn minimize-btn" title="Thu nhỏ">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="control-btn maximize-btn" title="Phóng to">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                    <button class="control-btn close-btn" title="Đóng">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div class="messages-container"></div>
+            </div>
+            <div class="chatbox__footer">
+                <div class="input-container">
+                    <input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+                    <button class="chatbox__send--footer send__button">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/app.js"></script>
+
+    <!-- Loading overlay script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+
+            // Bắt tất cả link
+            document.querySelectorAll('a[href*=".html"], a[href*="dongloc"], a[href*="huongtich"], a[href*="vidam"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Không show loading nếu là anchor link
+                    if (!this.href.includes('#')) {
+                        if (loadingOverlay) {
+                            loadingOverlay.classList.add('show');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when clicked
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Travel Booking - Khám Phá Thế Giới Cùng Chúng Tôi</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../shared/chatbot.css">
+    <link rel="stylesheet" href="../shared/darkmode.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c62828",
+                        "primary-light": "#ef5350",
+                        "primary-dark": "#8e0000",
+                        "secondary": "#ffd700",
+                        "secondary-light": "#ffed4e",
+                        "background-light": "#fefefe",
+                        "background-dark": "#1a1212",
+                        "accent-gold": "#d4af37",
+                        "gray-light": "#f8f6f6",
+                        "gray-dark": "#2a2020",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 10px 40px rgba(0, 0, 0, 0.15)',
+                        'primary-glow': '0 0 20px rgba(198, 40, 40, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                        'bounce-slight': 'bounceSlght 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceSlght: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        * {
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+        
+        body {
+            scroll-behavior: smooth;
+        }
+        
+        /* Header Sticky */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: linear-gradient(135deg, #fefefe 0%, #f8f6f6 100%);
+            box-shadow: 0 2px 10px rgba(198, 40, 40, 0.15);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        html.dark header {
+            background: linear-gradient(135deg, #2a2020 0%, #1a1212 100%);
+            border-bottom-color: #3a3a3a;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(198, 40, 40, 0.2);
+        }
+        
+        /* Navigation */
+        nav a {
+            position: relative;
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        html.dark nav a {
+            color: #ccc;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #c62828, #d4af37);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #c62828 0%, #8e0000 50%, #4a0000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(239, 83, 80, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        /* Form Container */
+        .form-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(198, 40, 40, 0.15);
+            padding: 40px;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 25px;
+            }
+        }
+        
+        /* Form Inputs */
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: "Be Vietnam Pro", sans-serif;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #c62828;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Label */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .required::after {
+            content: ' *';
+            color: #e74c3c;
+        }
+        
+        /* Radio Button */
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .radio-option {
+            position: relative;
+        }
+        
+        .radio-option input[type="radio"] {
+            display: none;
+        }
+        
+        .radio-option label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .radio-option input[type="radio"]:checked + label {
+            border-color: #c62828;
+            background: linear-gradient(135deg, rgba(198, 40, 40, 0.1), rgba(255, 215, 0, 0.1));
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.2);
+        }
+        
+        /* Price Display */
+        .price-display {
+            background: linear-gradient(135deg, #c62828 0%, #ffd700 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .price-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .price-value {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: right;
+        }
+        
+        /* CTA Button */
+        .btn-cta {
+            background: linear-gradient(135deg, #c62828 0%, #8e0000 100%);
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(198, 40, 40, 0.4);
+        }
+        
+        .btn-cta:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-cta:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Confirmation Card */
+        .confirmation-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #fffef0 100%);
+            border-left: 5px solid #c62828;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(198, 40, 40, 0.15);
+            margin-top: 30px;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .confirmation-card h3 {
+            color: #c62828;
+            font-size: 22px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .confirmation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .confirmation-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #c62828;
+        }
+        
+        .confirmation-item label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .confirmation-item p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Alert Messages */
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideUp 0.4s ease-out;
+        }
+        
+        .alert.show {
+            display: block;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-left: 4px solid #c62828;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-left: 4px solid #8e0000;
+        }
+        
+        .alert-info {
+            background: #fffef0;
+            color: #664400;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #ffd700;
+        }
+        
+        /* Section Padding */
+        .section-padding {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+        
+        /* Hover Effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(198, 40, 40, 0.2);
+        }
+        
+        /* Error Class */
+        input.error, select.error {
+            border-color: #e74c3c !important;
+            background: #fff5f5 !important;
+        }
+        
+        /* Success Animation */
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .success-animation {
+            animation: successPulse 0.6s ease-out;
+        }
+        
+        /* Loading State */
+        .btn-loading {
+            pointer-events: none;
+        }
+        
+        .btn-loading::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-left: 10px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* ========== MODAL STYLES ========== */
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9999;
+            animation: fadeInOverlay 0.3s ease-out;
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal-overlay.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes fadeInOverlay {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Modal Container */
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(198, 40, 40, 0.3);
+            max-width: 500px;
+            width: 90%;
+            padding: 40px;
+            text-align: center;
+            animation: scaleIn 0.4s ease-out;
+            position: relative;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Icon Container */
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            animation: iconBounce 0.6s ease-out;
+        }
+        
+        .modal-icon.success {
+            background: linear-gradient(135deg, #c62828 0%, #ffd700 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(198, 40, 40, 0.3);
+        }
+        
+        .modal-icon.error {
+            background: linear-gradient(135deg, #8e0000 0%, #c62828 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(142, 0, 0, 0.3);
+        }
+        
+        @keyframes iconBounce {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Modal Title */
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+        
+        .modal-content.success .modal-title {
+            color: #c62828;
+        }
+        
+        .modal-content.error .modal-title {
+            color: #8e0000;
+        }
+        
+        /* Modal Message */
+        .modal-message {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+        
+        /* Modal Details (for success) */
+        .modal-details {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+            display: none;
+        }
+        
+        .modal-content.success .modal-details {
+            display: block;
+            border-left: 4px solid #c62828;
+        }
+        
+        .modal-details-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .modal-details-item:last-child {
+            border-bottom: none;
+        }
+        
+        .modal-details-label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .modal-details-value {
+            color: #c62828;
+            font-weight: 600;
+        }
+        
+        /* Modal Buttons */
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .modal-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: "Be Vietnam Pro", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .modal-btn-primary {
+            background: linear-gradient(135deg, #c62828 0%, #8e0000 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+            flex: 1;
+        }
+        
+        .modal-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+        }
+        
+        .modal-btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .modal-btn-secondary:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        
+        .modal-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Error List */
+        .error-list {
+            background: #fff5f5;
+            border-left: 4px solid #8e0000;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .error-list h4 {
+            color: #8e0000;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+        
+        .error-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .error-list li {
+            color: #666;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        
+        .error-list li::before {
+            content: "✗ ";
+            color: #8e0000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        /* Responsive Modal */
+        @media (max-width: 640px) {
+            .modal-content {
+                width: 95%;
+                padding: 30px 20px;
+            }
+            
+            .modal-title {
+                font-size: 20px;
+            }
+            
+            .modal-message {
+                font-size: 14px;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+            }
+            
+            .modal-btn {
+                width: 100%;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #00b341;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- HEADER & NAVIGATION -->
+    <header id="header" class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Du Lịch & Khám Phá</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#home" title="Trang chủ"><i class="fa-solid fa-home"></i><span class="hidden sm:inline">Trang chủ</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#booking" title="Đặt tour"><i class="fa-solid fa-ticket"></i><span class="hidden sm:inline">Đặt Tour</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#contact" title="Liên hệ"><i class="fa-solid fa-envelope"></i><span class="hidden sm:inline">Liên hệ</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <button id="theme-toggle" class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero py-20 md:py-32 relative text-white">
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animation-fade-in">
+                Hành Trình Về Nguồn
+            </h2>
+            <p class="text-xl md:text-2xl font-semibold mb-6 animation-fade-in text-accent-gold">
+                Gìn Giữ Giá Trị Lịch Sử
+            </p>
+            <p class="text-lg md:text-xl mb-10 opacity-90 animation-fade-in max-w-2xl mx-auto">
+                Khám phá vẻ đẹp thiên nhiên và văn hóa đặc sắc của Cần Lộc. 
+                Hơn 100+ tour du lịch được yêu thích bởi du khách
+            </p>
+            <a href="#booking" class="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <i class="fas fa-arrow-down"></i> Đặt Tour Ngay
+            </a>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-4 section-padding">
+        <!-- Alert Container -->
+        <div id="alertContainer" class="mb-6"></div>
+
+        <!-- Booking Form Section -->
+        <section id="booking" class="mb-12">
+            <div class="grid md:grid-cols-3 gap-10 items-start">
+                <!-- Form Column -->
+                <div class="md:col-span-2">
+                    <div class="form-container">
+                        <h2 class="text-3xl font-bold text-primary mb-2">
+                            <i class="fas fa-pen-to-square"></i> Đặt Tour Du Lịch
+                        </h2>
+                        <p class="text-gray-600 mb-6">Hãy điền thông tin của bạn để bắt đầu chuyến hành trình tuyệt vời</p>
+                        
+                        <form id="bookingForm" novalidate>
+                            <!-- Customer Information Section -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary">
+                                    <i class="fas fa-user-circle"></i> Thông Tin Khách Hàng
+                                </h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <!-- Full Name -->
+                                    <div>
+                                        <label for="fullName" class="required">Họ và Tên</label>
+                                        <input 
+                                            type="text" 
+                                            id="fullName" 
+                                            name="fullName" 
+                                            placeholder="Nhập họ và tên đầy đủ"
+                                            required
+                                        />
+                                        <small class="error-text text-red-500 text-xs mt-1"></small>
+                                    </div>
+                                    
+                                    <!-- Phone Number -->
+                                    <div>
+                                        <label for="phone" class="required">Số Điện Thoại</label>
+                                        <input 
+                                            type="tel" 
+                                            id="phone" 
+                                            name="phone" 
+                                            placeholder="0123456789"
+                                            required
+                                        />
+                                        <small class="error-text text-red-500 text-xs mt-1"></small>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="mt-6">
+                                    <label for="email">Email (Tùy Chọn)</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="email@example.com"
+                                    />
+                                    <small class="error-text text-red-500 text-xs mt-1"></small>
+                                </div>
+                            </div>
+
+                            <!-- Tour Information Section -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-secondary">
+                                    <i class="fas fa-map"></i> Thông Tin Tour
+                                </h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <!-- Destination -->
+                                    <div>
+                                        <label for="destination" class="required">Địa Điểm Du Lịch</label>
+                                        <select id="destination" name="destination" required>
+                                            <option value="">-- Chọn địa điểm --</option>
+                                            <option value="chua-huong-tinh">Chùa Hương Tĩnh</option>
+                                            <option value="nga-ba-dong-loc">Ngã Ba Đồng Lộc</option>
+                                            <option value="moc-ban-truong-luu">Mộc Bản Trường Lưu</option>
+                                        </select>
+                                        <small class="error-text text-red-500 text-xs mt-1"></small>
+                                    </div>
+                                    
+                                    <!-- Departure Date -->
+                                    <div>
+                                        <label for="departureDate" class="required">Ngày Khởi Hành</label>
+                                        <input 
+                                            type="date" 
+                                            id="departureDate" 
+                                            name="departureDate"
+                                            required
+                                        />
+                                        <small class="error-text text-red-500 text-xs mt-1"></small>
+                                    </div>
+                                </div>
+                                
+                                <!-- Number of People -->
+                                <div class="mt-6">
+                                    <label for="numberOfPeople" class="required">Số Lượng Người</label>
+                                    <input 
+                                        type="number" 
+                                        id="numberOfPeople" 
+                                        name="numberOfPeople"
+                                        min="1"
+                                        value="1"
+                                        required
+                                    />
+                                    <small class="error-text text-red-500 text-xs mt-1"></small>
+                                </div>
+                            </div>
+
+                            <!-- Tour Type Section -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary">
+                                    <i class="fas fa-star"></i> Loại Tour
+                                </h3>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input 
+                                            type="radio" 
+                                            id="standard" 
+                                            name="tourType" 
+                                            value="standard"
+                                            checked
+                                        />
+                                        <label for="standard">
+                                            <span>
+                                                <i class="fas fa-check-circle"></i> Tiêu Chuẩn
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input 
+                                            type="radio" 
+                                            id="premium" 
+                                            name="tourType" 
+                                            value="premium"
+                                        />
+                                        <label for="premium">
+                                            <span>
+                                                <i class="fas fa-gem"></i> Cao Cấp
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input 
+                                            type="radio" 
+                                            id="vip" 
+                                            name="tourType" 
+                                            value="vip"
+                                        />
+                                        <label for="vip">
+                                            <span>
+                                                <i class="fas fa-crown"></i> VIP
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Notes -->
+                            <div class="mb-8">
+                                <label for="notes">Ghi Chú Thêm (Tùy Chọn)</label>
+                                <textarea 
+                                    id="notes" 
+                                    name="notes" 
+                                    rows="4"
+                                    placeholder="Những yêu cầu đặc biệt hoặc ghi chú của bạn..."
+                                ></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-cta" id="submitBtn">
+                                <i class="fas fa-check"></i> Xác Nhận Đặt Tour
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Price Summary Column -->
+                <div class="md:col-span-1">
+                    <div class="sticky top-24">
+                        <!-- Price Breakdown -->
+                        <div class="price-display">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-sm opacity-90">
+                                    <span>Giá cơ bản:</span>
+                                    <span id="basePriceDisplay">0 VNĐ</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm opacity-90">
+                                    <span>Số người:</span>
+                                    <span id="quantityDisplay">1</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm opacity-90">
+                                    <span>Loại tour:</span>
+                                    <span id="typeDisplay">Tiêu Chuẩn</span>
+                                </div>
+                                <hr class="border-white border-opacity-30">
+                                <div>
+                                    <div class="price-label">Tổng Tiền:</div>
+                                    <div class="price-value" id="totalPrice">
+                                        0 VNĐ
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tour Info Cards -->
+                        <div class="mt-8 space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-primary">
+                                <p class="text-sm font-bold text-primary mb-2">
+                                    <i class="fas fa-info-circle"></i> Bao Gồm
+                                </p>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li><i class="fas fa-check text-secondary"></i> Xe đưa đón 4 sao</li>
+                                    <li><i class="fas fa-check text-secondary"></i> Hướng dẫn viên chuyên nghiệp</li>
+                                    <li><i class="fas fa-check text-secondary"></i> Bảo hiểm du lịch</li>
+                                    <li><i class="fas fa-check text-secondary"></i> Ăn sáng hàng ngày</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-secondary">
+                                <p class="text-sm font-bold text-secondary mb-2">
+                                    <i class="fas fa-shield"></i> Bảo Đảm
+                                </p>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li><i class="fas fa-check text-primary"></i> Hoàn tiền 100% nếu hủy</li>
+                                    <li><i class="fas fa-check text-primary"></i> Miễn phí thay đổi ngày</li>
+                                    <li><i class="fas fa-check text-primary"></i> Hỗ trợ 24/7</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmation Section (Hidden by default) -->
+        <section id="confirmationSection" class="hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="confirmation-card">
+                    <h3>
+                        <i class="fas fa-check-circle"></i> 
+                        Đặt Tour Thành Công!
+                    </h3>
+                    <p class="text-gray-700 mb-6">
+                        Cảm ơn bạn đã tin tưởng chúng tôi. Chi tiết đặt tour của bạn được hiển thị dưới đây:
+                    </p>
+                    <div class="confirmation-grid" id="confirmationDetails"></div>
+                    <div class="flex gap-4 mt-8">
+                        <button 
+                            id="downloadBtn" 
+                            class="btn-cta flex-1"
+                            style="background: linear-gradient(135deg, #00b341 0%, #008833 100%);"
+                        >
+                            <i class="fas fa-download"></i> Tải Hóa Đơn
+                        </button>
+                        <button 
+                            id="newBookingBtn" 
+                            class="btn-cta flex-1"
+                            style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%);"
+                        >
+                            <i class="fas fa-plus"></i> Đặt Tour Khác
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Bookings -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-primary mb-6">
+                        <i class="fas fa-history"></i> Lịch Sử Đặt Tour
+                    </h3>
+                    <div id="bookingHistory" class="grid gap-4"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-background-dark text-white pt-16 pb-8 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">CAN LỘC</h2>
+                            <p class="text-xs text-gray-400 font-medium">Du Lịch & Khám Phá</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang đặt tour du lịch về Can Lộc - Vùng đất có giá trị lịch sử và văn hóa sâu sắc.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#"><i class="fa-solid fa-facebook"></i></a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#"><i class="fa-solid fa-twitter"></i></a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#"><i class="fa-solid fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#home"><i class="fa-solid fa-link"></i>Trang chủ</a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#booking"><i class="fa-solid fa-link"></i>Đặt tour</a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#"><i class="fa-solid fa-link"></i>Về chúng tôi</a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#"><i class="fa-solid fa-link"></i>Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Thông tin</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#"><i class="fa-solid fa-scroll"></i>Chính sách</a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#"><i class="fa-solid fa-file"></i>Điều khoản</a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2" href="#"><i class="fa-solid fa-lock"></i>Bảo mật</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-map"></i></div>
+                            <p class="text-gray-400 text-sm">Can Lộc, Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
+                            <p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                            <p class="text-gray-400 text-sm">info@canloc-travel.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © 2024 Can Loc Travel. Bảo lưu mọi quyền.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL NOTIFICATION -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content" id="modalContent">
+            <!-- Icon -->
+            <div class="modal-icon" id="modalIcon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <!-- Title -->
+            <h3 class="modal-title" id="modalTitle">Đặt Tour Thành Công!</h3>
+            
+            <!-- Message -->
+            <p class="modal-message" id="modalMessage">
+                Đặt tour thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.
+            </p>
+            
+            <!-- Details (success only) -->
+            <div class="modal-details" id="modalDetails"></div>
+            
+            <!-- Error List (error only) -->
+            <div class="error-list" id="errorList" style="display: none;">
+                <h4>⚠️ Vui lòng kiểm tra các lỗi sau:</h4>
+                <ul id="errorListItems"></ul>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-primary" id="modalPrimaryBtn">OK</button>
+                <button class="modal-btn modal-btn-secondary" id="modalSecondaryBtn" style="display: none;">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ========== DATA & CONFIGURATION ==========
+        // Tour pricing configuration
+        const tourPrices = {
+            'chua-huong-tinh': { base: 1500000, standard: 1, premium: 1.3, vip: 1.6 },
+            'nga-ba-dong-loc': { base: 2000000, standard: 1, premium: 1.25, vip: 1.5 },
+            'moc-ban-truong-luu': { base: 2500000, standard: 1, premium: 1.2, vip: 1.45 },
+        };
+
+        const tourNames = {
+            'chua-huong-tinh': 'Tour Chùa Hương Tĩnh - Tâm Linh Thiêng Liêng',
+            'nga-ba-dong-loc': 'Tour Ngã Ba Đồng Lộc - Di Tích Lịch Sử',
+            'moc-ban-truong-luu': 'Tour Mộc Bản Trường Lưu - Làng Truyền Thống',
+        };
+
+        const tourTypeNames = {
+            'standard': 'Tiêu Chuẩn',
+            'premium': 'Cao Cấp',
+            'vip': 'VIP'
+        };
+
+        // ========== DOM ELEMENTS ==========
+        const form = document.getElementById('bookingForm');
+        const fullNameInput = document.getElementById('fullName');
+        const phoneInput = document.getElementById('phone');
+        const emailInput = document.getElementById('email');
+        const destinationInput = document.getElementById('destination');
+        const departureDateInput = document.getElementById('departureDate');
+        const numberOfPeopleInput = document.getElementById('numberOfPeople');
+        const tourTypeRadios = document.querySelectorAll('input[name="tourType"]');
+        const notesInput = document.getElementById('notes');
+        const submitBtn = document.getElementById('submitBtn');
+        const alertContainer = document.getElementById('alertContainer');
+        const totalPriceDisplay = document.getElementById('totalPrice');
+        const confirmationSection = document.getElementById('confirmationSection');
+        const confirmationDetails = document.getElementById('confirmationDetails');
+        const bookingHistory = document.getElementById('bookingHistory');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const newBookingBtn = document.getElementById('newBookingBtn');
+        const header = document.getElementById('header');
+
+        // ========== EVENT LISTENERS ==========
+        // Price calculation triggers
+        destinationInput.addEventListener('change', calculatePrice);
+        numberOfPeopleInput.addEventListener('input', calculatePrice);
+        tourTypeRadios.forEach(radio => radio.addEventListener('change', calculatePrice));
+
+        // Form submission
+        form.addEventListener('submit', handleFormSubmit);
+
+        // Download button
+        downloadBtn.addEventListener('click', downloadInvoice);
+        newBookingBtn.addEventListener('click', startNewBooking);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Real-time validation
+        fullNameInput.addEventListener('blur', () => validateField(fullNameInput));
+        phoneInput.addEventListener('blur', () => validateField(phoneInput));
+        emailInput.addEventListener('blur', () => validateField(emailInput));
+        destinationInput.addEventListener('change', () => validateField(destinationInput));
+        departureDateInput.addEventListener('change', () => validateField(departureDateInput));
+        numberOfPeopleInput.addEventListener('change', () => validateField(numberOfPeopleInput));
+
+        // ========== FUNCTIONS ==========
+
+        /**
+         * Calculate and update total price based on selections
+         */
+        function calculatePrice() {
+            const destination = destinationInput.value;
+            const numberOfPeople = parseInt(numberOfPeopleInput.value) || 1;
+            const tourType = document.querySelector('input[name="tourType"]:checked').value;
+
+            // Update displays
+            document.getElementById('quantityDisplay').textContent = numberOfPeople;
+            document.getElementById('typeDisplay').textContent = tourTypeNames[tourType];
+
+            if (!destination) {
+                totalPriceDisplay.textContent = '0 VNĐ';
+                document.getElementById('basePriceDisplay').textContent = '0 VNĐ';
+                return;
+            }
+
+            // Calculate price
+            const pricing = tourPrices[destination];
+            const basePrice = pricing.base;
+            const multiplier = pricing[tourType];
+            const totalPrice = basePrice * multiplier * numberOfPeople;
+
+            // Update displays with formatting
+            document.getElementById('basePriceDisplay').textContent = formatCurrency(basePrice);
+            totalPriceDisplay.textContent = formatCurrency(totalPrice);
+
+            // Animate price update
+            totalPriceDisplay.parentElement.classList.add('animate-bounce-slight');
+            setTimeout(() => {
+                totalPriceDisplay.parentElement.classList.remove('animate-bounce-slight');
+            }, 600);
+        }
+
+        /**
+         * Format number as Vietnamese currency
+         */
+        function formatCurrency(value) {
+            return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        }
+
+        /**
+         * Validate form field
+         */
+        function validateField(field) {
+            const errorElement = field.parentElement.querySelector('.error-text');
+            let isValid = true;
+            let errorMessage = '';
+
+            if (field.hasAttribute('required') && !field.value.trim()) {
+                isValid = false;
+                errorMessage = 'Trường này không được để trống';
+            } else if (field.id === 'phone') {
+                const phoneRegex = /^[0-9]{10,11}$/;
+                if (!phoneRegex.test(field.value)) {
+                    isValid = false;
+                    errorMessage = 'Số điện thoại không hợp lệ (10-11 chữ số)';
+                }
+            } else if (field.id === 'email' && field.value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(field.value)) {
+                    isValid = false;
+                    errorMessage = 'Email không hợp lệ';
+                }
+            } else if (field.id === 'numberOfPeople') {
+                if (parseInt(field.value) < 1) {
+                    isValid = false;
+                    errorMessage = 'Số lượng người tối thiểu là 1';
+                }
+            } else if (field.id === 'departureDate') {
+                const selectedDate = new Date(field.value);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                if (selectedDate < today) {
+                    isValid = false;
+                    errorMessage = 'Ngày khởi hành không thể là ngày quá khứ';
+                }
+            }
+
+            // Update UI
+            if (isValid) {
+                field.classList.remove('error');
+                if (errorElement) errorElement.textContent = '';
+            } else {
+                field.classList.add('error');
+                if (errorElement) errorElement.textContent = errorMessage;
+            }
+
+            return isValid;
+        }
+
+        /**
+         * Validate entire form
+         */
+        function validateForm() {
+            const fieldsToValidate = [
+                fullNameInput,
+                phoneInput,
+                emailInput,
+                destinationInput,
+                departureDateInput,
+                numberOfPeopleInput
+            ];
+
+            let allValid = true;
+            fieldsToValidate.forEach(field => {
+                if (!validateField(field)) {
+                    allValid = false;
+                }
+            });
+
+            return allValid;
+        }
+
+        /**
+         * Show alert message
+         */
+        function showAlert(message, type = 'info') {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} show`;
+            alertDiv.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                ${message}
+            `;
+            alertContainer.appendChild(alertDiv);
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                alertDiv.classList.remove('show');
+                setTimeout(() => alertDiv.remove(), 300);
+            }, 5000);
+        }
+
+        /**
+         * Handle form submission with modal notification
+         */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            // Validate form
+            if (!validateForm()) {
+                // Show error modal
+                showModal({
+                    type: 'error',
+                    title: 'Kiểm Tra Lại Thông Tin',
+                    message: 'Vui lòng điền đầy đủ các thông tin bắt buộc.',
+                    errors: getValidationErrors()
+                });
+                return;
+            }
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.classList.add('btn-loading');
+
+            // Simulate processing (1.5 seconds)
+            setTimeout(() => {
+                // Get form data
+                const bookingData = {
+                    id: Date.now(),
+                    fullName: fullNameInput.value,
+                    phone: phoneInput.value,
+                    email: emailInput.value,
+                    destination: destinationInput.value,
+                    departureDate: departureDateInput.value,
+                    numberOfPeople: numberOfPeopleInput.value,
+                    tourType: document.querySelector('input[name="tourType"]:checked').value,
+                    notes: notesInput.value,
+                    totalPrice: parseInt(totalPriceDisplay.textContent.replace(/[^\d]/g, '')),
+                    bookingDate: new Date().toLocaleString('vi-VN')
+                };
+
+                // Save to localStorage
+                let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                bookings.unshift(bookingData);
+                localStorage.setItem('bookings', JSON.stringify(bookings));
+
+                // Show success modal with booking details
+                showModal({
+                    type: 'success',
+                    title: 'Đặt Tour Thành Công!',
+                    message: 'Đặt tour thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.',
+                    bookingData: bookingData,
+                    onClose: () => {
+                        // Reset form and show booking history
+                        displayConfirmation(bookingData);
+                        startNewBooking();
+                    }
+                });
+
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('btn-loading');
+            }, 1500);
+        }
+
+        /**
+         * Get validation errors for modal display
+         */
+        function getValidationErrors() {
+            const errors = [];
+            
+            if (!fullNameInput.value.trim()) {
+                errors.push('Họ và tên không được để trống');
+            }
+            if (!phoneInput.value.trim()) {
+                errors.push('Số điện thoại không được để trống');
+            } else if (!/^[0-9]{10,11}$/.test(phoneInput.value)) {
+                errors.push('Số điện thoại không hợp lệ (10-11 chữ số)');
+            }
+            if (!destinationInput.value) {
+                errors.push('Vui lòng chọn địa điểm du lịch');
+            }
+            if (!departureDateInput.value) {
+                errors.push('Vui lòng chọn ngày khởi hành');
+            } else {
+                const selectedDate = new Date(departureDateInput.value);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                if (selectedDate < today) {
+                    errors.push('Ngày khởi hành không thể là ngày quá khứ');
+                }
+            }
+            
+            return errors;
+        }
+
+        /**
+         * Show Modal Notification
+         * @param {Object} config - Modal configuration
+         * @param {string} config.type - 'success' or 'error'
+         * @param {string} config.title - Modal title
+         * @param {string} config.message - Modal message
+         * @param {Array} config.errors - Array of error messages (for error type)
+         * @param {Object} config.bookingData - Booking data (for success type)
+         * @param {Function} config.onClose - Callback after closing
+         */
+        function showModal(config) {
+            const overlay = document.getElementById('modalOverlay');
+            const modalContent = document.getElementById('modalContent');
+            const modalIcon = document.getElementById('modalIcon');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const modalDetails = document.getElementById('modalDetails');
+            const errorList = document.getElementById('errorList');
+            const errorListItems = document.getElementById('errorListItems');
+            const primaryBtn = document.getElementById('modalPrimaryBtn');
+            const secondaryBtn = document.getElementById('modalSecondaryBtn');
+
+            // Reset modal content
+            modalDetails.innerHTML = '';
+            errorListItems.innerHTML = '';
+            errorList.style.display = 'none';
+            secondaryBtn.style.display = 'none';
+
+            // Set modal class based on type
+            modalContent.className = `modal-content ${config.type}`;
+
+            // Update modal title and message
+            modalTitle.textContent = config.title;
+            modalMessage.textContent = config.message;
+
+            // Update icon based on type
+            if (config.type === 'success') {
+                modalIcon.className = 'modal-icon success';
+                modalIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
+                primaryBtn.textContent = '✓ Tuyệt Vời';
+
+                // Add booking details
+                if (config.bookingData) {
+                    const bookingData = config.bookingData;
+                    const detailsHTML = `
+                        <div class="modal-details-item">
+                            <span class="modal-details-label">Khách hàng:</span>
+                            <span class="modal-details-value">${bookingData.fullName}</span>
+                        </div>
+                        <div class="modal-details-item">
+                            <span class="modal-details-label">Số điện thoại:</span>
+                            <span class="modal-details-value">${bookingData.phone}</span>
+                        </div>
+                        <div class="modal-details-item">
+                            <span class="modal-details-label">Tour:</span>
+                            <span class="modal-details-value">${tourNames[bookingData.destination]}</span>
+                        </div>
+                        <div class="modal-details-item">
+                            <span class="modal-details-label">Ngày khởi hành:</span>
+                            <span class="modal-details-value">${new Date(bookingData.departureDate).toLocaleDateString('vi-VN')}</span>
+                        </div>
+                        <div class="modal-details-item">
+                            <span class="modal-details-label">Số người:</span>
+                            <span class="modal-details-value">${bookingData.numberOfPeople}</span>
+                        </div>
+                        <div class="modal-details-item">
+                            <span class="modal-details-label">Loại tour:</span>
+                            <span class="modal-details-value">${tourTypeNames[bookingData.tourType]}</span>
+                        </div>
+                        <div class="modal-details-item">
+                            <span class="modal-details-label">Tổng tiền:</span>
+                            <span class="modal-details-value">${formatCurrency(bookingData.totalPrice)}</span>
+                        </div>
+                    `;
+                    modalDetails.innerHTML = detailsHTML;
+                }
+            } else if (config.type === 'error') {
+                modalIcon.className = 'modal-icon error';
+                modalIcon.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
+                primaryBtn.textContent = '✓ Đã Hiểu';
+
+                // Add error list
+                if (config.errors && config.errors.length > 0) {
+                    errorList.style.display = 'block';
+                    let errorHTML = '';
+                    config.errors.forEach(error => {
+                        errorHTML += `<li>${error}</li>`;
+                    });
+                    errorListItems.innerHTML = errorHTML;
+                }
+            }
+
+            // Show modal
+            overlay.classList.add('show');
+
+            // Button click handlers
+            const closeModal = () => {
+                overlay.classList.remove('show');
+                if (config.onClose && typeof config.onClose === 'function') {
+                    config.onClose();
+                }
+            };
+
+            // Remove old listeners and add new ones
+            primaryBtn.onclick = closeModal;
+            secondaryBtn.onclick = closeModal;
+
+            // Close on overlay click (optional - uncomment if desired)
+            // overlay.onclick = (e) => {
+            //     if (e.target === overlay) closeModal();
+            // };
+        }
+
+        /**
+         * Display booking confirmation
+         */
+        function displayConfirmation(bookingData) {
+            // Hide form and show confirmation
+            document.querySelector('.form-container').classList.add('hidden');
+            confirmationSection.classList.remove('hidden');
+
+            // Build confirmation details HTML
+            const confirmationHTML = `
+                <div class="confirmation-item">
+                    <label>Họ và Tên</label>
+                    <p>${bookingData.fullName}</p>
+                </div>
+                <div class="confirmation-item">
+                    <label>Số Điện Thoại</label>
+                    <p>${bookingData.phone}</p>
+                </div>
+                <div class="confirmation-item">
+                    <label>Email</label>
+                    <p>${bookingData.email || 'N/A'}</p>
+                </div>
+                <div class="confirmation-item">
+                    <label>Tour Du Lịch</label>
+                    <p>${tourNames[bookingData.destination]}</p>
+                </div>
+                <div class="confirmation-item">
+                    <label>Ngày Khởi Hành</label>
+                    <p>${new Date(bookingData.departureDate).toLocaleDateString('vi-VN')}</p>
+                </div>
+                <div class="confirmation-item">
+                    <label>Số Người</label>
+                    <p>${bookingData.numberOfPeople} người</p>
+                </div>
+                <div class="confirmation-item">
+                    <label>Loại Tour</label>
+                    <p>${tourTypeNames[bookingData.tourType]}</p>
+                </div>
+                <div class="confirmation-item">
+                    <label>Tổng Tiền</label>
+                    <p class="text-primary font-bold text-lg">${formatCurrency(bookingData.totalPrice)}</p>
+                </div>
+            `;
+
+            confirmationDetails.innerHTML = confirmationHTML;
+
+            // Update booking history
+            updateBookingHistory();
+
+            // Scroll to confirmation
+            setTimeout(() => {
+                confirmationSection.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+
+        /**
+         * Update booking history display
+         */
+        function updateBookingHistory() {
+            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+            let historyHTML = '';
+
+            if (bookings.length === 0) {
+                bookingHistory.innerHTML = '<p class="text-gray-500">Chưa có lịch sử đặt tour</p>';
+                return;
+            }
+
+            bookings.slice(0, 3).forEach((booking, index) => {
+                historyHTML += `
+                    <div class="bg-white border border-gray-200 rounded-lg p-4 hover-lift">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-bold text-primary">${tourNames[booking.destination]}</h4>
+                                <p class="text-sm text-gray-600">Khách: ${booking.fullName}</p>
+                                <p class="text-sm text-gray-600">Ngày: ${new Date(booking.departureDate).toLocaleDateString('vi-VN')}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-secondary">${formatCurrency(booking.totalPrice)}</p>
+                                <p class="text-xs text-gray-500">${booking.bookingDate}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            bookingHistory.innerHTML = historyHTML;
+        }
+
+        /**
+         * Download invoice as text file
+         */
+        function downloadInvoice() {
+            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+            if (bookings.length === 0) return;
+
+            const booking = bookings[0];
+            const invoiceText = `
+╔════════════════════════════════════════╗
+║        HÓA ĐƠN ĐẶT TOUR DU LỊCH       ║
+║         TRAVEL BOOKING 2026            ║
+╚════════════════════════════════════════╝
+
+Mã đơn: ${booking.id}
+Ngày đặt: ${booking.bookingDate}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THÔNG TIN KHÁCH HÀNG:
+Họ và tên: ${booking.fullName}
+Số điện thoại: ${booking.phone}
+Email: ${booking.email || 'Không có'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CHI TIẾT TOUR:
+Tour: ${tourNames[booking.destination]}
+Loại tour: ${tourTypeNames[booking.tourType]}
+Ngày khởi hành: ${new Date(booking.departureDate).toLocaleDateString('vi-VN')}
+Số lượng: ${booking.numberOfPeople} người
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BẢNG GIÁ:
+Tổng tiền: ${formatCurrency(booking.totalPrice)}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GHI CHÚ:
+${booking.notes || 'Không có ghi chú'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Thanh toán: Chờ xác nhận
+✓ Trạng thái: Đã nhận yêu cầu
+✓ Hỗ trợ: 24/7 - 0123456789
+
+Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!
+            `;
+
+            const blob = new Blob([invoiceText], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `hoa-don-${booking.id}.txt`;
+            link.click();
+        }
+
+        /**
+         * Start new booking
+         */
+        function startNewBooking() {
+            // Reset form
+            form.reset();
+            
+            // Clear error states
+            document.querySelectorAll('input.error, select.error').forEach(el => {
+                el.classList.remove('error');
+                const errorElement = el.parentElement.querySelector('.error-text');
+                if (errorElement) errorElement.textContent = '';
+            });
+
+            // Show form and hide confirmation
+            document.querySelector('.form-container').classList.remove('hidden');
+            confirmationSection.classList.add('hidden');
+
+            // Reset price display
+            document.getElementById('standard').checked = true;
+            calculatePrice();
+
+            // Scroll to top
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ========== INITIALIZATION ==========
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        departureDateInput.min = today;
+
+        // Initialize price display
+        calculatePrice();
+
+        // Load and display booking history on page load
+        updateBookingHistory();
+
+        // ========== DARK MODE TOGGLE ==========
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Load theme preference from localStorage
+        function loadThemePreference() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark');
+            } else {
+                htmlElement.classList.remove('dark');
+            }
+        }
+
+        // Initialize theme on page load
+        loadThemePreference();
+
+        // Toggle dark mode
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        }
+    </script>
+    <script src="../shared/app.js"></script>
+</body>
+</html>

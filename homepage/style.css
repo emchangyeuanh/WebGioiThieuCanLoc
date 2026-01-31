@@ -1,0 +1,524 @@
+/* Global Styles */
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+}
+
+/* Tailwind Configuration Styles */
+.traditional-pattern {
+    background-image: radial-gradient(#c62828 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    opacity: 0.05;
+}
+
+.section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+    h1.text-5xl {
+        line-height: 1.2 !important;
+    }
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #c62828 0%, #ef5350 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hover Lift Animation */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Text Balance */
+.text-balance {
+    text-wrap: balance;
+}
+
+/* ===== SMOOTH SCROLL ANIMATIONS ===== */
+
+/* Hiệu ứng highlight cho section khi được cuộn đến */
+.highlight-section {
+    animation: highlightPulse 1.5s ease;
+    box-shadow: 0 0 0 4px rgba(198, 40, 40, 0.2);
+    border-radius: 12px;
+}
+
+@keyframes highlightPulse {
+    0% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(198, 40, 40, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0); }
+}
+
+/* Style cho navigation link active */
+header nav a.active {
+    color: #c62828 !important;
+    background-color: rgba(198, 40, 40, 0.1) !important;
+}
+
+/* Dark mode */
+.dark header nav a.active {
+    color: #ef5350 !important;
+    background-color: rgba(239, 83, 80, 0.1) !important;
+}
+
+/* Hiệu ứng cho header khi cuộn */
+header {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Style cho thông báo notification */
+.notification {
+    font-family: "Be Vietnam Pro", sans-serif;
+    z-index: 9999;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.notification.info {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+/* Hiệu ứng cho các nút khi hover có tương tác */
+button, a {
+    cursor: pointer;
+}
+
+/* Animation cho smooth scroll indicator */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* ===== HORIZONTAL SCROLL STYLES ===== */
+
+/* Hide scrollbar */
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+/* Horizontal scroll container */
+#personalities-scroll {
+    scroll-behavior: smooth;
+    cursor: grab;
+    position: relative;
+}
+
+#personalities-scroll:active {
+    cursor: grabbing;
+}
+
+/* Scroll buttons */
+#scroll-left, #scroll-right {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#personalities:hover #scroll-left,
+#personalities:hover #scroll-right {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Fade effect for scroll container - disabled to show all images */
+#personalities::before,
+#personalities::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+#personalities::before {
+    left: 0;
+    background: none;
+}
+
+.dark #personalities::before {
+    background: none;
+}
+
+#personalities::after {
+    right: 0;
+    background: none;
+}
+
+.dark #personalities::after {
+    background: none;
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #c62828;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+    border: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #8e0000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Additional landmarks animation */
+.landmark-fade-in {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    #personalities-scroll .inline-block {
+        width: 280px;
+    }
+    
+    #scroll-left, #scroll-right {
+        display: none;
+    }
+}
+
+/* Custom scrollbar for personality scroll */
+#personalities-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+#personalities-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+#personalities-scroll::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 3px;
+}
+
+#personalities-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+}
+
+/* ===== COMPREHENSIVE DARK MODE STYLING ===== */
+
+/* Global dark mode background */
+html.dark,
+html.dark body,
+html.dark main,
+html.dark section,
+html.dark article {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+}
+
+/* Dark mode headings */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+    color: #ffffff;
+}
+
+/* Dark mode for all text elements */
+html.dark p,
+html.dark span,
+html.dark li,
+html.dark div,
+html.dark label {
+    color: #e0e0e0;
+}
+
+/* Dark mode for input fields */
+html.dark input,
+html.dark textarea,
+html.dark select {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+    background-color: #3a3a3a;
+    border-color: #d4af37;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #909090;
+}
+
+/* Dark mode for cards and containers */
+html.dark .card,
+html.dark .container,
+html.dark .section {
+    background-color: #1a1a1a;
+    border-color: #3d3d3d;
+}
+
+/* Dark mode for buttons */
+html.dark button {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark button:hover {
+    background-color: #3a3a3a;
+    border-color: #4d4d4d;
+}
+
+/* Dark mode for links */
+html.dark a {
+    color: #90caf9;
+}
+
+html.dark a:hover {
+    color: #bbdefb;
+}
+
+/* Dark mode for borders and dividers */
+html.dark hr,
+html.dark .border {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode for tables */
+html.dark table {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+html.dark table th {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: #3d3d3d;
+}
+
+html.dark table td {
+    border-color: #3d3d3d;
+}
+
+html.dark table tbody tr:hover {
+    background-color: #252525;
+}
+
+/* Dark mode for modals and dialogs */
+html.dark .modal,
+html.dark .dialog {
+    background-color: #1a1a1a;
+    border-color: #3a3a3a;
+}
+
+/* Dark mode for header and footer */
+html.dark header {
+    background-color: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+html.dark footer {
+    background-color: #0d0d0d;
+    border-color: #2a2a2a;
+}
+
+/* Dark mode for all backgrounds with Tailwind classes */
+html.dark .bg-white,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100,
+html.dark .bg-gray-light {
+    background-color: #1a1a1a;
+}
+
+html.dark .bg-background-light {
+    background-color: #0d0d0d;
+}
+
+/* Dark mode for text colors */
+html.dark .text-gray-700,
+html.dark .text-gray-800,
+html.dark .text-gray-900 {
+    color: #e0e0e0;
+}
+
+html.dark .text-gray-600 {
+    color: #b0b0b0;
+}
+
+html.dark .text-gray-500 {
+    color: #909090;
+}
+
+html.dark .text-gray-400 {
+    color: #707070;
+}
+
+/* Dark mode for borders */
+html.dark .border-gray-300,
+html.dark .border-gray-200,
+html.dark .border-gray-100 {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode for focus states */
+html.dark *:focus-visible {
+    outline-color: #d4af37;
+    outline-offset: 2px;
+}
+
+/* Dark mode for code blocks */
+html.dark code,
+html.dark pre {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+/* Dark mode for all elements that might have light backgrounds */
+html.dark [style*="background: white"],
+html.dark [style*="background:#fff"],
+html.dark [style*="background: #fff"] {
+    background-color: #1a1a1a !important;
+}
+
+/* Dark mode for all elements with light text */
+html.dark [style*="color: #333"],
+html.dark [style*="color: black"] {
+    color: #e0e0e0 !important;
+}
+
+/* Override any remaining light colors */
+html.dark .bg-gradient-to-r,
+html.dark .bg-gradient-to-b,
+html.dark .bg-gradient-to-l,
+html.dark .bg-gradient-to-t {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+}
+
+/* Ensure scrollbars are dark */
+html.dark * {
+    scrollbar-color: rgba(212, 175, 55, 0.4) rgba(26, 26, 26, 0.8);
+}
+
+html.dark ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 5px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 5px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+}
+
+/* Dark mode for badges and tags */
+html.dark .badge,
+html.dark .tag {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+/* Dark mode for alerts */
+html.dark .alert {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+/* Fix gradient text in dark mode */
+html.dark .gradient-text {
+    background: linear-gradient(135deg, #ef5350 0%, #d4af37 50%, #c62828 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Ensure all visible text has good contrast */
+html.dark,
+html.dark * {
+    color-scheme: dark;
+}

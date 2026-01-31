@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dân ca Ví, Giặm Nghệ Tĩnh - Di sản Văn hóa Phi vật thể UNESCO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Liên kết CSS -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../shared/chatbot.css">
+<link rel="stylesheet" href="../shared/darkmode.css">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#fdfaf6",
+                        "background-dark": "#221010",
+                        "accent-gold": "#d4af37",
+                        "heritage-red": "#b91c1c",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Music Player Styles */
+        #mini-player {
+            transition: all 0.3s ease !important;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        #mini-player.visible {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            z-index: 9999 !important;
+        }
+        
+        /* Đảm bảo tất cả elements trong mini-player đều tương tác được */
+        #mini-player * {
+            pointer-events: auto !important;
+        }
+        
+        #mini-player button {
+            cursor: pointer !important;
+            pointer-events: auto !important;
+            position: relative;
+            z-index: 10000;
+        }
+        
+        .music-btn.playing {
+            background-color: #c62828;
+        }
+
+        /* Hiệu ứng glow cho tiêu đề */
+        @keyframes title-glow {
+            0%, 100% {
+                text-shadow: 
+                    0 0 10px rgba(212, 175, 55, 0.4),
+                    0 0 20px rgba(212, 175, 55, 0.3),
+                    0 0 30px rgba(198, 40, 40, 0.2);
+            }
+            50% {
+                text-shadow: 
+                    0 0 20px rgba(212, 175, 55, 0.8),
+                    0 0 40px rgba(212, 175, 55, 0.6),
+                    0 0 60px rgba(198, 40, 40, 0.4);
+            }
+        }
+
+        .animate-title-glow {
+            animation: title-glow 3s ease-in-out infinite;
+        }
+        
+        .visualizer-bar {
+            background: linear-gradient(to top, #d4af37, #c62828);
+            border-radius: 2px;
+            transition: height 0.1s ease, opacity 0.1s ease;
+            pointer-events: none;
+        }
+        
+        .sound-bar {
+            animation: soundPulse 0.6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .sound-bar:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .sound-bar:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        .sound-bar:nth-child(4) {
+            animation-delay: 0.1s;
+        }
+        
+        .sound-bar:nth-child(5) {
+            animation-delay: 0s;
+        }
+        
+        @keyframes soundPulse {
+            0%, 100% {
+                height: 0.5rem;
+            }
+            50% {
+                height: 1.25rem;
+            }
+        }
+        
+        .music-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+            animation: glow 1s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+            }
+        }
+        
+        /* Input range styling */
+        input[type="range"] {
+            cursor: pointer !important;
+            pointer-events: auto !important;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d0d] dark:text-[#fcf8f8] font-display transition-colors duration-300">
+<!-- Audio element ẩn -->
+<audio id="background-music" preload="metadata">
+    <source src="music/dan-ca.mp3" type="audio/mpeg">
+    <source src="music/dan-ca.ogg" type="audio/ogg">
+    Trình duyệt của bạn không hỗ trợ thẻ audio.
+</audio>
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../homepage/codecanloc.html" class="flex items-center gap-3" style="text-decoration:none;color:inherit;pointer-events:auto;z-index:50" onclick="window.location.href='../homepage/codecanloc.html'">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#introduction" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#tradition" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <a href="../homepage/dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+<main>
+<section class="relative w-full h-[90vh] min-h-[700px] overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(34, 16, 16, 0.4), rgba(34, 16, 16, 0.9)), url('image/1.webp');">
+<div class="absolute inset-0 traditional-pattern"></div>
+</div>
+<div class="relative z-10 max-w-[1000px] px-6 text-center text-white">
+<div class="inline-flex items-center gap-3 px-4 py-2 mb-6 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+<span class="size-2 bg-accent-gold rounded-full animate-pulse"></span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">UNESCO Intangible Cultural Heritage</span>
+</div>
+<h2 class="text-6xl md:text-8xl font-black leading-tight mb-8 drop-shadow-2xl">
+                Hồn Quê Trong <br/>
+<span class="inline-block text-white drop-shadow-lg animate-title-glow" style="text-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(198, 40, 40, 0.4);">Câu Ví, Điệu Giặm</span>
+</h2>
+<p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-12 text-gray-200 leading-relaxed italic">
+                "Ai biết nước sông Lam răng là trong là đục, <br class="hidden md:block"/> Thì biết sống cuộc đời răng là nhục là vinh."
+            </p>
+<div class="flex flex-wrap gap-6 justify-center">
+<!-- NÚT NGHE NGAY ĐÃ ĐƯỢC SỬA -->  
+<button id="music-play-btn" class="music-btn bg-accent-gold hover:bg-yellow-600 text-background-dark px-10 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 relative overflow-hidden group">
+<span class="relative z-10 flex items-center gap-2">
+<span id="music-icon" class="material-symbols-outlined text-xl">play_circle</span>
+<span id="music-text">Nghe ngay</span>
+</span>
+
+<!-- Hiệu ứng sóng âm thanh (chỉ hiển thị khi đang phát) -->
+<div id="sound-waves" class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="flex items-center justify-center gap-1">
+<div class="sound-bar w-1 h-2 bg-current rounded-full"></div>
+<div class="sound-bar w-1 h-3 bg-current rounded-full"></div>
+<div class="sound-bar w-1 h-4 bg-current rounded-full"></div>
+<div class="sound-bar w-1 h-3 bg-current rounded-full"></div>
+<div class="sound-bar w-1 h-2 bg-current rounded-full"></div>
+</div>
+</div>
+
+<!-- Hiệu ứng glow khi phát nhạc -->
+<div class="music-glow absolute inset-0 rounded-full opacity-0"></div>
+</button>
+
+
+</div>
+
+<!-- Thông báo nhạc đang phát -->
+<div id="music-notification" class="mt-6 opacity-0 transition-opacity duration-300">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+<span class="animate-ping size-2 bg-accent-gold rounded-full"></span>
+<span class="text-sm">Đang phát: Dân ca Ví, Giặm Nghệ Tĩnh</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+<span class="text-[10px] uppercase tracking-[0.3em] text-white">Khám phá</span>
+<div class="w-px h-12 bg-gradient-to-b from-accent-gold to-transparent"></div>
+</div>
+</section>
+
+<!-- ... các section khác giữ nguyên ... -->
+
+<!-- Mini Player (sẽ hiện khi nhấn nút Nghe Ngay) -->
+<div id="mini-player" class="fixed bottom-6 right-6 z-50 translate-y-10 opacity-0 transition-all duration-500">
+<div class="bg-white/95 dark:bg-gray-dark/95 backdrop-blur-lg rounded-2xl shadow-2xl p-4 w-80 border border-gray-200 dark:border-gray-700">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="relative">
+<div class="size-10 rounded-full bg-accent-gold/20 flex items-center justify-center">
+<i class="fa-solid fa-music text-accent-gold"></i>
+</div>
+<!-- Spinner khi đang load -->
+<div id="loading-spinner" class="absolute inset-0 rounded-full border-2 border-accent-gold border-t-transparent animate-spin hidden"></div>
+</div>
+<div class="min-w-0">
+<h4 class="font-bold text-gray-900 dark:text-white text-sm truncate">Dân ca Ví, Giặm</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">Di sản UNESCO</p>
+</div>
+</div>
+<button id="close-player" class="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 ml-2">
+<i class="fa-solid fa-times"></i>
+</button>
+</div>
+
+<!-- Progress -->
+<div class="mb-3">
+<div class="flex justify-between text-xs text-gray-500 mb-1">
+<span id="current-time">0:00</span>
+<span id="total-time">0:00</span>
+</div>
+<div class="relative h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div id="progress-bar" class="absolute top-0 left-0 h-full bg-accent-gold rounded-full" style="width: 0%"></div>
+</div>
+</div>
+
+<!-- Controls -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button id="volume-toggle" class="text-gray-500 hover:text-accent-gold transition-colors duration-200 p-1 rounded-lg hover:bg-white/10">
+<i id="volume-icon" class="fa-solid fa-volume-high"></i>
+</button>
+<div id="volume-slider-container" class="hidden">
+<input type="range" id="volume-slider" min="0" max="100" value="70" class="w-16">
+</div>
+</div>
+
+<div class="flex items-center gap-4">
+<button id="prev-track" class="text-gray-500 hover:text-accent-gold transition-colors duration-200 p-1 rounded-lg hover:bg-white/10">
+<i class="fa-solid fa-backward-step"></i>
+</button>
+<button id="play-pause-mini" class="size-10 rounded-full bg-accent-gold text-white flex items-center justify-center hover:bg-yellow-600 transition-colors shadow-md hover:shadow-lg">
+<i id="play-pause-icon-mini" class="fa-solid fa-pause"></i>
+</button>
+<button id="next-track" class="text-gray-500 hover:text-accent-gold transition-colors duration-200 p-1 rounded-lg hover:bg-white/10">
+<i class="fa-solid fa-forward-step"></i>
+</button>
+</div>
+
+<div class="flex items-center gap-2">
+<button id="loop-toggle" class="text-gray-400 hover:text-accent-gold transition-colors duration-200 p-1 rounded-lg hover:bg-white/10" title="Lặp lại">
+<i id="loop-icon" class="fa-solid fa-repeat"></i>
+</button>
+</div>
+</div>
+
+<!-- Visualizer -->
+<div id="visualizer-container" class="mt-4 h-6 flex items-end justify-center gap-0.5">
+<!-- Các thanh visualizer sẽ được tạo bằng JavaScript -->
+</div>
+</div>
+</div>
+
+<section class="py-24 px-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 -z-10"></div>
+<div class="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<div class="inline-block">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Nguồn gốc &amp; Đặc điểm</span>
+<div class="h-1 w-20 bg-accent-gold mt-2"></div>
+</div>
+<h3 class="text-4xl md:text-5xl font-black text-[#1b0d0d] dark:text-white leading-tight">Mạch nguồn từ đời sống lao động</h3>
+<p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                    Dân ca Ví, Giặm Nghệ Tĩnh là một loại hình nghệ thuật trình diễn dân gian chiếm vị trí quan trọng trong đời sống văn hóa của người dân hai tỉnh Nghệ An và Hà Tĩnh. Những câu hát gắn liền với đời sống sinh hoạt, từ lúc cấy cày, dệt vải đến khi chèo thuyền trên sông.
+                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-6 bg-white dark:bg-white/5 rounded-2xl shadow-xl shadow-black/5 border border-gray-100 dark:border-white/10">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">waves</span>
+<h4 class="font-bold text-xl mb-2">Hát Ví</h4>
+<p class="text-sm text-gray-500">Là lối hát tự do, không có nhịp điệu chặt chẽ, âm điệu dàn trải theo nhịp thơ, mang tính tự sự và trữ tình sâu sắc.</p>
+</div>
+<div class="p-6 bg-white dark:bg-white/5 rounded-2xl shadow-xl shadow-black/5 border border-gray-100 dark:border-white/10">
+<span class="material-symbols-outlined text-accent-gold text-4xl mb-4">music_note</span>
+<h4 class="font-bold text-xl mb-2">Hát Giặm</h4>
+<p class="text-sm text-gray-500">Là lối hát có nhịp điệu rõ ràng, tiết tấu dồn dập, thường được chia thành từng khổ, mang tính kể lể và giáo huấn.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 traditional-pattern opacity-20 -z-10"></div>
+<div class="rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Biểu diễn Ví Giặm tại Can Lộc" class="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700" src="image/2.png"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 rounded-2xl max-w-xs shadow-2xl">
+<p class="text-2xl font-black mb-2 italic">"Mộc mạc nhưng tinh tế"</p>
+<p class="text-xs opacity-80 uppercase tracking-widest font-bold">Hồn cốt người dân xứ Nghệ</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white/50 dark:bg-[#1a0c0c] px-6">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h3 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Thư viện nghệ thuật</h3>
+<h2 class="text-4xl md:text-5xl font-black text-[#1b0d0d] dark:text-white">Giai điệu vượt thời gian</h2>
+</div>
+<div class="grid lg:grid-cols-12 gap-12">
+<div class="lg:col-span-7">
+<div class="relative group aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black">
+<iframe id="main-video-player" class="w-full h-full" src="https://drive.google.com/file/d/1SEZi8UFDM-UkqJifOoJjjmRDFGWNH_SF/preview" frameborder="0" allow="autoplay"></iframe>
+<div id="video-info" class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+<h4 id="main-video-title" class="text-white text-2xl font-bold">Giận Mà Thương</h4>
+<p id="main-video-artist" class="text-white/70 text-sm">Giọng ca: Thu Hiền</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-4">
+<h5 class="text-lg font-bold flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">headphones</span> Tuyển tập làn điệu đặc sắc
+                    </h5>
+<div class="video-item flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:shadow-lg transition-all cursor-pointer group" data-video="1SEZi8UFDM-UkqJifOoJjjmRDFGWNH_SF">
+<div class="size-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">01</div>
+<div class="flex-1">
+<h6 class="font-bold group-hover:text-primary transition-colors">Giận Mà Thương</h6>
+<p class="text-xs text-gray-500">Giọng ca: Thu Hiền</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">play_circle</span>
+</div>
+<div class="video-item flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:shadow-lg transition-all cursor-pointer group" data-video="1K11EbTeUsxI2wIlhEC2r_Qn9lOGKMFDL">
+<div class="size-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">02</div>
+<div class="flex-1">
+<h6 class="font-bold group-hover:text-primary transition-colors">Giặm Ru</h6>
+<p class="text-xs text-gray-500">Giọng ca: Thu Hiền</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">play_circle</span>
+</div>
+<div class="video-item flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:shadow-lg transition-all cursor-pointer group" data-video="1_WbqRK73uwI8AzCW67BKvNXEQMtWKCO3">
+<div class="size-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">03</div>
+<div class="flex-1">
+<h6 class="font-bold group-hover:text-primary transition-colors">Hát Khuyên</h6>
+<p class="text-xs text-gray-500">Giọng ca: NSND Tiến Dũng</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">play_circle</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:shadow-lg transition-all cursor-pointer group">
+<div class="size-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">04</div>
+<div class="flex-1">
+<h6 class="font-bold group-hover:text-primary transition-colors">Ví Trèo Non</h6>
+<p class="text-xs text-gray-500">Dân ca cổ - Nghệ nhân Can Lộc</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">play_circle</span>
+</div>
+<button class="mt-4 text-primary font-bold text-sm flex items-center gap-2 hover:underline">
+                        Xem tất cả thư viện <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h3 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Lịch trình &amp; Hoạt động</h3>
+<h2 class="text-4xl font-black text-[#1b0d0d] dark:text-white leading-tight">Ngày hội Dân ca &amp; CLB Địa phương</h2>
+</div>
+<div class="flex gap-2">
+<button class="size-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="size-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="group bg-background-light dark:bg-white/5 rounded-3xl p-8 border border-gray-100 dark:border-white/10 hover:border-primary/30 transition-all">
+<div class="text-accent-gold font-black text-4xl mb-6">15/03</div>
+<div class="mb-6">
+<span class="bg-primary/10 text-primary text-[10px] font-black uppercase px-3 py-1 rounded-full">Lễ hội quy mô tỉnh</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Liên hoan Dân ca Ví, Giặm Nghệ Tĩnh</h4>
+<p class="text-sm text-gray-500 mb-8">Tổ chức tại Trung tâm Văn hóa huyện Can Lộc với sự tham gia của 23 xã, thị trấn.</p>
+<div class="flex items-center gap-2 text-xs font-bold opacity-60">
+<span class="material-symbols-outlined text-sm">location_on</span> TT Nghèn, Can Lộc
+                </div>
+</div>
+<div class="group bg-heritage-red text-white rounded-3xl p-8 shadow-2xl shadow-primary/20 transform md:-translate-y-4">
+<div class="mb-6 flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-accent-gold">groups</span>
+<span class="bg-white/20 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Câu lạc bộ tiêu biểu</span>
+</div>
+<h4 class="text-xl font-bold mb-4">CLB Dân ca Ví, Giặm Kim Lộc</h4>
+<p class="text-sm text-white/80 mb-8">Một trong những CLB lâu đời nhất, lưu giữ hàng trăm làn điệu cổ và tích cực đào tạo thế hệ trẻ.</p>
+<div class="flex items-center gap-2 text-xs font-bold text-white/60">
+<span class="material-symbols-outlined text-sm">person</span> Chủ nhiệm: Nghệ nhân Nguyễn Văn A
+                </div>
+<button id="contact-btn" class="mt-8 w-full py-3 bg-white text-primary rounded-xl font-bold text-sm hover:bg-accent-gold hover:text-white transition-all">Liên hệ tham gia</button>
+</div>
+<div class="group bg-background-light dark:bg-white/5 rounded-3xl p-8 border border-gray-100 dark:border-white/10 hover:border-primary/30 transition-all">
+<div class="text-accent-gold font-black text-4xl mb-6">Hàng tuần</div>
+<div class="mb-6">
+<span class="bg-primary/10 text-primary text-[10px] font-black uppercase px-3 py-1 rounded-full">Giao lưu cộng đồng</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Đêm hát dân ca "Hẹn hò sông Nghèn"</h4>
+<p class="text-sm text-gray-500 mb-8">Chương trình giao lưu định kỳ tối Thứ Bảy hàng tuần dành cho du khách và người dân địa phương.</p>
+<div class="flex items-center gap-2 text-xs font-bold opacity-60">
+<span class="material-symbols-outlined text-sm">schedule</span> 19:30 - Tối Thứ 7
+                </div>
+</div>
+</div>
+</section>
+
+<section class="px-6 pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-12 lg:p-16 relative overflow-hidden">
+                    <div class="absolute inset-0 traditional-pattern opacity-10"></div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
+                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-48 -translate-x-48"></div>
+                    
+                    <div class="relative z-10 max-w-3xl mx-auto text-center text-white">
+                        <h3 class="text-3xl md:text-5xl font-black mb-8">
+                            Bắt đầu hành trình khám phá<br/>
+                            <span class="text-accent-gold">nguồn cội</span> ngay hôm nay
+                        </h3>
+                        <p class="text-xl opacity-90 mb-12 leading-relaxed">
+                            Đăng ký nhận thông tin về các sự kiện văn hóa, lễ hội truyền thống và tin tức mới nhất từ Can Lộc.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                            <input id="newsletter-email" class="flex-1 px-6 py-4 rounded-xl text-gray-900 border-none focus:ring-3 focus:ring-accent-gold focus:outline-none shadow-lg" 
+                                   placeholder="Nhập địa chỉ email của bạn..." 
+                                   type="email"/>
+                            <button id="subscribe-btn" class="bg-white text-gray-900 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2">
+                                <span>Đăng ký ngay</span>
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <p class="text-sm opacity-80 mt-6">
+                            Chúng tôi tôn trọng quyền riêng tư của bạn. Bạn có thể hủy đăng ký bất cứ lúc nào.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+</main>
+
+<!-- Popup Modal -->
+<div id="contact-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[999] flex items-center justify-center opacity-0 invisible transition-all duration-300">
+    <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-8 max-w-md w-full mx-6 transform scale-95 transition-transform duration-300">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+                <span class="material-symbols-outlined text-primary text-4xl">construction</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">ERROR 404</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-lg mb-8">Website đang được nâng cấp vui lòng thử lại sau</p>
+            <button id="close-modal-btn" class="w-full bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all">
+                Đóng
+            </button>
+        </div>
+    </div>
+</div>
+<footer class="bg-background-dark text-white pt-16 pb-8 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">CAN LỘC</h2>
+                            <p class="text-xs text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang thông tin văn hóa - lịch sử huyện Can Lộc, tỉnh Hà Tĩnh. Dựa trên dữ liệu từ Wikipedia và cổng thông tin địa phương.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                           <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#introduction">
+                           <i class="fa-solid fa-link"></i>
+                            Giới thiệu chung
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#landmarks">
+                            <i class="fa-solid fa-link"></i>
+                            Danh lam thắng cảnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#personalities">
+                            <i class="fa-solid fa-link"></i>
+                            Danh nhân
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-link"></i>
+                            Cổng thông tin huyện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Địa danh tiêu biểu</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Khu di tích Đồng Lộc
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                           <i class="fa-solid fa-map-pin"></i>
+                            Núi Hồng Lĩnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Sông Nghèn
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Làng Kế Thiện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Xã Can Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">canloc.hatinh.gov.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © Trang Web Được Xây Dựng Nhằm Mục Đích Tham Khảo Văn Hóa - Lịch Sử Huyện Can Lộc.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Chatbot Widget -->
+<div class="chatbox">
+    <div class="chatbox__button">
+        <button class="send__button">
+            <span class="chat-icon">💬</span>
+        </button>
+    </div>
+    <div class="chatbox__support">
+        <div class="chatbox__header">
+            <div class="chatbox__header-dragarea">
+                <i class="fa-solid fa-robot"></i>
+                <div class="chatbox__content--header">
+                    <div class="chatbox__heading--header">Bi Biết Tuốt</div>
+                    <div class="chatbox__description--header">Trợ lý ảo Can Lộc</div>
+                    <div class="chatbox__status">
+                        <span class="status-dot"></span>
+                        <span style="color: white; font-size: 0.8rem;">Trực tuyến</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbox__controls">
+                <button class="control-btn minimize-btn" title="Thu nhỏ">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="control-btn maximize-btn" title="Phóng to">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+                <button class="control-btn close-btn" title="Đóng">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chatbox__messages">
+            <div class="messages-container"></div>
+        </div>
+        <div class="chatbox__footer">
+            <div class="input-container">
+                <input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+                <button class="chatbox__send--footer send__button">
+                    <span class="send-icon">➤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script JavaScript -->
+<script src="script.js"></script>
+<script src="../shared/app.js"></script>
+<script>
+// Video player functionality - Play videos on left side when clicking songs on right
+document.addEventListener('DOMContentLoaded', function() {
+    const videoItems = document.querySelectorAll('.video-item');
+    const mainVideoPlayer = document.getElementById('main-video-player');
+    const mainVideoSource = document.getElementById('main-video-source');
+    const mainVideoTitle = document.getElementById('main-video-title');
+    const mainVideoArtist = document.getElementById('main-video-artist');
+    const audio = document.getElementById('background-music');
+
+    // Map video items to titles and artists
+    const videoData = {
+        '1SEZi8UFDM-UkqJifOoJjjmRDFGWNH_SF': { title: 'Giận Mà Thương', artist: 'Giọng ca: Thu Hiền', url: 'https://drive.google.com/file/d/1SEZi8UFDM-UkqJifOoJjjmRDFGWNH_SF/preview' },
+        '1K11EbTeUsxI2wIlhEC2r_Qn9lOGKMFDL': { title: 'Giặm Ru', artist: 'Giọng ca: Thu Hiền', url: 'https://drive.google.com/file/d/1K11EbTeUsxI2wIlhEC2r_Qn9lOGKMFDL/preview' },
+        '1_WbqRK73uwI8AzCW67BKvNXEQMtWKCO3': { title: 'Hát Khuyên', artist: 'Giọng ca: NSND Tiến Dũng', url: 'https://drive.google.com/file/d/1_WbqRK73uwI8AzCW67BKvNXEQMtWKCO3/preview' }
+    };
+
+    // Play video when clicking on song item
+    videoItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const videoUrl = this.getAttribute('data-video');
+            const data = videoData[videoUrl];
+            
+            if (data) {
+                // Dừng âm thanh nền nếu đang phát
+                if (audio && !audio.paused) {
+                    audio.pause();
+                }
+                
+                mainVideoPlayer.src = data.url;
+                mainVideoTitle.textContent = data.title;
+                mainVideoArtist.textContent = data.artist;
+                
+                // Scroll to video
+                mainVideoPlayer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    });
+
+    // Dừng âm thanh khi phát video qua các điều khiển của video
+    mainVideoPlayer.addEventListener('play', function() {
+        if (audio && !audio.paused) {
+            audio.pause();
+        }
+    });
+
+    // Cập nhật Mini player khi video dừng
+    mainVideoPlayer.addEventListener('ended', function() {
+        // Video kết thúc - không cần làm gì đặc biệt
+    });
+});
+
+// Contact modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.getElementById('contact-btn');
+    const contactModal = document.getElementById('contact-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    // Open modal when clicking contact button
+    contactBtn.addEventListener('click', function() {
+        contactModal.classList.remove('opacity-0', 'invisible');
+        contactModal.classList.add('opacity-100', 'visible');
+        // Animate the modal content
+        setTimeout(() => {
+            const modalContent = contactModal.querySelector('div:nth-child(1)');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }, 50);
+    });
+
+    // Close modal when clicking close button
+    closeModalBtn.addEventListener('click', function() {
+        const modalContent = contactModal.querySelector('div:nth-child(1)');
+        modalContent.classList.remove('scale-100');
+        modalContent.classList.add('scale-95');
+        setTimeout(() => {
+            contactModal.classList.add('opacity-0', 'invisible');
+            contactModal.classList.remove('opacity-100', 'visible');
+        }, 300);
+    });
+
+    // Close modal when clicking outside
+    contactModal.addEventListener('click', function(e) {
+        if (e.target === contactModal) {
+            const modalContent = contactModal.querySelector('div:nth-child(1)');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                contactModal.classList.add('opacity-0', 'invisible');
+                contactModal.classList.remove('opacity-100', 'visible');
+            }, 300);
+        }
+    });
+});</script>
+<script src="../shared/app.js"></script>
+<script src="../shared/darkmode.js"></script>
+</body></html>

@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hà Huy Tập - Tổng Bí thư Đảng Cộng sản Đông Dương & Nhà Cách Mạng Anh Dũng</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-light": "#f77171",
+                        "primary-dark": "#b91c1c",
+                        "background-light": "#fdfaf6",
+                        "background-dark": "#221010",
+                        "accent-gold": "#d4af37",
+                        "heritage-red": "#b91c1c",
+                        "gray-light": "#f8f6f6",
+                        "gray-dark": "#3d2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "serif": ["Crimson Text", "serif"]
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 10px 40px rgba(0, 0, 0, 0.15)',
+                        'primary-glow': '0 0 20px rgba(236, 19, 19, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .serif-font {
+            font-family: "Crimson Text", serif;
+        }
+        
+        .traditional-pattern {
+            background-image: radial-gradient(#ec1313 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ec1313 0%, #f77171 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* Fade-in on scroll animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #ec1313, #f77171);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 52%;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 52%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-right: 0;
+                padding-left: 60px;
+            }
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #ec1313;
+            border: 4px solid #fdfaf6;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-content {
+            background: #fdfaf6;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid #ec1313;
+        }
+
+        .dark .timeline-content {
+            background: #2a2020;
+            border-left-color: #f77171;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card-hover:hover {
+            border-color: #ec1313;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(236, 19, 19, 0.15);
+        }
+
+        /* Blockquote style */
+        .history-blockquote {
+            border-left: 4px solid #ec1313;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            background: rgba(236, 19, 19, 0.05);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .dark .history-blockquote {
+            background: rgba(236, 19, 19, 0.1);
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #ec1313;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(236, 19, 19, 0.3);
+            border: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: #b80f0f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(236, 19, 19, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                    <a href="../homepage/codecanloc.html" class="flex items-center gap-3" style="text-decoration:none;color:inherit;pointer-events:auto;z-index:50" onclick="window.location.href='../homepage/codecanloc.html'">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#introduction" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#tradition" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <a href="../homepage/dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative">
+        
+        <!-- ===== HERO SECTION ===== -->
+        <section id="home" class="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
+            <!-- Background with overlay -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in" 
+                 style="background-image: linear-gradient(to bottom, rgba(34, 16, 16, 0.8), rgba(34, 16, 16, 0.95)), url('https://images.unsplash.com/photo-1524661264601-baa9dd17b52e?w=1200&q=80'); background-attachment: fixed;">
+            </div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 max-w-4xl px-6 text-center text-white animate-slide-up">
+                <span class="inline-block px-5 py-2 mb-6 border border-primary/50 rounded-full text-sm font-bold tracking-[0.2em] uppercase bg-primary/20 backdrop-blur-sm">
+                    Lãnh đạo Đảng Cộng sản Đông Dương – Thời Kỳ Liên Bang Đông Dương
+                </span>
+                
+                <!-- Main Title -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 drop-shadow-2xl text-balance serif-font px-6 py-8">
+                    Hà Huy Tập
+                    <br/>
+                    <span class="text-4xl md:text-5xl font-light">(1906–1941)</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-4 text-gray-200 leading-relaxed">
+                    Tổng Bí thư Đảng Cộng sản Đông Dương – Nhà Cách Mạng Anh Dũng Hy Sinh Cho Độc Lập Tự Do
+                </p>
+
+                <!-- Famous Quote -->
+                <div class="max-w-2xl mx-auto mb-12 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+                    <p class="text-lg italic font-light text-gray-100 serif-font leading-relaxed">
+                        "Dạy học cho công nhân, dạy chữ cho dân nghèo<br/>
+                        Là đóng góp của một nhà thơ yêu nước"
+                    </p>
+                    <p class="text-sm text-gray-300 mt-3">— Phần tự sự của Hà Huy Tập tại Phương Đông</p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg hover:shadow-primary-glow flex items-center justify-center gap-2">
+                        <span>Khám phá hành trình</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Tìm hiểu chi tiết</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </div>
+        </section>
+
+        <!-- ===== BIOGRAPHY SECTION ===== -->
+        <section id="biography" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-book-open"></i> Tiểu sử
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Từ Cẩm Xuyên Đến <span class="text-primary">Phong Trào Cách Mạng</span>
+                    </h2>
+                </div>
+
+                <!-- Basic Information -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-16 fade-in-section">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h3 class="text-3xl font-black text-gray-900 dark:text-white serif-font">Thông tin cơ bản</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Info Item 1 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-id-card"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Tên thật</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Hà Huy Khiêm (bút danh: Hà Huy Tập) – Còn gọi là "Ba"</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 2 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Năm Sinh-Năm Mất</p>
+                                    <p class="text-gray-600 dark:text-gray-400">24 tháng 4 năm 1906 – 28 tháng 8 năm 1941 (35 tuổi)</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 3 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Nơi sinh – Quê quán</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Sinh tại làng Kim Nặc, xã Cẩm Hưng, huyện Cẩm Xuyên, tỉnh Hà Tĩnh</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 4 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Học vấn – Sự nghiệp</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Tốt nghiệp Quốc học Huế (1923, Diplôme hạng ưu); Giáo viên tiểu học; Học tập tại Liên Xô; Tổng Bí thư Đảng Cộng sản Đông Dương</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Item 5 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                                        <i class="fa-solid fa-ring"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Gia đình</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Vợ: Nguyễn Thị Giáo (lập gia đình năm 1928); Con gái: Hà Thị Thúy Hồng (sinh 2.3.1929)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portrait -->
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl transform -rotate-1 transition-transform group-hover:rotate-0 duration-700"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-hard">
+                            <img class="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                                 alt="Chân dung cố Tổng Bí thư Hà Huy Tập" 
+                                 src="hht.jpg"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background and Early Life -->
+                <div class="bg-white dark:bg-gray-dark rounded-2xl shadow-soft p-8 md:p-12 mb-16 fade-in-section">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-6 serif-font">Xuất Thân & Những Năm Đầu Cuộc Đời</h3>
+                    <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p>Hà Huy Tập sinh ngày 24 tháng 4 năm 1906 tại làng Kim Nặc, tổng Thổ Ngọa (nay là xã Cẩm Hưng, huyện Cẩm Xuyên), tỉnh Hà Tĩnh. Ông là con thứ ba trong gia đình năm anh em, còn được gọi bởi cái tên thân thương "Ba" trong gia tộc. Cha ông, Hà Huy Tương, từng đỗ Cử nhân Nho học nhưng không lựa chọn con đường làm quan. Thay vào đó, cha ông dạy học và bốc thuốc ở quê nhà, trở thành một nhân vật được nhân dân kính trọng vì sự hiếu học và tâm tư yêu nước.</p>
+                        
+                        <p>Ngoài việc thừa kế nền tảng kiến thức Nho học từ cha, Hà Huy Tập đã vào học bậc Tiểu học tại Thị xã Hà Tĩnh. Năm 1919, ông thi vào trường Quốc học Huế – một trong những trường học ưu tú nhất của Liên Bang Đông Dương. Tại đây, ông tốt nghiệp với Diplôme hạng ưu vào năm 1923, và được phân về dạy học tại trường Tiểu học Nha Trang cho đến năm 1926.</p>
+
+                        <div class="history-blockquote">
+                            <p class="italic font-light serif-font mb-3">Trong tiểu sử tự thuật của Hà Huy Tập khi học tại trường Phương Đông (Liên Xô), ông viết:</p>
+                            <p class="text-sm">"Tôi sinh ra trong một gia đình nông dân hai trai hai gái. Bố tôi mất năm 1916. Mẹ tôi còn sống. Anh cả tôi khi thì ở nông thôn trồng lúa trên những thửa ruộng của mẹ tôi, khi thì làm việc trong các xí nghiệp công hoặc hầm mỏ vì anh ấy không thể đủ cấp cho nhu cầu gia đình với những công việc đồng áng. Em gái út của tôi là vợ của một người cộng sản vừa tháng 6/1929 bị kết án lao động khổ sai cho đến khi chết."</p>
+                        </div>
+
+                        <p>Ông cống hiến tâm huyết cho sự giáo dục, không chỉ dạy học cho học sinh mà còn dạy chữ cho công nhân và dân nghèo ngoài giờ hành chính. Ông thường trích một phần tiền lương của mình để mua sách vở cho những học sinh nghèo.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="mt-20 pt-16 border-t border-gray-200 dark:border-gray-800">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-12 serif-font">Dấu Mốc Cuộc Đời</h3>
+                    
+                    <div class="timeline">
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1906 – 1923</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Sinh tại Cẩm Xuyên, Hà Tĩnh. Lớn lên trong gia đình có truyền thống hiếu học. Năm 1919, vào học Quốc học Huế; tốt nghiệp năm 1923 với Diplôme hạng ưu.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1923 – 1926</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Phân công dạy học tại trường Tiểu học Nha Trang. Ngoài giờ, dạy chữ cho công nhân và dân nghèo. Hoạt động giáo dục nhân đạo này được nhiều trí thức trẻ khác tán đồng.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1926 – 1928</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Giữa 1926, bị Ủy viên công sứ Pháp P. Bréda sa thải và trục xuất khỏi Nha Trang vì hoạt động cách mạng. Tháng 8 năm 1926, dạy học tại trường Cao Xuân Dục ở Vinh. Tháng 3 năm 1927, chuyển vào Sài Gòn hoạt động tuyên truyền cách mạng. Tháng 1 năm 1928, bị sa thải khỏi An Nam học đường.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1928 – 1929</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Tiếp tục dạy học và tuyên truyền cách mạng ở Bà Rịa, Biên Hòa, Sài Gòn, Gia Định. Tháng 7 năm 1928, ra Bắc liên lạc với Việt Nam Thanh niên Cách mạng Đồng chí Hội. Tháng 12 năm 1928, được cử sang Quảng Châu để tham gia khóa huấn luyện của Việt Nam Thanh niên Cách mạng Đồng chí Hội.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 5 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1929 – 1934</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Ngày 19 tháng 7 năm 1929, sang Liên Xô học trường Đại học Lao động Cộng sản Phương Đông của Quốc tế Cộng sản. Ấn tượng mạnh với tư tưởng của Nguyễn Ái Quốc. Tháng 4 năm 1934, tốt nghiệp khóa học. Trên đường trở về nước, bị Pháp bắt và bị trục xuất sang Bỉ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 6 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1935 – 1936</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Tháng 3 năm 1935, tại Đại hội I của Đảng ở Ma Cao, được bầu vào Ban Chấp hành Trung ương và cử vào cương vị Bí thư Ban Chỉ huy hải ngoại. Tháng 7 năm 1936, Ban Chỉ huy Hải ngoại họp Hội nghị lần thứ nhất, Ban Chấp hành Trung ương cử ông về nước để lập lại Trung ương cấp ủy.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 7 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1936 – 1938</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Từ ngày 26 tháng 7 năm 1936, giữ chức Tổng Bí thư Đảng Cộng sản Đông Dương. Trực tiếp chỉ đạo báo L'Avant garde (Tiền phong) (1937) và Dân chúng (1938). Tháng 9-10 năm 1937, Hội nghị Trung ương tại Bà Điểm do ông báo cáo. Ngày 30 tháng 3 năm 1938, thôi giữ chức Tổng bí thư nhưng vẫn tham gia Thường vụ Trung ương.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 8 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1938 – 1941</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Ngày 1 tháng 5 năm 1938, bị bắt ở Sài Gòn. Bị trục xuất khỏi Nam Kỳ và quản thúc ở quê. Ngày 30 tháng 3 năm 1940, bị bắt lại. Ngày 25 tháng 10 năm 1940, xét xử 5 năm tù giam. Ngày 25 tháng 3 năm 1941, bị đổi thành án tử hình vì "chịu trách nhiệm tinh thần về cuộc khởi nghĩa Nam Kỳ".</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 9 -->
+                        <div class="timeline-item fade-in-section">
+                            <div class="timeline-content">
+                                <h4 class="font-black text-lg text-primary mb-2">1941</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Ngày 28 tháng 8 năm 1941, Hà Huy Tập bị thực dân Pháp xử bắn cùng với một số người khác tại Sở Rác (nay là bệnh viện Hóc Môn), Sài Gòn. Ông hưởng thọ 35 tuổi, để lại một di sản vĩ đại về lý luận, tổ chức và đấu tranh cách mạng cho dân tộc Việt Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== REVOLUTIONARY ACTIVITIES SECTION ===== -->
+        <section id="revolutionary" class="section-padding px-6 bg-gray-light dark:bg-gray-dark">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-fire"></i> Hoạt động cách mạng
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Con Đường <span class="text-primary">Đấu Tranh Cách Mạng</span>
+                    </h2>
+                </div>
+
+                <!-- Revolutionary Journey Grid -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16 fade-in-section">
+                    
+                    <!-- Phase 1 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-black text-gray-900 dark:text-white">Từ Giáo Viên Đến Nhà Cách Mạng (1923–1928)</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">Bắt đầu từ công việc giáo viên, Hà Huy Tập dần chuyển hướng sang hoạt động cách mạng. Năm 1926, bị thực dân Pháp sa thải vì hoạt động cách mạng. Ông được các trí thức trẻ giới thiệu tham gia Hội Phục Việt, sau này hình thành nên Tân Việt Cách mạng Đảng. Tinh thần yêu nước và muốn cải biến xã hội của ông ngày càng rõ nét.</p>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-dove"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-black text-gray-900 dark:text-white">Việt Nam Thanh Niên & Liên Xô (1928–1934)</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">Năm 1928, liên lạc với Việt Nam Thanh niên Cách mạng Đồng chí Hội. Tháng 12 năm 1928, được cử sang Quảng Châu huấn luyện. Ấn tượng mạnh với tư tưởng Nguyễn Ái Quốc, ông tích cực hoạt động. Ngày 19 tháng 7 năm 1929, sang Liên Xô học tại trường Đại học Lao động Cộng sản Phương Đông của Quốc tế Cộng sản. Tôi luyện tư tưởng cách mạng khoa học.</p>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-black text-gray-900 dark:text-white">Ban Chỉ Huy Hải Ngoại (1934–1936)</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">Tháng 4 năm 1934, tốt nghiệp khóa học. Trên đường trở về nước bị bắt và trục xuất. Được Quốc tế Cộng sản chỉ định tham gia Ban Chỉ huy Hải ngoại của Đảng Cộng sản Đông Dương dưới sự lãnh đạo của Lê Hồng Phong. Tham dự các Hội nghị đặc biệt của Đảng, góp phần định hướng chính sách cách mạng.</p>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-black text-gray-900 dark:text-white">Tổng Bí Thư (1936–1938)</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">Được cử về nước để lập lại Trung ương cấp ủy. Từ ngày 26 tháng 7 năm 1936, giữ chức Tổng Bí thư Đảng Cộng sản Đông Dương. Trực tiếp chỉ đạo báo Tiền phong (1937) và Dân chúng (1938). Là lãnh đạo cách mạng có tầm nhìn và lý luận sâu sắc.</p>
+                    </div>
+
+                </div>
+
+                <!-- Additional context -->
+                <div class="bg-white dark:bg-gray-dark rounded-2xl shadow-soft p-8 md:p-12 fade-in-section">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-6 serif-font">Tổ Chức Đảng & Tuyên Truyền</h3>
+                    <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p>Hà Huy Tập là một nhà cách mạng có tầm nhìn và kỹ năng tổ chức xuất sắc. Ông nhận thức rõ rệt về nhu cầu thống nhất các tổ chức chống thực dân Pháp vào một khối lực lượng duy nhất. Tháng 7 năm 1928, ông đi Bắc để liên lạc với Việt Nam Thanh niên Cách mạng Đồng chí Hội nhằm mục tiêu này.</p>
+
+                        <p>Khi giữ chức Tổng Bí thư từ năm 1936 đến 1938, Hà Huy Tập đã trực tiếp lãnh đạo các hoạt động báo chí cách mạng, bao gồm báo L'Avant garde (Tiền phong) và báo Dân chúng, những cơ quan thông tấn quan trọng của Đảng ở Nam Kỳ. Các bài báo do ông chỉ đạo mang tính kích thích, thức tỉnh tinh thần yêu nước của các tầng lớp nhân dân.</p>
+
+                        <p>Ông cũng chủ trì các Hội nghị Trung ương quan trọng của Đảng, chẳng hạn như Hội nghị Bà Điểm (tháng 9-10 năm 1937) và Hội nghị lần thứ 3 Ban Chấp hành Trung ương Đảng (ngày 30 tháng 3 năm 1938). Qua những Hội nghị này, ông báo cáo về tình hình lãnh đạo của Đảng và định hướng công tác tiếp theo, thể hiện vai trò là một lãnh đạo chiến lược của phong trào cách mạng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ROLE & CONTRIBUTION SECTION ===== -->
+        <section id="role" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-certificate"></i> Vai trò & Đóng góp
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Tổng Bí Thư <span class="text-primary">& Lý Luận Gia Cách Mạng</span>
+                    </h2>
+                </div>
+
+                <!-- Contributions Cards -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16 fade-in-section">
+                    
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-scroll"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Công Trình Lý Luận</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Sáng tác cuốn "Sơ thảo lịch sử phong trào cộng sản Đông Dương" bằng tiếng Pháp, 291 trang (1933), dưới bút danh Hồng Thế Công (H-T-C). Đây là công trình chủ yếu khảo cứu phong trào cộng sản trong bối cảnh toàn Đông Dương, có giá trị lịch sử sâu sắc.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Báo Chí Cách Mạng</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Trực tiếp chỉ đạo báo L'Avant garde (Tiền phong) (1937) và báo Dân chúng (1938). Những tờ báo này là cơ quan ngôn luận công khai của Đảng, giúp nâng cao nhận thức chính trị của nhân dân Nam Kỳ.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-diagram-project"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Tổ Chức Đảng</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Là Tổng Bí thư, ông chịu trách nhiệm xây dựng và tổ chức lại Trung ương cấp ủy của Đảng sau khi về nước. Lãnh đạo các Hội nghị Trung ương quan trọng định hướng chính sách cách mạng.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-primary/10 text-primary text-xl">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-900 dark:text-white mb-3">Tư Tưởng Cách Mạng</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Ủng hộ tư tưởng của Nguyễn Ái Quốc và Chủ nghĩa Mác-xít. Sau khi học tập ở Liên Xô, ông trở thành một lý luận gia cách mạng có tư duy sâu sắc và bác học.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Detailed Works -->
+                <div class="bg-white dark:bg-gray-dark rounded-2xl shadow-soft p-8 md:p-12 fade-in-section">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-8 serif-font">Các Tác Phẩm Tiêu Biểu</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="pb-6 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-3 serif-font">Sơ Thảo Lịch Sử Phong Trào Cộng Sản Đông Dương (1933)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                Công trình lớn nhất, 291 trang, viết bằng tiếng Pháp dưới bút danh Hồng Thế Công (H-T-C). Đây là một khảo cứu sâu sắc về lịch sử phong trào cộng sản từ thành lập cho đến thời điểm viết, có giá trị lịch sử và lý luận to lớn. Công trình này phản ánh tư duy lý luận Mác-xít của Hà Huy Tập.
+                            </p>
+                        </div>
+
+                        <div class="pb-6 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-3 serif-font">"Trôtxkit Và Phản Cách Mạng" (1933)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                Công trình phân tích tư tưởng Trôtxki và phê phán tính phản cách mạng của Trôtxkianism. Viết dưới bút danh Thanh Hương. Công trình này thể hiện sự hiểu biết sâu sắc của ông về lý luận cách mạng Mác-xít-Lênin.
+                            </p>
+                        </div>
+
+                        <div class="pb-6 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
+                            <h4 class="text-2xl font-bold text-primary mb-3 serif-font">Các Bài Viết & Văn Kiện (1929–1938)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                Toàn bộ tác phẩm của Hà Huy Tập gồm 14 bài viết và văn kiện, 20 tác phẩm sách báo:
+                            </p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside">
+                                <li>"Lịch sử của Tân Việt cách mệnh Đảng" (1929)</li>
+                                <li>"Hoạt động của Đảng Cộng sản Đông Dương" (1931)</li>
+                                <li>"Đảng Cộng sản Đông Dương đứng trước chủ nghĩa cải lương quốc gia" (1932)</li>
+                                <li>"Thư gửi Ban biên tập Tạp chí Bôn-sơ-vích" (1932)</li>
+                                <li>"Kỷ niệm ba năm ngày Đảng Cộng sản Đông Dương thống nhất" (1933)</li>
+                                <li>Và nhiều công trình khác về chính trị, lý luận cách mạng</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <span class="font-bold text-primary">Lưu ý học thuật:</span> Hà Huy Tập sử dụng nhiều bút danh trong sáng tác như Hồng Thế Công, Thanh Hương, Xinhikin, Xinhitrơkin, Sinitchkin, Giodep Marat, Hồng Quy Vít, Nhỏ. Nhiều bút danh được lấy từ tên con gái mình để cải hoán hoặc liên tưởng. Các tác phẩm của ông mang tính học thuật cao, sâu sắc về lý luận Mác-xít-Lênin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SACRIFICE & MARTYRDOM SECTION ===== -->
+        <section id="sacrifice" class="section-padding px-6 bg-gray-light dark:bg-gray-dark">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-cross"></i> Hy sinh
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Bị Bắt, Xét Xử <span class="text-primary">& Hy Sinh</span>
+                    </h2>
+                </div>
+
+                <!-- Arrest & Trial Timeline -->
+                <div class="bg-white dark:bg-gray-dark rounded-2xl shadow-soft p-8 md:p-12 mb-16 fade-in-section">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-8 serif-font">Hành Trình Bị Bắt & Xét Xử</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 pt-2">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <span class="text-primary font-bold text-lg">1938</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Bị Bắt Lần Đầu (1 tháng 5 năm 1938)</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Hà Huy Tập bị bắt do có chỉ điểm trong khi tham dự ngày Quốc tế Lao động tại Sài Gòn. Bị trục xuất khỏi Nam Kỳ và đưa về quê chịu quản thúc. Dù bị quản thúc, ông vẫn tiếp tục hoạt động cách mạng một cách kín đáo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 pt-2">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <span class="text-primary font-bold text-lg">1940</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Bị Bắt Lần Thứ Hai (30 tháng 3 năm 1940)</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Hà Huy Tập bị bắt lại và đưa vào Nam Kỳ. Ngày 25 tháng 10 năm 1940, tòa án thực dân Pháp xét xử ông và tuyên án 5 năm tù giam. Tại phiên tòa này, ông được một luật sư trẻ tên là Nguyễn Văn Huyền (người sau này giữ chức Phó tổng thống Việt Nam Cộng hòa) làm luật sư biện hộ.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 pt-2">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <span class="text-primary font-bold text-lg">1941</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Đổi Thành Án Tử Hình (25 tháng 3 năm 1941)</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Ngày 25 tháng 3 năm 1941, chính quyền Pháp đổi bản án của Hà Huy Tập thành án tử hình vì "chịu trách nhiệm tinh thần về cuộc khởi nghĩa Nam Kỳ". Cùng bị kết án tử hình với ông còn có Nguyễn Văn Cừ (người kế nhiệm ông làm Tổng Bí thư) và những cách mạng khác. Quyết định đổi án này phản ánh sợ hãi của thực dân Pháp đối với vai trò lãnh đạo cách mạng của Hà Huy Tập.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 pt-2">
+                                <div class="w-16 h-16 rounded-full bg-heritage-red/10 flex items-center justify-center border-2 border-heritage-red">
+                                    <span class="text-heritage-red font-bold text-lg">⚰</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Hy Sinh Anh Dũng (28 tháng 8 năm 1941)</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Ngày 28 tháng 8 năm 1941, Hà Huy Tập bị chính quyền Pháp xử bắn cùng với một số người khác tại Sở Rác (nay là bệnh viện Hóc Môn), Sài Gòn. Ông hưởng thọ 35 tuổi, nhưng để lại một di sản vĩ đại về lý luận, tổ chức và đấu tranh cách mạng cho dân tộc Việt Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discovery of Remains -->
+                <div class="bg-primary/5 rounded-2xl p-8 md:p-12 fade-in-section border border-primary/20">
+                    <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-6 serif-font">Tìm Thấy Hài Cốt (2009)</h3>
+                    <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p>Sau hơn 60 năm, hài cốt của Hà Huy Tập được phát hiện vào ngày 22 tháng 11 năm 2009 tại khu vực Bến Tắm Ngựa, thuộc xã Xuân Thới Thượng, huyện Hóc Môn, Thành phố Hồ Chí Minh. Đây là một sự kiện có ý nghĩa lịch sử to lớn, cho phép dân tộc Việt Nam tưởng nhớ và tôn vinh những công lao của vị Tổng Bí thư anh dũng.</p>
+
+                        <p>Ngày 1 tháng 12 năm 2009, lễ viếng và truy điệu linh cữu ông được tổ chức tại Hội trường Thống Nhất Thành phố Hồ Chí Minh. Sự kiện này có sự tham dự của nhiều quan chức lãnh đạo của Đảng, Nhà nước và hàng trăm đoàn đại biểu từ các nơi. Sau đó, linh cữu ông được đưa về an táng tại huyện Cẩm Xuyên, tỉnh Hà Tĩnh – nơi sinh ra của ông.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LEGACY SECTION ===== -->
+        <section id="legacy" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-crown"></i> Di sản
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 serif-font">
+                        Giá Trị Lịch Sử <span class="text-primary">& Ghi Nhận</span>
+                    </h2>
+                </div>
+
+                <!-- Legacy Cards -->
+                <div class="grid md:grid-cols-2 gap-10 mb-16 fade-in-section">
+                    
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-primary">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Lý Luận Cách Mạng</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Hà Huy Tập là một nhà lý luận Mác-xít đầu tiên của Việt Nam, với các công trình sâu sắc về lịch sử phong trào cộng sản. Các tác phẩm của ông đóng góp to lớn vào việc nâng cao trình độ lý luận của các cấp cán bộ Đảng, giúp tạo nên nền tảng tư tưởng vững chắc cho phong trào cách mạng.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Tư Tưởng Cách Mạng</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-accent-gold">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Tổ Chức Đảng</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Là Tổng Bí thư, Hà Huy Tập đã thể hiện khả năng tổ chức xuất sắc trong việc xây dựng và tổ chức lại Trung ương cấp ủy. Ông chủ trì các Hội nghị Trung ương quan trọng, định hướng chính sách cách mạng và phát triển khả năng lãnh đạo của Đảng.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <span>Tổ Chức & Lãnh Đạo</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-primary">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Báo Chí Cách Mạng</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Chỉ đạo báo Tiền phong và báo Dân chúng, những cơ quan ngôn luận công khai quan trọng của Đảng. Những tờ báo này giúp nâng cao nhận thức chính trị, thức tỉnh tinh thần yêu nước của nhân dân Nam Kỳ, đóng vai trò then chốt trong phong trào cách mạng.
+                        </p>
+                        <div class="flex items-center gap-2 text-primary font-semibold">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <span>Báo Chí & Tuyên Truyền</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-dark rounded-2xl p-8 shadow-soft hover-lift border-l-4 border-accent-gold">
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white mb-4">Di Sản Nhân Vật Lịch Sử</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Tên Hà Huy Tập được đặt cho nhiều con đường, phố ở các thành phố lớn: Hà Nội, Thành phố Hồ Chí Minh, Đồng Hới, Nam Định, Vinh, Đà Nẵng, Quy Nhơn, Hà Tĩnh và Đồng Nai. Các đường phố mang tên ông là lời tưởng nhớ vĩnh viễn về sự hy sinh và đóng góp của ông.
+                        </p>
+                        <div class="flex items-center gap-2 text-accent-gold font-semibold">
+                            <i class="fa-solid fa-road"></i>
+                            <span>Kỷ Niệm Địa Danh</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Historical Significance -->
+                <div class="bg-gradient-to-r from-primary/10 to-accent-gold/10 rounded-2xl p-12 fade-in-section border border-primary/20">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-6 serif-font">Ý Nghĩa Lịch Sử</h3>
+                    <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p>Hà Huy Tập là một biểu tượng của sự cam kết vô điều kiện với lý tưởng cách mạng và độc lập tự do của dân tộc Việt Nam. Mặc dù chỉ sống 35 năm, nhưng ông đã để lại một di sản vĩ đại về lý luận, tổ chức và đấu tranh cách mạng.</p>
+
+                        <div class="history-blockquote">
+                            <p class="font-bold text-primary mb-2">Những đóng góp chính của Hà Huy Tập:</p>
+                            <ul class="space-y-2 ml-4">
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-check text-primary flex-shrink-0 mt-1"></i>
+                                    <span>Là một trong những nhà lý luận Mác-xít đầu tiên, có công trình khảo cứu lịch sử phong trào cộng sản Đông Dương</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-check text-primary flex-shrink-0 mt-1"></i>
+                                    <span>Tổ chức lại Trung ương cấp ủy Đảng sau khi về nước từ Liên Xô</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-check text-primary flex-shrink-0 mt-1"></i>
+                                    <span>Chỉ đạo báo chí cách mạng, góp phần nâng cao nhận thức chính trị của nhân dân</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-check text-primary flex-shrink-0 mt-1"></i>
+                                    <span>Thể hiện tinh thần anh dũng, dũng cảm khi đối mặt với xét xử và hành quyết của thực dân Pháp</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p>Hà Huy Tập không chỉ là Tổng Bí thư của Đảng Cộng sản Đông Dương, mà còn là một nhân vật biểu tượng của sự hy sinh và cam kết với tổ quốc. Ông thể hiện sự kết hợp hoàn hảo giữa lý luận Mác-xít cách mạng và tấm lòng yêu nước sâu sắc. Cả cuộc đời ông – từ ngày làm giáo viên yêu nước, qua những năm học tập tại Liên Xô, lên nắm chức Tổng Bí thư, cho đến khi hy sinh anh dũng – đều là một bài học về tình yêu nước, lý tưởng cách mạng và sự cam kết không lay động với phong trào giải phóng dân tộc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark text-white pt-16 pb-8 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">CAN LỘC</h2>
+                            <p class="text-xs text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang thông tin văn hóa - lịch sử huyện Can Lộc, tỉnh Hà Tĩnh. Dựa trên dữ liệu từ Wikipedia và cổng thông tin địa phương.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                           <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#introduction">
+                           <i class="fa-solid fa-link"></i>
+                            Giới thiệu chung
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#landmarks">
+                            <i class="fa-solid fa-link"></i>
+                            Danh lam thắng cảnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#personalities">
+                            <i class="fa-solid fa-link"></i>
+                            Danh nhân
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-link"></i>
+                            Cổng thông tin huyện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Địa danh tiêu biểu</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Khu di tích Đồng Lộc
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                           <i class="fa-solid fa-map-pin"></i>
+                            Núi Hồng Lĩnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Sông Nghèn
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Làng Kế Thiện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Xã Can Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">canloc.hatinh.gov.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © Trang Web Được Xây Dựng Nhằm Mục Đích Tham Khảo Văn Hóa - Lịch Sử Huyện Can Lộc.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in sections
+        document.querySelectorAll('.fade-in-section').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-background-dark/95 z-[9999] flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center mb-6">
+                <div class="relative w-16 h-16">
+                    <div class="absolute inset-0 rounded-full border-4 border-primary/20"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary border-r-primary animate-spin" style="animation: spin 1s linear infinite;"></div>
+                </div>
+            </div>
+            <p class="text-white font-bold tracking-widest uppercase text-sm">Đang tải...</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        #loading-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        #loading-overlay.show {
+            opacity: 1;
+        }
+    </style>
+
+    <script src="../homepage/smooth-scroll.js"></script>
+
+    <!-- Chatbot Widget -->
+    <link rel="stylesheet" href="../shared/chatbot.css">
+
+    <div class="chatbox">
+        <div class="chatbox__button">
+            <button class="send__button">
+                <span class="chat-icon">💬</span>
+            </button>
+        </div>
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__header-dragarea">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="chatbox__content--header">
+                        <div class="chatbox__heading--header">Bi Biết Tuốt</div>
+                        <div class="chatbox__description--header">Trợ lý ảo Can Lộc</div>
+                        <div class="chatbox__status">
+                            <span class="status-dot"></span>
+                            <span style="color: white; font-size: 0.8rem;">Trực tuyến</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbox__controls">
+                    <button class="control-btn minimize-btn" title="Thu nhỏ">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="control-btn maximize-btn" title="Phóng to">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                    <button class="control-btn close-btn" title="Đóng">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div class="messages-container"></div>
+            </div>
+            <div class="chatbox__footer">
+                <div class="input-container">
+                    <input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+                    <button class="chatbox__send--footer send__button">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/app.js"></script>
+
+    <!-- Loading overlay script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+
+            // Bắt tất cả link
+            document.querySelectorAll('a[href*=".html"], a[href*="dongloc"], a[href*="huongtich"], a[href*="vidam"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Không show loading nếu là anchor link
+                    if (!this.href.includes('#')) {
+                        if (loadingOverlay) {
+                            loadingOverlay.classList.add('show');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when clicked
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body></html>

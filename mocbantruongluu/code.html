@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trang Di Sản Mộc Bản Trường Lưu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41111",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "gold": "#C5A059",
+                        "gold-dim": "#8c7038",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal scrolling areas */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* UNESCO Heritage Gallery */
+        .unesco-gallery {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 2rem;
+        }
+        .unesco-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            max-width: 300px;
+            height: auto;
+            cursor: pointer;
+        }
+        .unesco-gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.95);
+        }
+        .unesco-gallery-item:hover {
+            box-shadow: 0 8px 24px rgba(197, 160, 89, 0.3);
+            border-color: rgba(197, 160, 89, 0.4);
+        }
+        .unesco-gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        @media (max-width: 768px) {
+            .unesco-gallery {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .unesco-gallery-item {
+                max-width: 250px;
+            }
+        }
+        /* Image Lightbox Modal */
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+        .image-lightbox.active {
+            display: flex;
+        }
+        .image-lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: lightboxZoom 0.3s ease-out;
+        }
+        @keyframes lightboxZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .image-lightbox-img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 0.5rem;
+            display: block;
+        }
+        .image-lightbox-close {
+            position: absolute;
+            top: -2.5rem;
+            right: 0;
+            background: rgba(212, 17, 17, 0.8);
+            border: none;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+        .image-lightbox-close:hover {
+            background: #d41111;
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .image-lightbox-content {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+            .image-lightbox-close {
+                top: 0.5rem;
+                right: 0.5rem;
+                width: 2rem;
+                height: 2rem;
+                font-size: 1.2rem;
+            }
+        }
+        /* Scholar Profile Layout */
+        .scholar-profile {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .scholar-profile-image {
+            flex-shrink: 0;
+            width: 280px;
+            min-width: 280px;
+        }
+        .scholar-profile-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .scholar-profile-content h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #C5A059;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        .scholar-profile-content p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            .scholar-profile {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .scholar-profile-image {
+                width: 100%;
+                max-width: 280px;
+            }
+            .scholar-profile-content {
+                width: 100%;
+                text-align: left;
+            }
+        }
+        /* Video Modal Popup */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal-content {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 90vw;
+            width: 100%;
+            max-height: 90vh;
+            overflow: auto;
+            animation: modalSlideUp 0.3s ease-out;
+        }
+        @keyframes modalSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .video-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(212, 17, 17, 0.8);
+            border: none;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+        .video-modal-close:hover {
+            background: #d41111;
+            transform: scale(1.1);
+        }
+        .video-modal-body {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-modal-body video,
+        .video-modal-body iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .video-modal-content {
+                max-width: 95vw;
+                max-height: 80vh;
+            }
+            .video-modal-close {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1.2rem;
+            }
+        }
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #c62828;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+            border: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: #8e0000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../homepage/codecanloc.html" class="flex items-center gap-3" style="text-decoration:none;color:inherit;pointer-events:auto;z-index:50" onclick="window.location.href='../homepage/codecanloc.html'">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#introduction" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#tradition" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <a href="dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+<!-- Hero Section -->
+<section class="relative flex min-h-screen items-center justify-center pt-20">
+<!-- Background with Overlay -->
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-fixed" data-alt="Close up texture of ancient asian wooden carvings and textures" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSwWuJQPooIfPz8-R5yQfB9uhY72ZItkB3BthwA6sdr7sVAaGvbSMpNzO7_hXiosPtBCssI6-rFjpZOrGI4R0QRFiCmEocWh3F6AZBsmhOsq3Kaih3hvMsUGPfyXz_f8aBA35L-0Z0IEzK22kzEjsVWDv7IW1gZZ5E3XZTQUu5ehdKCWGrm55Gt0IEk7izXlBjF2AWxmPxGrlc0G9DHCTgIS_FwVnE9GrMmt-FyzQ8xhGoC1jdm8lt7w9vZDv7MAtv2UWwHwByhn9H');">
+</div>
+<div class="absolute inset-0 z-0 bg-gradient-to-b from-[#221010]/80 via-[#221010]/60 to-[#221010]"></div>
+<div class="relative z-10 container mx-auto px-6 text-center">
+<div class="mb-6 flex justify-center">
+<span class="inline-block rounded-full border border-gold/30 bg-black/30 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
+                    Di Sản Ký Ức Thế Giới UNESCO
+                 </span>
+</div>
+<h1 class="mb-6 font-display text-5xl font-black uppercase leading-tight tracking-tight text-white sm:text-7xl lg:text-8xl drop-shadow-2xl">
+                Mộc Bản <br class="md:hidden"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#f0e6d2]">Trường Lưu</span>
+</h1>
+<p class="mx-auto max-w-2xl text-lg font-light leading-relaxed text-gray-200 md:text-xl">
+                Bảo tồn mực vàng của dòng họ Nguyễn Huy. Minh chứng cho truyền thống học vấn và di sản văn hóa của Việt Nam thế kỷ 18.
+            </p>
+<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+<button class="flex h-12 w-full min-w-[160px] items-center justify-center gap-2 rounded border border-white/20 bg-white/5 px-8 text-sm font-bold uppercase tracking-wider text-white backdrop-blur-sm hover:bg-white/10 transition-colors sm:w-auto" onclick="openVideoModal()">
+<span class="material-symbols-outlined text-lg">play_circle</span>
+                    Xem tư liệu
+                </button>
+</div>
+</div>
+<!-- Decorative bottom fade -->
+<div class="absolute bottom-0 h-32 w-full bg-gradient-to-t from-background-dark to-transparent"></div>
+</section>
+<!-- Introduction Section -->
+<section class="bg-background-dark py-20 lg:py-32" id="intro">
+<div class="container mx-auto px-6 lg:px-8">
+<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-gold/20 opacity-50 blur-lg rounded-xl transition-opacity duration-500 group-hover:opacity-75"></div>
+<div class="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-white/10 shadow-2xl">
+<img alt="Detail of ancient Han Nom script on aged paper" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="disan.jpg"/>
+</div>
+<div class="absolute -bottom-6 -right-6 hidden lg:block">
+<div class="flex size-32 items-center justify-center rounded-full border border-gold/20 bg-[#2a1515] p-2 text-center text-xs font-medium uppercase leading-tight text-gold shadow-xl backdrop-blur-sm">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-2xl">edit_document</span>
+<span>2000+<br/>Blocks</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-8">
+<div>
+<h2 class="text-gold mb-2 text-sm font-bold uppercase tracking-widest">Di Sản Cần Lộc</h2>
+<h3 class="text-3xl font-bold leading-tight text-white lg:text-5xl">Nơi Mực Gặp Vĩnh Cửu</h3>
+</div>
+<div class="space-y-6 text-gray-300 font-light leading-relaxed">
+<p>
+                            Nằm trong lòng tỉnh Hà Tĩnh, các mộc bản Trường Lưu đại diện cho sự giao thoa độc đáo của giáo dục, văn học và truyền thống gia tộc. Được tạo ra từ thế kỷ 18 đến 20 bởi các học giả của dòng họ Nguyễn Huy, những khối này không chỉ là công cụ in ấn mà còn là thuyền chở tri thức cho nhiều thế hệ.
+                        </p>
+<p>
+                            Bộ sưu tập bao gồm các văn bản về địa lý, y học và kinh điển Nho giáo, được khắc tinh xảo bằng chữ Hán Nôm. Mỗi mộc bản là một kiệt tác của kỹ năng thủ công, bảo tồn không chỉ các từ ngữ mà còn tinh thần của một dòng học vấn đã hình thành nên bộ mặt trí tuệ của Việt Nam.
+                        </p>
+</div>
+<div class="flex gap-8 pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-3xl font-bold text-white">Thế Kỷ 18</span>
+<span class="text-sm text-gray-400">Khởi Nguyên</span>
+</div>
+<div class="w-px bg-white/10"></div>
+<div class="flex flex-col gap-1">
+<span class="text-3xl font-bold text-white">3</span>
+<span class="text-sm text-gray-400">Danh Hiệu UNESCO</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Historical Value Section (Features) -->
+<section class="bg-[#1a0c0c] py-24 relative overflow-hidden" id="history">
+<!-- Background Pattern -->
+<div class="absolute top-0 right-0 -mr-20 -mt-20 size-96 rounded-full bg-primary/5 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 size-96 rounded-full bg-gold/5 blur-3xl"></div>
+<div class="container mx-auto px-6 lg:px-8 relative z-10">
+<div class="mb-16 max-w-2xl">
+<h2 class="text-3xl font-bold text-white lg:text-4xl">Ý Nghĩa Lịch Sử</h2>
+<div class="mt-4 h-1 w-20 rounded bg-primary"></div>
+<p class="mt-6 text-gray-400">Các mộc bản Trường Lưu không chỉ là những di vật; chúng là những người tham gia tích cực trong việc truyền tải văn hóa, giáo dục và các giá trị gia tộc qua nhiều thế kỷ.</p>
+</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden rounded-lg border border-gold/20 bg-[#2a1515] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]">
+<div class="mb-6 inline-flex size-14 items-center justify-center rounded-lg bg-primary/10 text-gold group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-white group-hover:text-gold transition-colors">Thành Thạo Hán Nôm</h3>
+<p class="text-sm leading-relaxed text-gray-400">Bảo tồn các chữ viết độc đáo và các tác phẩm văn học từ thế kỷ 18, cung cấp những hiểu biết vô giá về sự tiến hóa của hệ thống chữ viết Việt Nam.</p>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden rounded-lg border border-gold/20 bg-[#2a1515] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]">
+<div class="mb-6 inline-flex size-14 items-center justify-center rounded-lg bg-primary/10 text-gold group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-white group-hover:text-gold transition-colors">Tác Động Giáo Dục</h3>
+<p class="text-sm leading-relaxed text-gray-400">Được sử dụng để giảng dạy và phổ biến kiến thức qua nhiều thế kỷ tại Trường Phúc Giang, một trung tâm giáo dục nổi bật của khu vực.</p>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden rounded-lg border border-gold/20 bg-[#2a1515] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]">
+<div class="mb-6 inline-flex size-14 items-center justify-center rounded-lg bg-primary/10 text-gold group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">diversity_3</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-white group-hover:text-gold transition-colors">Truyền Thống Dòng Họ</h3>
+<p class="text-sm leading-relaxed text-gray-400">Biểu tượng của di sản học thuật danh giá của gia tộc Nguyễn Huy, phản ánh giá trị Nho giáo về "tu thân để quản gia tộc".</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Scholars Section -->
+<section class="bg-background-dark py-24" id="clan">
+<div class="container mx-auto px-6 lg:px-8">
+<div class="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+<div>
+<h2 class="text-3xl font-bold text-white lg:text-4xl">Các Học Giả Nguyễn Huy</h2>
+<p class="mt-4 max-w-lg text-gray-400">Những bộ óc xuất sắc đứng sau các mộc bản, những người mà sự tận tâm với học vấn đã đưa dòng họ lên danh tiếng toàn quốc.</p>
+</div>
+<a class="group flex items-center gap-2 text-sm font-bold text-gold hover:text-white transition-colors" href="#">
+                    Xem Dòng Dõi Đầy Đủ 
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<!-- Scholars Grid -->
+<div class="scholar-profile">
+<div class="scholar-profile-image">
+<!-- Scholar 1 Image -->
+<div class="group">
+<div class="relative mb-4 aspect-[3/4] overflow-hidden rounded-lg bg-gray-800">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="text-xs uppercase tracking-widest text-gold mb-1">Nhà Tầm Nhìn Vĩ Đại</p>
+<h3 class="text-2xl font-bold text-white">Nguyễn Huy Oanh</h3>
+<p class="text-sm text-gray-300">1713 - 1789</p>
+</div>
+<img alt="Portrait representation of an 18th century scholar in traditional robes" class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0" src="oanh.png"/>
+</div>
+</div>
+</div>
+<div class="scholar-profile-content">
+<h3>NGUYỄN HUY OÁNH (1722–1789)</h3>
+<p>Nguyễn Huy Oánh, tự Thư Hiên, hiệu Thạch Đình, quê ở làng Trường Lưu (nay thuộc xã Trường Lộc, huyện Can Lộc, Hà Tĩnh), là danh nhân lớn về giáo dục, văn hóa và khoa bảng của Việt Nam thế kỷ XVIII.</p>
+<p>Năm 1748, ông đỗ Thám hoa (Đình nguyên, đệ nhất giáp Tiến sĩ cập đệ), trở thành vị khoa bảng đầu tiên và tiêu biểu của dòng họ Nguyễn Huy ở Trường Lưu.</p>
+<p>Ông từng giữ nhiều chức vụ quan trọng trong triều đình như: Thị giảng, Tả thị lang bộ Lại, Đông các Đại học sĩ, Đô ngự sử, Chánh sứ sang nhà Thanh, sau thăng Thượng thư bộ Hộ, tước Thạc Lĩnh bá.</p>
+<p>Khi về trí sĩ tại quê nhà, ông sáng lập Thư viện Phúc Giang và Trường Lưu học hiệu, một trung tâm giáo dục lớn, đào tạo hơn 30 Tiến sĩ và hàng trăm Hương cống, Cử nhân.</p>
+<p>Ông còn lập ruộng học để khuyến khích học trò, góp phần đưa Trường Lưu trở thành vùng văn hiến nổi tiếng xứ Hồng Lam.</p>
+<p>Nguyễn Huy Oánh là anh của Nguyễn Huy Quýnh, cha của Nguyễn Huy Tự – đều là những danh nhân tiêu biểu.</p>
+<p>Sau khi mất, ông được nhân dân lập đền thờ "cụ Thám"; nhà thờ Nguyễn Huy Oánh hiện được xếp hạng Di tích lịch sử – văn hóa cấp quốc gia.</p>
+</div>
+</div>
+
+<!-- Other Scholars Grid -->
+<div class="scholar-profile">
+<div class="scholar-profile-image">
+<!-- Scholar 2 Image -->
+<div class="group">
+<div class="relative mb-4 aspect-[3/4] overflow-hidden rounded-lg bg-gray-800">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="text-xs uppercase tracking-widest text-gold mb-1">Nhà Giáo Biên Soạn</p>
+<h3 class="text-2xl font-bold text-white">Nguyễn Huy Cự</h3>
+<p class="text-sm text-gray-300">Thế kỷ XVIII</p>
+</div>
+<img alt="Artistic depiction of a Vietnamese scholar reading a scroll" class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0" src="cu.png"/>
+</div>
+</div>
+</div>
+<div class="scholar-profile-content">
+<h3>NGUYỄN HUY CỰ (Thế kỷ XVIII)</h3>
+<p>Nguyễn Huy Cự là nhà nho, nhà giáo và học giả tiêu biểu của dòng họ Nguyễn Huy ở làng Trường Lưu (nay thuộc xã Trường Lộc, huyện Can Lộc, tỉnh Hà Tĩnh). Ông sinh ra và trưởng thành trong một gia đình có truyền thống khoa bảng, là một trong những nhân vật quan trọng góp phần tạo dựng nền tảng học thuật cho Trường học Phúc Giang.</p>
+<p>Nguyễn Huy Cự là một trong những tác giả trực tiếp tham gia biên soạn, viết chữ và tổ chức khắc in các mộc bản của Trường học Phúc Giang.</p>
+<p>Bút tích, chữ viết và ấn triện của ông còn được lưu giữ trên nhiều mộc bản, khẳng định vai trò tác giả và giá trị xác thực của di sản.</p>
+<p>Ông cùng với Nguyễn Huy Oánh và các thành viên trong dòng họ đã chắt lọc tinh hoa Nho giáo, biên soạn các bộ sách giáo khoa phục vụ giảng dạy, góp phần hình thành hệ thống tư liệu giáo dục có giá trị lớn về lịch sử, tư tưởng và văn hóa.</p>
+<p>Các tác phẩm do Nguyễn Huy Cự tham gia biên soạn không chỉ dùng trong phạm vi Trường Lưu mà còn có ảnh hưởng rộng rãi đến hoạt động giáo dục Nho học đương thời, góp phần đào tạo nhiều nhân tài cho đất nước.</p>
+<p>Với đóng góp bền bỉ trong lĩnh vực giáo dục và học thuật, Nguyễn Huy Cự được hậu thế ghi nhận là một trong những trụ cột học thuật của Mộc bản Trường Lưu, góp phần làm rạng danh vùng đất văn hiến Trường Lưu – Hồng Lam.</p>
+</div>
+</div>
+
+
+</section>
+<!-- UNESCO Section -->
+<section class="relative py-24 bg-background-dark" id="unesco">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+<div class="container relative mx-auto px-6 lg:px-8">
+<div class="rounded-2xl border border-gold/30 bg-gradient-to-br from-[#2a1515] to-black p-10 lg:p-16 shadow-[0_0_50px_rgba(197,160,89,0.05)] text-center">
+
+<h2 class="text-3xl font-black uppercase text-white lg:text-5xl">Di Sản Ký Ức Thế Giới UNESCO</h2>
+<p class="mx-auto mt-6 max-w-2xl text-lg text-gold font-medium">Ghi Danh vào Năm 2016 - Khu Vực Châu Á - Thái Bình Dương</p>
+<p class="mx-auto mt-6 max-w-3xl text-gray-400 font-light">
+                    Được ghi nhận vì giá trị to lớn trong việc nghiên cứu lịch sử văn hóa, giáo dục và mối quan hệ xã hội ở Việt Nam thời kỳ 18-20. Các Mộc Bản Trường Lưu đứng như một ngọn hải đăng của di sản lâu dài của Dòng Họ Nguyễn Huy.
+                </p>
+<!-- UNESCO Heritage Images Gallery -->
+<div class="unesco-gallery">
+<div class="unesco-gallery-item" onclick="openImageLightbox('uneso.jpg', 'UNESCO Heritage - Mộc Bản Trường Lưu')">
+<img alt="UNESCO Heritage - Mộc Bản Trường Lưu" src="uneso.jpg"/>
+</div>
+<div class="unesco-gallery-item" onclick="openImageLightbox('uns.jpeg', 'UNESCO Heritage Documentation')">
+<img alt="UNESCO Heritage Documentation" src="uns.jpeg"/>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- Image Lightbox Modal -->
+<div id="imageLightbox" class="image-lightbox">
+<div class="image-lightbox-content">
+<button class="image-lightbox-close" onclick="closeImageLightbox()">✕</button>
+<img id="lightboxImage" class="image-lightbox-img" src="" alt=""/>
+</div>
+</div>
+<!-- Video Modal Popup -->
+<div id="videoModal" class="video-modal">
+<div class="video-modal-content">
+<button class="video-modal-close" onclick="closeVideoModal()">✕</button>
+<div class="video-modal-body">
+<iframe class="w-full h-full" style="min-height: 400px;" src="https://drive.google.com/file/d/13d55_p1RQyeHF8cI7Vu8jkPsYAkemObD/preview" frameborder="0" allow="autoplay"></iframe>
+</div>
+</div>
+</div>
+    <!-- Footer -->
+    <footer class="bg-background-dark text-white pt-16 pb-8 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <span class="material-symbols-outlined text-lg">history_edu</span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">MỘC BẢN TRƯỜNG LƯU</h2>
+                            <p class="text-xs text-gray-400 font-medium">Di sản Ký ức Thế giới UNESCO</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Bảo tồn quá khứ để khai sáng tương lai. Một kho lưu trữ kỹ thuật số dành riêng cho các mộc bản của Dòng Họ Nguyễn Huy.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                           <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="../homepage/codecanloc.html#introduction">
+                           <i class="fa-solid fa-link"></i>
+                            Giới thiệu
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#history">
+                            <i class="fa-solid fa-link"></i>
+                            Lịch sử
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#scholars">
+                            <i class="fa-solid fa-link"></i>
+                            Các học giả
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#unesco">
+                            <i class="fa-solid fa-link"></i>
+                            UNESCO
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Dòng họ Nguyễn Huy</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-user"></i>
+                            Nguyễn Huy Oánh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                           <i class="fa-solid fa-user"></i>
+                            Nguyễn Huy Quỳnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-user"></i>
+                            Nguyễn Huy Củ
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-user"></i>
+                            Di sản gia tộc
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Xã Trường Lưu, Huyện Can Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">035 674 8243</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">mocbantruongluu.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © 2023 Di Sản Dòng Họ Nguyễn Huy. Tất cả các quyền được bảo lưu.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Video Modal JavaScript -->
+<script>
+function openVideoModal() {
+    const modal = document.getElementById('videoModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const video = modal.querySelector('video');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        // Dừng video khi đóng
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    }
+}
+
+// Đóng modal khi click ra ngoài
+document.addEventListener('DOMContentLoaded', function() {
+    const videoModal = document.getElementById('videoModal');
+    const imageLightbox = document.getElementById('imageLightbox');
+    
+    if (videoModal) {
+        videoModal.addEventListener('click', function(event) {
+            if (event.target === videoModal) {
+                closeVideoModal();
+            }
+        });
+    }
+    
+    if (imageLightbox) {
+        imageLightbox.addEventListener('click', function(event) {
+            if (event.target === imageLightbox) {
+                closeImageLightbox();
+            }
+        });
+    }
+});
+
+// Image Lightbox Functions
+function openImageLightbox(src, alt) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    if (lightbox && lightboxImage) {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeImageLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Đóng modal khi nhấn phím Escape
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeVideoModal();
+        closeImageLightbox();
+    }
+});
+</script>
+
+<!-- Back to top button -->
+<div class="back-to-top">
+    <i class="fa-solid fa-chevron-up"></i>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay" class="fixed inset-0 bg-background-dark/95 z-[9999] flex items-center justify-center hidden">
+    <div class="text-center">
+        <div class="inline-flex items-center justify-center mb-6">
+            <div class="relative w-16 h-16">
+                <div class="absolute inset-0 rounded-full border-4 border-primary/20"></div>
+                <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary border-r-primary animate-spin" style="animation: spin 1s linear infinite;"></div>
+            </div>
+        </div>
+        <p class="text-white font-bold tracking-widest uppercase text-sm">Đang tải...</p>
+    </div>
+</div>
+
+<style>
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+#loading-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+#loading-overlay.show {
+    opacity: 1;
+}
+</style>
+
+<script src="../homepage/smooth-scroll.js"></script>
+
+<!-- Chatbot Widget -->
+<link rel="stylesheet" href="../shared/chatbot.css">
+
+<div class="chatbox">
+    <div class="chatbox__button">
+        <button class="send__button">
+            <span class="chat-icon">💬</span>
+        </button>
+    </div>
+    <div class="chatbox__support">
+        <div class="chatbox__header">
+            <i class="fa-solid fa-robot"></i>
+            <div class="chatbox__content--header">
+                <div class="chatbox__heading--header">Bi Biết Tuốt</div>
+                <div class="chatbox__description--header">Trợ lý ảo Can Lộc</div>
+                <div class="chatbox__status">
+                    <span class="status-dot"></span>
+                    <span style="color: white; font-size: 0.8rem;">Trực tuyến</span>
+                </div>
+            </div>
+            <div class="chatbox__controls">
+                <button class="control-btn minimize-btn" title="Thu nhỏ">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="control-btn maximize-btn" title="Phóng to">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+                <button class="control-btn close-btn" title="Đóng">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chatbox__messages">
+            <div class="messages-container"></div>
+        </div>
+        <div class="chatbox__footer">
+            <div class="input-container">
+                <input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+                <button class="chatbox__send--footer send__button">
+                    <span class="send-icon">➤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../shared/app.js"></script>
+
+<!-- Loading overlay script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadingOverlay = document.getElementById('loading-overlay');
+        
+        // Bắt tất cả link
+        document.querySelectorAll('a[href*=".html"], a[href*="dongloc"], a[href*="huongtich"], a[href*="vidam"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Không show loading nếu là anchor link
+                if (!this.href.includes('#')) {
+                    if (loadingOverlay) {
+                        loadingOverlay.classList.add('show');
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body></html>

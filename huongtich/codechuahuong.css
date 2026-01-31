@@ -1,0 +1,421 @@
+/* ========== GENERAL STYLES ========== */
+body { 
+    font-family: 'Be Vietnam Pro', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.material-symbols-outlined { 
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; 
+}
+
+.gold-border { 
+    border: 1px solid #d4af37; 
+}
+
+.mist-overlay { 
+    background: linear-gradient(0deg, rgba(26,18,18,1) 0%, rgba(26,18,18,0.4) 50%, rgba(26,18,18,0) 100%); 
+}
+
+/* Smooth transitions */
+* {
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.fade-in-up:nth-child(1) { 
+    animation-delay: 0.2s; 
+}
+
+.fade-in-up:nth-child(2) { 
+    animation-delay: 0.4s; 
+}
+
+.fade-in-up:nth-child(3) { 
+    animation-delay: 0.6s; 
+}
+
+.fade-in-up:nth-child(4) { 
+    animation-delay: 0.8s; 
+}
+
+/* ========== MODAL STYLES ========== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #331919, #1a0c0c);
+    border: 2px solid #d4af37;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideInUp 0.4s ease-out;
+    color: #f5f5f5;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: #ec1313;
+}
+
+.modal-title {
+    color: #d4af37;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 15px;
+}
+
+.modal-text {
+    color: #d0d0d0;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.modal-image {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #d4af37;
+    transition: transform 0.3s;
+}
+
+.modal-image:hover {
+    transform: scale(1.05);
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== MAP MODAL - LARGE ========== */
+.map-modal-content {
+    background: #1a0c0c;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    width: 90vw;
+    height: 85vh;
+    max-width: 1000px;
+    position: relative;
+    animation: slideInUp 0.3s ease-out;
+    overflow: hidden;
+}
+
+.map-modal-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.map-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: #d4af37;
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 5px 12px;
+    z-index: 1001;
+}
+
+.map-modal-close:hover {
+    color: #ec1313;
+}
+
+/* ========== GALLERY EXPAND ========== */
+.gallery-item.hidden {
+    display: none;
+}
+
+.gallery-item.hidden.show {
+    display: block;
+}
+
+/* ========== BACK TO TOP BUTTON ========== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 40;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #c62828;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    transform: translateY(20px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: #8e0000;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(198, 40, 40, 0.3);
+}
+/* ===== DARK MODE STYLING FOR HUONGTICH ===== */
+
+/* Global dark mode */
+html.dark,
+html.dark body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+}
+
+/* Dark mode headings */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+    color: #ffffff;
+}
+
+/* Dark mode text */
+html.dark p,
+html.dark span,
+html.dark li,
+html.dark div {
+    color: #e0e0e0;
+}
+
+/* Dark mode forms */
+html.dark input,
+html.dark textarea,
+html.dark select {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark input:focus,
+html.dark textarea:focus {
+    background-color: #3a3a3a;
+    border-color: #d4af37;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #909090;
+}
+
+/* Dark mode buttons */
+html.dark button {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark button:hover {
+    background-color: #3a3a3a;
+}
+
+/* Dark mode links */
+html.dark a {
+    color: #90caf9;
+}
+
+html.dark a:hover {
+    color: #bbdefb;
+}
+
+/* Dark mode borders */
+html.dark hr,
+html.dark .border {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode tables */
+html.dark table {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+html.dark table th {
+    background-color: #2a2a2a;
+    border-color: #3d3d3d;
+}
+
+html.dark table td {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode header/footer */
+html.dark header {
+    background-color: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+html.dark footer {
+    background-color: #0d0d0d;
+    border-color: #2a2a2a;
+}
+
+/* Dark mode backgrounds */
+html.dark .bg-white,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100 {
+    background-color: #1a1a1a;
+}
+
+html.dark .bg-background-light {
+    background-color: #0d0d0d;
+}
+
+/* Dark mode text colors */
+html.dark .text-gray-700,
+html.dark .text-gray-800,
+html.dark .text-gray-900 {
+    color: #e0e0e0;
+}
+
+html.dark .text-gray-600 {
+    color: #b0b0b0;
+}
+
+html.dark .text-gray-500 {
+    color: #909090;
+}
+
+/* Dark mode scrollbars */
+html.dark ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.8);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+}
+
+/* Dark mode cards */
+html.dark .card {
+    background-color: #1a1a1a;
+    border-color: #3d3d3d;
+}
+
+/* Dark mode modals */
+html.dark .modal {
+    background-color: #1a1a1a;
+}
+
+/* Ensure all text is visible */
+html.dark {
+    color-scheme: dark;
+}

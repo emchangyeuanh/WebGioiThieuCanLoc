@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Can Loc - Vùng đất Địa linh Nhân kiệt</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c62828",
+                        "primary-light": "#ef5350",
+                        "primary-dark": "#8e0000",
+                        "background-light": "#fefefe",
+                        "background-dark": "#1a1212",
+                        "accent-gold": "#d4af37",
+                        "gray-light": "#f8f6f6",
+                        "gray-dark": "#2a2020",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 10px 40px rgba(0, 0, 0, 0.15)',
+                        'primary-glow': '0 0 20px rgba(198, 40, 40, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            scroll-behavior: smooth;
+        }
+        .traditional-pattern {
+            background-image: radial-gradient(#c62828 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #c62828 0%, #ef5350 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="codecanloc.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#introduction" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../cudo/cudo-details.html" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <a href="dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative">
+        <!-- Hero Section -->
+        <section class="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in" style="background-image: linear-gradient(to bottom, rgba(26, 18, 18, 0.7), rgba(26, 18, 18, 0.9)), url('1.jpg');">
+            </div>
+            <div class="relative z-10 max-w-4xl px-6 text-center text-white animate-slide-up">
+                <span class="inline-block px-5 py-2 mb-6 border border-primary/50 rounded-full text-sm font-bold tracking-[0.2em] uppercase bg-primary/20 backdrop-blur-sm">Tự hào quê hương Hà Tĩnh</span>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-8 drop-shadow-2xl text-balance px-6 py-8">
+                    Can Lộc 
+                    <span class="gradient-text inline-block text-6xl md:text-6xl lg:text-5xl  mt-4">Vùng đất Địa linh Nhân kiệt</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-12 text-gray-200 leading-relaxed">
+                    Nơi hội tụ hào khí lịch sử, vẻ đẹp tâm linh của núi Hồng sông Lam và những tâm hồn thơ ca bất hủ.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="hero-explore-btn" class="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg hover:shadow-primary-glow flex items-center justify-center gap-2">
+                        <span>Bắt đầu hành trình</span>
+                        <i class="fa-solid fa-share"></i>
+                    </button>
+                    <button id="hero-history-btn" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-book"></i>
+                        <span>Tìm hiểu lịch sử</span>
+                    </button>
+                </div>
+            </div>
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="introduction" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-px w-12 bg-primary"></div>
+                                <span class="text-primary font-bold tracking-widest uppercase text-sm">Giới thiệu chung</span>
+                            </div>
+                            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight">
+                                Vị trí Địa lý &<br/>
+                                <span class="text-primary">Hào khí Lịch sử</span>
+                            </h2>
+                        </div>
+                        <div class="space-y-6">
+                            <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                                Can Lộc là một huyện nằm ở phía Bắc tỉnh Hà Tĩnh, Việt Nam. Phía đông giáp huyện Nghi Xuân và huyện Lộc Hà; phía tây giáp huyện Đức Thọ và huyện Vũ Quang; phía nam giáp huyện Thạch Hà và huyện Hương Khê; phía bắc giáp thị xã Hồng Lĩnh.
+                            </p>
+                            <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                                Đây là vùng đất cổ có bề dày truyền thống văn hóa, nơi khai sinh ra nhiều bậc hiền tài, những chiến sĩ cách mạng kiên trung và là trọng điểm giao lưu kinh tế, văn hóa của khu vực Bắc Trung Bộ.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6 pt-4">
+                            <div class="p-6 bg-gray-light dark:bg-gray-dark rounded-2xl border border-gray-200 dark:border-gray-800 hover-lift">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <i class="fa-solid fa-map"></i>
+                                    </div>
+                                    <h3 class="font-black text-3xl text-primary">180.2</h3>
+                                </div>
+                                <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Diện tích tự nhiên (km²)</p>
+                            </div>
+                            <div class="p-6 bg-gray-light dark:bg-gray-dark rounded-2xl border border-gray-200 dark:border-gray-800 hover-lift">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <i class="fa-solid fa-building"></i>
+                                    </div>
+                                    <h3 class="font-black text-3xl text-primary">23</h3>
+                                </div>
+                                <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Đơn vị hành chính</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl transform -rotate-1 transition-transform group-hover:rotate-0 duration-700"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-hard">
+                            <img class="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                                 data-alt="Bản đồ hành chính và hình ảnh làng quê Can Lộc xưa" 
+                                 src="2.jpg"/>
+                            <div class="absolute bottom-6 right-6 bg-white/95 dark:bg-gray-dark/95 p-5 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center gap-3">
+                                    <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <i class="fa-solid fa-map-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-900 dark:text-white">Tọa độ địa lý</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">18°27′24″B 105°45′23″Đ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Famous Landmarks -->
+        <section id="landmarks" class="section-padding px-6 bg-gray-light dark:bg-gray-dark">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        Danh lam thắng cảnh
+                    </div>
+                    <h2 class="text-4xl md:text-4xl font-black text-gray-900 dark:text-white mb-6">
+    Những địa danh <span class="text-primary">lưu danh sử sách</span>
+</h2>
+                    <p class="text-s text-gray-600 dark:text-gray-400">
+                        Khám phá những địa danh lịch sử và văn hóa tiêu biểu của vùng đất Can Lộc
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="landmarks-container">
+                    <!-- Initial 3 landmarks -->
+                    <!-- Landmark 1 -->
+                    <a href="../dongloc/dongloc.html" class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-200 dark:border-gray-800 block text-decoration-none hover:no-underline">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                                 data-alt="Ngã ba Đồng Lộc biểu tượng của tinh thần bất khuất" 
+                                 src="dongloc.jpg"/>
+                            <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                <i class="fa-solid fa-landmark"></i>
+                                <span class="inline-block bg-primary text-white text-xs font-black uppercase px-3 py-1.5 rounded-full shadow-lg">Kháng chiến</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Ngã ba Đồng Lộc</h3>
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                                Địa danh huyền thoại gắn liền với sự hy sinh anh dũng của 10 cô gái thanh niên xung phong, biểu tượng của chủ nghĩa anh hùng cách mạng.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link">
+                                <span>Khám phá chi tiết</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <!-- Landmark 2 -->
+                    <a href="../huongtich/codechuahuong.html" class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-200 dark:border-gray-800 block text-decoration-none hover:no-underline">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                                 data-alt="Chùa Hương Tích cổ kính trên núi Hồng Lĩnh" 
+                                 src="chuahuong.jpg"/>
+                            <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                <i class="fa-solid fa-vihara"></i>
+                                <span class="inline-block bg-primary text-white text-xs font-black uppercase px-3 py-1.5 rounded-full shadow-lg">Tâm linh</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Chùa Hương Tích</h3>
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                                Được mệnh danh là "Hoan Châu đệ nhất danh lam", ngôi chùa cổ nằm lưng chừng núi Hồng Lĩnh với phong cảnh sơn thủy hữu tình.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link">
+                                <span>Khám phá chi tiết</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <!-- Landmark 3 -->
+                    <a href="../mocbantruongluu/code.html" class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-200 dark:border-gray-800 block text-decoration-none hover:no-underline">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                                 data-alt="Mộc Bản Trường Lưu di sản văn hóa truyền thống" 
+                                 src="mocbantruongluu.jpg"/>
+                            <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span class="inline-block bg-primary text-white text-xs font-black uppercase px-3 py-1.5 rounded-full shadow-lg">UNESCO</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Mộc Bản Trường Lưu</h3>
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                                Di sản tư liệu "Ký ức thế giới" UNESCO. Bộ sưu tập mộc bản quý giá của dòng họ Nguyễn Huy thế kỷ 18-20, minh chứng cho truyền thống học vấn và di sản văn hóa Việt Nam.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link">
+                                <span>Khám phá ngay</span>
+                                <i class="fa-solid fa-arrow-right transition-transform group-hover/link:translate-x-1"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Additional landmarks (hidden by default) -->
+                <div id="additional-landmarks" class="hidden">
+                    <!-- Additional Landmark 4 -->
+                    <div class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-200 dark:border-gray-800">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                                 data-alt="Ngã Ba Chợ Nhe" 
+                                 src="ngabacaunhe.webp"/>
+                            <div class="absolute d fa-landmark"></i>
+                                <span class="inline-block bg-primary text-white text-xs font-black uppercase px-3 py-1.5 rounded-full shadow-lg">Di tích</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Di Tích Lịch Sử Cầu Nhe</h3>
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                                Địa điểm kỷ niệm những sự kiện lịch sử trọng đại, nơi ghi dấu hành trình cách mạng và bảo vệ độc lập của dân tộc.
+                            </p>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link explore-link" href="#">
+                                <span>Khám phá chi tiết</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Landmark 5 -->
+                    <div class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-200 dark:border-gray-800">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                                 data-alt="Đền thờ Xuân Diệu" 
+                                 src="denthoxuandieu.jpg"/>
+                            <div class="absolute d fa-landmark"></i>
+                                <span class="inline-block bg-primary text-white text-xs font-black uppercase px-3 py-1.5 rounded-full shadow-lg">Di tích</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Đền thờ Xuân Diệu</h3>
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                                Nơi tưởng niệm "Ông hoàng thơ tình" Xuân Diệu, bảo tồn những giá trị văn hóa của một trong những nhà thơ lớn nhất Việt Nam.
+                            </p>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link explore-link" href="#">
+                                <span>Khám phá chi tiết</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Landmark 6 -->
+                    <div class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-200 dark:border-gray-800">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                                 data-alt="Sông Nghèn" 
+                                 src="hotraitieu.jpg"/>
+                            <div class="absolute d fa-water"></i>
+                                <span class="inline-block bg-primary text-white text-xs font-black uppercase px-3 py-1.5 rounded-full shadow-lg">Sông nước</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Sông Nghèn</h3>
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                                Dòng sông chảy qua trung tâm huyện Can Lộc, gắn liền với đời sống văn hóa, sinh hoạt của người dân địa phương qua nhiều thế hệ.
+                            </p>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link explore-link" href="#">
+                                <span>Khám phá chi tiết</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button id="toggle-landmarks" class="inline-flex items-center gap-3 px-8 py-3.5 bg-white dark:bg-gray-dark text-gray-800 dark:text-white font-bold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all border border-gray-300 dark:border-gray-700 hover-lift">
+                        <span>Xem thêm địa danh</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Famous Personalities -->
+        <section id="personalities" class="section-padding px-6">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest mb-6">
+                        Con người Can Lộc
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
+                        Những bậc <span class="text-primary">hiền tài lưu danh</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">
+                        Tự hào với những con người đã làm rạng danh quê hương Can Lộc
+                    </p>
+                </div>
+                
+                <!-- Horizontal scroll container -->
+                <div class="relative">
+                    <!-- Navigation buttons -->
+                    <button id="scroll-left" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 size-12 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-lg hover:bg-primary-dark transition-all hover:scale-110 opacity-0 transition-opacity duration-300">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    
+                    <button id="scroll-right" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 size-12 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-lg hover:bg-primary-dark transition-all hover:scale-110 opacity-0 transition-opacity duration-300">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Horizontal scroll container -->
+                    <div id="personalities-scroll" class="overflow-x-auto whitespace-nowrap pb-8 scroll-smooth hide-scrollbar">
+                        <div class="inline-flex gap-8">
+                            <!-- Person 1 -->
+                            <div class="inline-block w-80 flex-shrink-0">
+                                <a href="../nhatho/xuandieu.html" class="group text-center bg-gray-light dark:bg-gray-dark rounded-2xl p-8 hover-lift border border-transparent hover:border-primary/20 transition-all h-full block text-decoration-none hover:no-underline">
+                                    <div class="relative mb-8">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                                        <div class="relative size-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-dark shadow-xl">
+                                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                                                 data-alt="Chân dung nhà thơ Xuân Diệu" 
+                                                 src="xuandieu.jpg"/>
+                                        </div>
+                                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full shadow-md text-xs font-black uppercase tracking-wider">
+                                            Nhà thơ
+                                        </div>
+                                    </div>
+                                    <h3 class="text-2xl font-black mb-2">Xuân Diệu</h3>
+                                    <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">"Ông hoàng thơ tình"</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed whitespace-normal">
+                                        Quê gốc làng Trảo Nha, thị trấn Nghèn. Một trong những nhà thơ lớn của Việt Nam thế kỷ 20.
+                                    </p>
+                                </a>
+                            </div>
+                            
+                            <!-- Person 2 -->
+                            <div class="inline-block w-80 flex-shrink-0">
+                                <a href="../nhatho/ngoducke.html" class="group text-center bg-gray-light dark:bg-gray-dark rounded-2xl p-8 hover-lift border border-transparent hover:border-primary/20 transition-all h-full block text-decoration-none hover:no-underline">
+                                    <div class="relative mb-8">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                                        <div class="relative size-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-dark shadow-xl">
+                                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                                                 data-alt="Chân dung nhà yêu nước Ngô Đức Kế" 
+                                                 src="ngoducke.jpg"/>
+                                        </div>
+                                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full shadow-md text-xs font-black uppercase tracking-wider">
+                                            Sĩ phu
+                                        </div>
+                                    </div>
+                                    <h3 class="text-2xl font-black mb-2">Ngô Đức Kế</h3>
+                                    <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">Chí sĩ yêu nước</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed whitespace-normal">
+                                        Nhà báo tài năng, linh hồn của phong trào Duy Tân, đóng góp lớn cho văn hóa và chính trị Việt Nam đầu thế kỷ 20.
+                                    </p>
+                                </a>
+                            </div>
+                            
+                            <!-- Person 3 -->
+                            <div class="inline-block w-80 flex-shrink-0">
+                                <a href="../nhatho/hahuytap.html" class="group text-center bg-gray-light dark:bg-gray-dark rounded-2xl p-8 hover-lift border border-transparent hover:border-primary/20 transition-all h-full block text-decoration-none hover:no-underline">
+                                    <div class="relative mb-8">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                                        <div class="relative size-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-dark shadow-xl">
+                                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                                                 data-alt="Chân dung Tổng bí thư Hà Huy Tập" 
+                                                 src="hahuytap.jpg"/>
+                                        </div>
+                                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full shadow-md text-xs font-black uppercase tracking-wider">
+                                            Chính trị
+                                        </div>
+                                    </div>
+                                    <h3 class="text-2xl font-black mb-2">Hà Huy Tập</h3>
+                                    <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">Cố Tổng Bí thư</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed whitespace-normal">
+                                        Cố Tổng Bí thư Đảng Cộng sản Việt Nam, người con ưu tú của quê hương Can Lộc, nhà lãnh đạo xuất sắc.
+                                    </p>
+                                </a>
+                            </div>
+                            
+                            <!-- Person 4 -->
+                            <div class="inline-block w-80 flex-shrink-0">
+                                <div class="group text-center bg-gray-light dark:bg-gray-dark rounded-2xl p-8 hover-lift border border-transparent hover:border-primary/20 transition-all h-full">
+                                    <div class="relative mb-8">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                                        <div class="relative size-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-dark shadow-xl">
+                                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                                                 data-alt="Chân dung thám hoa Đặng Nho Công" 
+                                                 src="DinhNhoHoan.jpg"/>
+                                        </div>
+                                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full shadow-md text-xs font-black uppercase tracking-wider">
+                                            Hoàng giáp
+                                        </div>
+                                    </div>
+                                    <h3 class="text-2xl font-black mb-2">Đinh Nho Hoàn</h3>
+                                    <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">Thám hoa lừng danh</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed whitespace-normal">
+                                        Thám hoa lừng danh, biểu tượng của tinh thần hiếu học đất Can Lộc, đỗ đạt cao trong các kỳ thi khoa bảng.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Person 5 -->
+                            <div class="inline-block w-80 flex-shrink-0">
+                                <div class="group text-center bg-gray-light dark:bg-gray-dark rounded-2xl p-8 hover-lift border border-transparent hover:border-primary/20 transition-all h-full">
+                                    <div class="relative mb-8">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                                        <div class="relative size-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-dark shadow-xl">
+                                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                                                 data-alt="Chân dung nhà văn Hồng Nhu" 
+                                                 src="HongNhu.jpg"/>
+                                        </div>
+                                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full shadow-md text-xs font-black uppercase tracking-wider">
+                                            Nhà văn
+                                        </div>
+                                    </div>
+                                    <h3 class="text-2xl font-black mb-2">Hồng Nhu</h3>
+                                    <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">Nhà văn cách mạng</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed whitespace-normal">
+                                        Nhà văn, nhà báo cách mạng, nguyên Tổng Biên tập Báo Văn nghệ, đóng góp quan trọng cho nền văn học Việt Nam.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Person 6 -->
+                            <div class="inline-block w-80 flex-shrink-0">
+                                <div class="group text-center bg-gray-light dark:bg-gray-dark rounded-2xl p-8 hover-lift border border-transparent hover:border-primary/20 transition-all h-full">
+                                    <div class="relative mb-8">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                                        <div class="relative size-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-dark shadow-xl">
+                                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                                                 data-alt="Chân dung giáo sư Võ Quý" 
+                                                 src="VoQuy.webp"/>
+                                        </div>
+                                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full shadow-md text-xs font-black uppercase tracking-wider">
+                                            Khoa học
+                                        </div>
+                                    </div>
+                                    <h3 class="text-2xl font-black mb-2">Võ Quý</h3>
+                                    <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">Giáo sư, nhà khoa học</p>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed whitespace-normal">
+                                        Giáo sư, nhà khoa học nổi tiếng về đa dạng sinh học, có nhiều đóng góp cho công tác bảo tồn thiên nhiên Việt Nam.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scroll hint -->
+                    <div class="flex justify-center items-center gap-2 mt-8 text-sm text-gray-500 dark:text-gray-400">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Cuộn ngang để xem thêm</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="px-6 pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-12 lg:p-16 relative overflow-hidden">
+                    <div class="absolute inset-0 traditional-pattern opacity-10"></div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
+                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-48 -translate-x-48"></div>
+                    
+                    <div class="relative z-10 max-w-3xl mx-auto text-center text-white">
+                        <h3 class="text-3xl md:text-5xl font-black mb-8">
+                            Bắt đầu hành trình khám phá<br/>
+                            <span class="text-accent-gold">nguồn cội</span> ngay hôm nay
+                        </h3>
+                        <p class="text-xl opacity-90 mb-12 leading-relaxed">
+                            Đăng ký nhận thông tin về các sự kiện văn hóa, lễ hội truyền thống và tin tức mới nhất từ Can Lộc.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                            <input id="newsletter-email" class="flex-1 px-6 py-4 rounded-xl text-gray-900 border-none focus:ring-3 focus:ring-accent-gold focus:outline-none shadow-lg" 
+                                   placeholder="Nhập địa chỉ email của bạn..." 
+                                   type="email"/>
+                            <button id="subscribe-btn" class="bg-white text-gray-900 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2">
+                                <span>Đăng ký ngay</span>
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <p class="text-sm opacity-80 mt-6">
+                            Chúng tôi tôn trọng quyền riêng tư của bạn. Bạn có thể hủy đăng ký bất cứ lúc nào.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white dark:bg-gray-dark rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
+            <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gradient-to-r from-primary/10 to-accent-gold/10">
+                <div class="flex items-center gap-3">
+                    <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-book text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-gray-900 dark:text-white">Tìm hiểu lịch sử Can Lộc</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Khám phá hành trình hào hùng của vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </div>
+                <button id="close-video-modal" class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-times text-gray-600 dark:text-gray-400"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="aspect-video bg-black rounded-xl overflow-hidden shadow-inner border border-gray-200 dark:border-gray-700">
+                    <iframe class="w-full h-full" src="https://drive.google.com/file/d/1c8CCj-CpgiTI_n0W52u-FYz3jUgNzsie/preview" frameborder="0" allow="autoplay"></iframe>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Video giới thiệu về lịch sử và văn hóa huyện Can Lộc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark text-white pt-16 pb-8 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">CAN LỘC</h2>
+                            <p class="text-xs text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang thông tin văn hóa - lịch sử huyện Can Lộc, tỉnh Hà Tĩnh. Dựa trên dữ liệu từ Wikipedia và cổng thông tin địa phương.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                           <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#introduction">
+                           <i class="fa-solid fa-link"></i>
+                            Giới thiệu chung
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#landmarks">
+                            <i class="fa-solid fa-link"></i>
+                            Danh lam thắng cảnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#personalities">
+                            <i class="fa-solid fa-link"></i>
+                            Danh nhân
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-link"></i>
+                            Cổng thông tin huyện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Địa danh tiêu biểu</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Khu di tích Đồng Lộc
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                           <i class="fa-solid fa-map-pin"></i>
+                            Núi Hồng Lĩnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Sông Nghèn
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Làng Kế Thiện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 pb-3 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Xã Can Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">canloc.hatinh.gov.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © Trang Web Được Xây Dựng Nhằm Mục Đích Tham Khảo Văn Hóa - Lịch Sử Huyện Can Lộc.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+    
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-background-dark/95 z-[9999] flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center mb-6">
+                <div class="relative w-16 h-16">
+                    <div class="absolute inset-0 rounded-full border-4 border-primary/20"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary border-r-primary animate-spin" style="animation: spin 1s linear infinite;"></div>
+                </div>
+            </div>
+            <p class="text-white font-bold tracking-widest uppercase text-sm">Đang tải...</p>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        #loading-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        #loading-overlay.show {
+            opacity: 1;
+        }
+    </style>
+    
+    <script src="smooth-scroll.js"></script>
+
+    <!-- Chatbot Widget -->
+    <link rel="stylesheet" href="../shared/chatbot.css">
+    
+    <div class="chatbox">
+        <div class="chatbox__button">
+            <button class="send__button">
+                <span class="chat-icon">💬</span>
+            </button>
+        </div>
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__header-dragarea">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="chatbox__content--header">
+                        <div class="chatbox__heading--header">Bi Biết Tuốt</div>
+                        <div class="chatbox__description--header">Trợ lý ảo Can Lộc</div>
+                        <div class="chatbox__status">
+                            <span class="status-dot"></span>
+                            <span style="color: white; font-size: 0.8rem;">Trực tuyến</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbox__controls">
+                    <button class="control-btn minimize-btn" title="Thu nhỏ">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="control-btn maximize-btn" title="Phóng to">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                    <button class="control-btn close-btn" title="Đóng">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div class="messages-container"></div>
+            </div>
+            <div class="chatbox__footer">
+                <div class="input-container">
+                    <input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+                    <button class="chatbox__send--footer send__button">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/app.js"></script>
+    
+    <!-- Loading overlay script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            
+            // Bắt tất cả link
+            document.querySelectorAll('a[href*=".html"], a[href*="dongloc"], a[href*="huongtich"], a[href*="vidam"], a[href*="mocbantruongluu"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Không show loading nếu là anchor link
+                    if (!this.href.includes('#')) {
+                        if (loadingOverlay) {
+                            loadingOverlay.classList.add('show');
+                        }
+                    }
+                });
+            });
+            
+            // Xử lý các link "explore-link" để hiển thị thông báo
+            document.querySelectorAll('a.explore-link[href="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Tính năng đang được phát triển. Vui lòng quay lại sau!');
+                });
+            });
+        });
+
+        // Video modal functionality
+        document.getElementById('hero-history-btn').addEventListener('click', function() {
+            document.getElementById('video-modal').classList.remove('hidden');
+            const video = document.getElementById('history-video');
+            video.play().catch(e => console.log('Autoplay failed:', e));
+        });
+
+        document.getElementById('close-video-modal').addEventListener('click', function() {
+            document.getElementById('video-modal').classList.add('hidden');
+            const video = document.getElementById('history-video');
+            video.pause();
+            video.currentTime = 0;
+        });
+
+        // Click outside to close modal
+        document.getElementById('video-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+                const video = document.getElementById('history-video');
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+
+        // Prevent modal close when clicking inside content
+        document.querySelector('#video-modal > div').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>

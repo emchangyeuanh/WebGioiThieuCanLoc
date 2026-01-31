@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Travel Booking - Khám Phá Thế Giới Cùng Chúng Tôi</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="dulich.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c62828",
+                        "primary-light": "#ef5350",
+                        "primary-dark": "#8e0000",
+                        "secondary": "#ffd700",
+                        "secondary-light": "#ffed4e",
+                        "accent-gold": "#d4af37",
+                        "gray-light": "#f8f6f6",
+                        "gray-dark": "#2a2020",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 10px 40px rgba(0, 0, 0, 0.15)',
+                        'primary-glow': '0 0 20px rgba(198, 40, 40, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                        'bounce-slight': 'bounceSlight 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceSlight: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="codecanloc.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">CAN LỘC</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="codecanloc.html#introduction" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="codecanloc.html#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="codecanloc.html#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2" href="../cudo/cudo-details.html" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                    <a href="dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-700 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero py-20 md:py-32 relative text-white">
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Hành Trình Về Nguồn</h2>
+            <p class="text-xl md:text-2xl font-semibold mb-6 animate-fade-in text-accent-gold">Gìn Giữ Giá Trị Lịch Sử</p>
+            <p class="text-lg md:text-xl mb-10 opacity-90 animate-fade-in max-w-2xl mx-auto">Khám phá vẻ đẹp thiên nhiên và văn hóa đặc sắc của Cần Lộc với hơn 100+ tour du lịch được yêu thích.</p>
+            <a href="#booking" class="inline-block bg-white dark:bg-gray-dark text-primary dark:text-primary-light font-bold py-3 px-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <i class="fas fa-arrow-down"></i> Đặt Tour Ngay
+            </a>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-4 section-padding">
+        <div id="alertContainer" class="mb-6"></div>
+
+        <!-- Booking Form Section -->
+        <section id="booking" class="mb-12">
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                <!-- Form Column -->
+                <div class="md:col-span-2">
+                    <div class="form-container">
+                        <h2 class="text-3xl font-bold text-primary mb-2">
+                            <i class="fas fa-pen-to-square"></i> Đặt Tour Du Lịch
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Hãy điền thông tin của bạn để bắt đầu chuyến hành trình tuyệt vời</p>
+                        
+                        <form id="bookingForm" novalidate>
+                            <!-- Customer Information Section -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-6 pb-3 border-b-2 border-primary">
+                                    <i class="fas fa-user-circle"></i> Thông Tin Khách Hàng
+                                </h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="fullName" class="required">Họ và Tên</label>
+                                        <div class="input-group">
+                                            <input type="text" id="fullName" name="fullName" placeholder="Nhập tên đầy đủ" required/>
+                                            <div class="input-icon"><i class="fas fa-user"></i></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="required">Số Điện Thoại</label>
+                                        <div class="input-group">
+                                            <input type="tel" id="phone" name="phone" placeholder="0123456789" required/>
+                                            <div class="input-icon"><i class="fas fa-phone"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label for="email">Email (Tùy Chọn)</label>
+                                    <div class="input-group">
+                                        <input type="email" id="email" name="email" placeholder="email@example.com"/>
+                                        <div class="input-icon"><i class="fas fa-envelope"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Number of Segments -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-6 pb-3 border-b-2 border-secondary">
+                                    <i class="fas fa-route"></i> Số Chặng Du Lịch
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">Bạn muốn đi mấy chặng?</p>
+                                
+                                <div class="segment-container">
+                                    <button type="button" class="segment-btn active" data-segments="1">1 Chặng</button>
+                                    <button type="button" class="segment-btn" data-segments="2">2 Chặng</button>
+                                    <button type="button" class="segment-btn" data-segments="3">3 Chặng</button>
+                                </div>
+
+                                <!-- Segments List -->
+                                <div id="segmentsList" class="segment-list mt-6"></div>
+                            </div>
+
+                            <!-- Tour Information Section -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-6 pb-3 border-b-2 border-secondary">
+                                    <i class="fas fa-calendar-alt"></i> Chi Tiết Tour
+                                </h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="departureDate" class="required">Ngày Khởi Hành</label>
+                                        <div class="input-group">
+                                            <input type="date" id="departureDate" name="departureDate" required/>
+                                            <div class="input-icon"><i class="fas fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="numberOfPeople" class="required">Số Người</label>
+                                        <div class="input-group">
+                                            <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" value="1" required/>
+                                            <div class="input-icon"><i class="fas fa-users"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tour Type Section -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-6 pb-3 border-b-2 border-primary">
+                                    <i class="fas fa-crown"></i> Loại Tour
+                                </h3>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="standard" name="tourType" value="standard" checked/>
+                                        <label for="standard">Tiêu Chuẩn</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="premium" name="tourType" value="premium"/>
+                                        <label for="premium">Cao Cấp</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="vip" name="tourType" value="vip"/>
+                                        <label for="vip">VIP</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Notes -->
+                            <div class="mb-8">
+                                <label for="notes">Ghi Chú Thêm (Tùy Chọn)</label>
+                                <textarea id="notes" name="notes" rows="4" placeholder="Những yêu cầu đặc biệt hoặc ghi chú của bạn..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-cta" id="submitBtn">
+                                <i class="fas fa-check"></i> Xác Nhận Đặt Tour
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Price Summary Column -->
+                <div class="md:col-span-1">
+                    <div id="priceSummary" class="price-summary-sticky" data-sticky="true">
+                        <div class="price-display">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-sm opacity-90">
+                                    <span>Giá cơ bản:</span>
+                                    <span id="basePriceDisplay">0 VNĐ</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm opacity-90">
+                                    <span>Loại tour:</span>
+                                    <span id="typeDisplay">Tiêu Chuẩn</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm opacity-90">
+                                    <span>Số lượng:</span>
+                                    <span id="quantityDisplay">1 người</span>
+                                </div>
+                                <hr class="border-white border-opacity-30">
+                                <div>
+                                    <div class="price-label">Tổng Giá:</div>
+                                    <div class="price-value" id="totalPrice">0 VNĐ</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 space-y-4">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-primary">
+                                <p class="text-sm font-bold text-primary dark:text-primary-light mb-2">
+                                    <i class="fas fa-check-circle"></i> Bao Gồm
+                                </p>
+                                <ul class="text-xs text-gray-700 dark:text-gray-300 space-y-1">
+                                    <li>✓ Vé cáp treo</li>
+                                    <li>✓ Hướng dẫn viên</li>
+                                    <li>✓ Ăn trưa</li>
+                                    <li>✓ Bảo hiểm du lịch</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-secondary">
+                                <p class="text-sm font-bold text-secondary dark:text-secondary-light mb-2">
+                                    <i class="fas fa-info-circle"></i> Thông Tin
+                                </p>
+                                <p class="text-xs text-gray-700 dark:text-gray-300">
+                                    Hoàn tiền 100% nếu hủy 48 giờ trước.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmation Section -->
+        <section id="confirmationSection" class="hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="confirmation-card">
+                    <h3><i class="fas fa-check-circle"></i> Đặt Tour Thành Công!</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">Chi tiết đặt tour của bạn:</p>
+                    <div class="confirmation-grid" id="confirmationDetails"></div>
+                    <div class="flex gap-4 mt-8">
+                        <button id="downloadBtn" class="btn-cta flex-1" style="background: linear-gradient(135deg, #00b341 0%, #008833 100%);">
+                            <i class="fas fa-download"></i> Tải Hóa Đơn
+                        </button>
+                        <button id="newBookingBtn" class="btn-cta flex-1" style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%);">
+                            <i class="fas fa-plus"></i> Đặt Tour Khác
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-primary mb-6">
+                        <i class="fas fa-history"></i> Lịch Sử Đặt Tour
+                    </h3>
+                    <div id="bookingHistory" class="grid gap-4"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-dark text-white pt-12 pb-8 px-4 sm:px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="text-primary size-10 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black uppercase tracking-tight">CAN LỘC</h2>
+                            <p class="text-xs text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang thông tin văn hóa - lịch sử huyện Can Lộc, tỉnh Hà Tĩnh. Dựa trên dữ liệu từ Wikipedia và cổng thông tin địa phương.
+                    </p>
+                    <div class="flex gap-3">
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                           <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors hover:scale-105" href="#">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 pb-2 border-b border-primary/30">Liên kết nhanh</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="codecanloc.html#introduction">
+                           <i class="fa-solid fa-link"></i>
+                            Giới thiệu chung
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="codecanloc.html#landmarks">
+                            <i class="fa-solid fa-link"></i>
+                            Danh lam thắng cảnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#personalities">
+                            <i class="fa-solid fa-link"></i>
+                            Danh nhân
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-link"></i>
+                            Cổng thông tin huyện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 pb-2 border-b border-primary/30">Địa danh tiêu biểu</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Khu di tích Đồng Lộc
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                           <i class="fa-solid fa-map-pin"></i>
+                            Núi Hồng Lĩnh
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Sông Nghèn
+                        </a></li>
+                        <li><a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Làng Kế Thiện
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 pb-2 border-b border-primary/30">Liên hệ</h4>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Xã Can Lộc, Tỉnh Hà Tĩnh, Việt Nam</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">+84 (0239) 3 841 xxx</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">canloc.hatinh.gov.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-6 border-t border-white/5 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">
+                        © Trang Web Được Xây Dựng Nhằm Mục Đích Tham Khảo Văn Hóa - Lịch Sử Huyện Can Lộc.
+                    </p>
+                    <div class="flex gap-6 text-xs text-gray-500">
+                        <a class="hover:text-gray-300 transition-colors" href="#">Chính sách bảo mật</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Điều khoản sử dụng</a>
+                        <a class="hover:text-gray-300 transition-colors" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <link rel="stylesheet" href="../shared/chatbot.css">
+    
+    <div class="chatbox">
+        <div class="chatbox__button">
+            <button class="send__button">
+                <span class="chat-icon">💬</span>
+            </button>
+        </div>
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__header-dragarea">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="chatbox__content--header">
+                        <div class="chatbox__heading--header">Bi Biết Tuốt</div>
+                        <div class="chatbox__description--header">Trợ lý ảo Can Lộc</div>
+                        <div class="chatbox__status">
+                            <span class="status-dot"></span>
+                            <span style="color: white; font-size: 0.8rem;">Trực tuyến</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbox__controls">
+                    <button class="control-btn minimize-btn" title="Thu nhỏ">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="control-btn maximize-btn" title="Phóng to">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                    <button class="control-btn close-btn" title="Đóng">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div class="messages-container"></div>
+            </div>
+            <div class="chatbox__footer">
+                <div class="input-container">
+                    <input class="chatbox__footer" placeholder="Bạn muốn hỏi Bi về điều gì...">
+                    <button class="chatbox__send--footer send__button">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTopBtn" class="back-to-top" title="Lên Đầu Trang" aria-label="Lên đầu trang">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- MODAL NOTIFICATION -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-icon" id="modalIcon"><i class="fas fa-check-circle"></i></div>
+            <h3 class="modal-title" id="modalTitle">Đặt Tour Thành Công!</h3>
+            <p class="modal-message" id="modalMessage">Đặt tour thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.</p>
+            <div class="modal-details" id="modalDetails"></div>
+            <div class="error-list" id="errorList" style="display: none;">
+                <h4>⚠️ Vui lòng kiểm tra các lỗi sau:</h4>
+                <ul id="errorListItems"></ul>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-primary" id="modalPrimaryBtn">OK</button>
+                <button class="modal-btn modal-btn-secondary" id="modalSecondaryBtn" style="display: none;">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dulich.js"></script>
+    <!-- Activate Chatbot with localStorage -->
+    <script src="../shared/app.js"></script>
+</body>
+</html>

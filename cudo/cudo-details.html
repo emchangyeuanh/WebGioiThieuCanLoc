@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kẹo Cu Đơ Hà Tĩnh - Đặc sản truyền thống, hương vị đậm, kết tinh từ quê hương. Tìm hiểu lịch sử, nguyên liệu và cách thưởng thức.">
+    <title>Kẹo Cu Đơ Hà Tĩnh - Đặc Sản Ẩm Thực Truyền Thống</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../shared/chatbot.css">
+    <link rel="stylesheet" href="../shared/darkmode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../homepage/style.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c62828",
+                        "primary-light": "#ef5350",
+                        "primary-dark": "#8e0000",
+                        "background-light": "#fefefe",
+                        "background-dark": "#1a1212",
+                        "accent-gold": "#d4af37",
+                        "gray-light": "#f8f6f6",
+                        "gray-dark": "#2a2020",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 10px 40px rgba(0, 0, 0, 0.15)',
+                        'primary-glow': '0 0 20px rgba(198, 40, 40, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0d0d0d;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #c62828 0%, #ef5350 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(160, 82, 45, 0.6)),
+                        url('anhnen.jpg') center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #FFD700;
+            animation: fadeInScale 1s ease-out, textGlowPulse 3s ease-in-out infinite;
+            animation-delay: 0.3s, 1.3s;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textGlowPulse {
+            0%, 100% {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+            }
+            50% {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 30px rgba(255, 215, 0, 0.6), 0 0 50px rgba(198, 40, 40, 0.4);
+            }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-style: italic;
+            color: #F4E4C1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #c62828;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #8e0000, #ef5350);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #ef5350;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Image Styling */
+        .image-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: #999;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .text-column {
+            padding: 1rem;
+        }
+
+        .image-column {
+            text-align: center;
+        }
+
+        .image-column img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Ingredients List */
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .ingredient-card {
+            background: #1a1212;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #8e0000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .ingredient-card h4 {
+            color: #ef5350;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .ingredient-card p {
+            margin: 0;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, #262020 0%, #2a2020 100%);
+            border-left: 4px solid #8e0000;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: #d0d0d0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 3rem;
+            color: #D2691E;
+            opacity: 0.5;
+            margin-right: 0.5rem;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            background: #1a1212;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c62828, #ef5350);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h4 {
+            color: #ef5350;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            margin: 0;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: #1a1212;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #c62828;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #333;
+            color: #b0b0b0;
+        }
+
+        .comparison-table tr:hover {
+            background: #262020;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Features List */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: #1a1212;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .feature-item h4 {
+            color: #ef5350;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item h4::before {
+            content: '✓';
+            color: #ef5350;
+            font-weight: bold;
+            margin-right: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-item p {
+            margin: 0;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c62828, #ef5350);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+            background: linear-gradient(135deg, #ef5350, #c62828);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.85rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-gray-dark/95 backdrop-blur-md border-b border-gray-800 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <a href="../homepage/codecanloc.html" style="text-decoration:none;color:inherit;pointer-events:auto;z-index:50" onclick="window.location.href='../homepage/codecanloc.html'" class="flex items-center gap-3">
+                        <div class="text-primary size-9 flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="size-6">
+                                <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-black tracking-tight text-white">CAN LỘC</h1>
+                            <p class="text-xs text-gray-400 font-medium">Vùng đất Địa linh Nhân kiệt</p>
+                        </div>
+                    </a>
+                </div>
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-300 hover:text-primary-light transition-colors rounded-lg hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#introduction" title="Giới thiệu"><i class="fa-solid fa-info"></i><span class="hidden sm:inline">Giới thiệu</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-300 hover:text-primary-light transition-colors rounded-lg hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#landmarks" title="Địa danh"><i class="fa-solid fa-location-crosshairs"></i><span class="hidden sm:inline">Địa danh</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-300 hover:text-primary-light transition-colors rounded-lg hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#personalities" title="Danh nhân"><i class="fa-solid fa-graduation-cap"></i><span class="hidden sm:inline">Danh nhân</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-300 hover:text-primary-light transition-colors rounded-lg hover:bg-gray-800 flex items-center gap-2" href="../vidam/codevidam.html" title="Làn điệu Dân ca"><i class="fa-solid fa-music"></i><span class="hidden sm:inline">Làn điệu Dân ca</span></a>
+                    <a class="px-5 py-2 text-sm font-semibold text-gray-300 hover:text-primary-light transition-colors rounded-lg hover:bg-gray-800 flex items-center gap-2" href="../homepage/codecanloc.html#tradition" title="Truyền thống"><i class="fa-solid fa-torii-gate"></i><span class="hidden sm:inline">Truyền thống</span></a>
+                    <div class="h-6 w-px bg-gray-700 mx-2"></div>
+                    <a href="../homepage/dulich.html" id="nav-explore-btn" class="ml-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-primary-glow inline-block">
+                        Khám phá ngay
+                    </a>
+                </nav>
+                <button class="lg:hidden text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kẹo Cu Đơ Hà Tĩnh</h1>
+            <p>Hồn quê kết tinh trong hương vị ngọt ngào</p>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">Một món quà truyền thống, ghi dấu ấn của lịch sử và tình người Hà Tĩnh</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Giới Thiệu Chung -->
+        <section id="intro">
+            <div class="container">
+                <h2>Giới Thiệu Chung</h2>
+                
+                <p>Kẹo Cu Đơ không phải là một món kẹo bình thường. Nó là linh hồn mộc mạc của quê hương Hà Tĩnh, kết tinh trong vị ngọt kiên cường và nồng hậu. Như những câu ca dao truyền thống đã ca ngợi: <strong>"Chè xanh thêm chút gừng cay, Cu đơ Hà Tĩnh làm say lòng người"</strong> – điều này phản ánh sâu sắc vị trí của kẹo Cu Đơ trong đời sống và văn hóa ẩm thực của dân tộc.</p>
+
+                <div class="image-section">
+                    <img src="cudo3.jpg" alt="Kẹo Cu Đơ truyền thống">
+                    <p class="image-caption">Kẹo Cu Đơ – Hương vị truyền thống đặc biệt của Hà Tĩnh</p>
+                </div>
+
+                <p>Từ một món quà quê dân dã, kẹo Cu Đơ đã có một hành trình phát triển ngoạn mục, trở thành một trong những động lực kinh tế quan trọng của tỉnh Hà Tĩnh. Hiện nay, sản phẩm này được vinh danh trong <strong>"Top 100 Đặc sản Quà tặng Việt Nam"</strong>, là biểu tượng của sự kết hợp hoàn hảo giữa truyền thống và hiện đại.</p>
+
+                <p>Kẹo Cu Đơ đại diện cho con người Hà Tĩnh: vẻ ngoài có thể lam lũ, khắc khổ nhưng bên trong là một tinh thần kiên cường, một tấm lòng nồng hậu và một vị ngọt của tình người bền bỉ, đậm đà.</p>
+
+                <div class="quote-box">
+                    Món kẹo này là một tạo tác văn hóa, một di sản từ mảnh đất Hà Tĩnh cằn cỗi nhưng nặng nghĩa tình, từ lịch sử phức hợp và cốt cách kiên cường, ấm áp của con người nơi đây.
+                </div>
+            </div>
+        </section>
+
+        <!-- Lịch Sử & Nguồn Gốc -->
+        <section id="history">
+            <div class="container">
+                <h2>Lịch Sử & Nguồn Gốc Tên Gọi</h2>
+
+                <h3>Khởi Nguồn của Một Huyền Thoại</h3>
+                <p>Kẹo Cu Đơ bắt đầu từ xóm Thịnh Bình (xưa gọi là Thịnh Xá), nay thuộc xã Sơn Tiến, tỉnh Hà Tĩnh. Người khai sinh ra món kẹo này là ông <strong>Chắt Vy</strong>, được dân làng gọi thân mật là ông <strong>Cu Hai</strong>. Ban đầu, món kẹo của ông đơn giản là kẹo lạc được gọi là <strong>"kẹo cu Hai"</strong> theo tên người làm ra nó.</p>
+
+                <div class="image-section">
+                    <img src="cudo1.jpg" alt="Quá trình hình thành kẹo Cu Đơ">
+                    <p class="image-caption">Di tích lịch sử về nguồn gốc kẹo Cu Đơ tại xã Sơn Tiến</p>
+                </div>
+
+                <h3>Câu Chuyện Về Cái Tên "Cu Đơ"</h3>
+                <p>Sự biến đổi từ <strong>"Hai"</strong> thành <strong>"Đơ"</strong> là một chương hấp dẫn, phản ánh sự giao thoa văn hóa Việt - Pháp độc đáo. Cốt lõi của câu chuyện nằm ở việc chữ "Hai" trong tiếng Việt được dịch sang tiếng Pháp là <strong>"Deux"</strong>, sau đó được phiên âm ngược lại theo kiểu Việt hóa thành <strong>"Đơ"</strong>.</p>
+
+                <p>Một giai thoại phổ biến kể rằng, lính Pháp đóng quân tại đây đã gọi món kẹo của ông Hai là <strong>"Cu Deux"</strong>, đọc chệch đi thành <strong>"Cu Đơ"</strong>. Một dị bản khác lại cho rằng sự thay đổi này đến từ tầng lớp trí thức bản địa khi phong trào Tây học nở rộ, họ dùng từ "Deux" thay cho "Hai" để tên gọi nghe có vẻ "trí thức" và tân thời hơn.</p>
+
+                <div class="quote-box">
+                    Cái tên "Cu Đơ" không chỉ đơn thuần là sự áp đặt hay sao chép, mà là một sản phẩm lai ghép, một di chỉ ngôn ngữ học xã hội, ghi lại dấu ấn của một thời kỳ mà các nền văn hóa vừa xung đột, vừa đối thoại, vừa dung hợp để tạo ra những hình thái mới.
+                </div>
+
+                <p>Cái tên này vừa thể hiện sự lịch sử của quá trình hình thành, vừa mang trong nó yếu tố của sự hiện đại hóa và cải tiến công thức, làm cho kẹo Cu Đơ trở thành một biểu tượng của văn hóa lai tạo – đó là bản chất của Hà Tĩnh trong suốt lịch sử.</p>
+            </div>
+        </section>
+
+        <!-- Nguyên Liệu & Quy Trình -->
+        <section id="ingredients">
+            <div class="container">
+                <h2>Nguyên Liệu & Quy Trình Chế Biến</h2>
+
+                <h3>Những Thành Phần Từ Tình Yêu Quê Hương</h3>
+                <p>Để làm ra kẹo Cu Đơ, người dân Hà Tĩnh gọi nghệ nhân là <strong>"thợ kết mật"</strong>. Từ "kết" ở đây không chỉ là nấu, mà còn mang hàm ý kết nối, gắn kết, quyện hòa tinh túy của đất trời vào một thức quà. Mỗi thành phần trong chiếc kẹo đều là mảnh ghép từ bản đồ nông sản đặc trưng của tỉnh, tạo nên một "terroir" không thể nhầm lẫn.</p>
+
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <h4>🍯 Mật Mía</h4>
+                        <p>Linh hồn của chiếc kẹo, phải là loại mật nguyên chất, có màu vàng cánh gián óng ả, vị ngọt thanh mà không gắt, được thu mua từ những vùng đồi núi trập trùng của Sơn Thọ.</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <h4>🥜 Lạc Rang</h4>
+                        <p>Thân xác của kẹo, là những hạt chắc, mẩy, béo bùi, được trồng trên những vùng đất cát pha ven biển và ven sông của các vùng Lộc Hà, Nghi Xuân hay Thạch Hà.</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <h4>🌶️ Gừng</h4>
+                        <p>Mang đến hơi ấm nồng nàn, vị cay đặc trưng giúp cân bằng vị ngọt, thường là gừng thơm và cay nhất từ Hương Khê hoặc Vũ Quang.</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <h4>🥘 Bánh Tráng</h4>
+                        <p>Lớp áo giòn tan bao bọc bên ngoài, được làm từ bột gạo của vùng Đức Thọ, tráng mỏng, khi nướng lên giòn rụm, đôi khi được điểm thêm hạt vừng đen thơm lừng.</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <h4>🌾 Mạch Nha</h4>
+                        <p>Để tăng độ dẻo, người con phối trộn cả mạch nha trong nguyên liệu. Mạch nha được chiết xuất từ mầm lúa nếp của vùng Can Lộc.</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <h4>🧂 Các Gia Vị</h4>
+                        <p>Muối tinh luyện, và các thảo dược bí truyền của từng gia đình thợ kẹo, tạo nên các biến thể riêng, độc đáo của mỗi thương hiệu.</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">Quy Trình Làm Kẹo Truyền Thống</h3>
+                <p>Quy trình làm kẹo Cu Đơ là một nghệ thuật thủ công được trân trọng, đòi hỏi sự kiên nhẫn, kinh nghiệm và một cảm nhận tinh tế mà máy móc không thể thay thế.</p>
+
+                <div class="image-section">
+                    <img src="cudo4.jpg" alt="Quy trình làm kẹo Cu Đơ">
+                    <p class="image-caption">Thợ kết mật đang thực hiện công đoạn kết hợp các nguyên liệu</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Rang Lạc</h4>
+                        <p>Lạc được rang đều trên chảo gang với chút muối cho đến khi dậy mùi thơm và vỏ lụa nứt ra.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Chuẩn Bị Gừng</h4>
+                        <p>Gừng được cạo vỏ, rửa sạch và thái sợi hoặc băm nhuyễn, tùy theo sở thích và kỹ thuật của thợ.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Luyện Mật</h4>
+                        <p>Mật mía và mạch nha được đun trong chảo lòng sâu, đáy dày. Người thợ phải "canh lửa" chuẩn xác, khuấy liên tục, đều tay để mật không bén nồi.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Xác Định Mật "Tới"</h4>
+                        <p>Nhỏ một giọt mật vào bát nước lạnh; nếu giọt mật đông lại thành viên tròn đều, màu cánh gián, không tan trong nước thì mật đã đạt chuẩn.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h4>Trộn Nguyên Liệu</h4>
+                        <p>Nhanh tay cho lạc rang và gừng vào mật sôi, đảo đều rồi tắt bếp ngay lập tức để lưu giữ độ tươi của hương vị.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h4>Kẹp Bánh Tráng</h4>
+                        <p>Hỗn hợp kẹo nóng hổi được múc nhanh, đổ lên miếng bánh tráng, sau đó dùng miếng bánh tráng khác úp lên, ép nhẹ để chúng kết dính.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">7</div>
+                        <h4>Làm Mát & Cắt</h4>
+                        <p>Để ngóai mát, sau đó cắt thành các miếng kích thước vừa phải. Chính những "bí quyết riêng" tạo nên sự đa dạng và phong phú.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">8</div>
+                        <h4>Đóng Gói</h4>
+                        <p>Sản phẩm được đóng gói cẩn thận, có thể bọc giấy gạo hoặc bao bì chuyên nghiệp, bảo đảm chất lượng và dễ bảo quản.</p>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    Hành động "kết mật" chính là nghệ thuật điều phối, kết hợp vị ngọt của mật mía vùng đồi, vị bùi của lạc vùng cát và vị giòn của bánh tráng vùng đồng bằng – là sự hòa hợp của đất, khí hậu, con người và kinh nghiệm qua nhiều thế hệ.
+                </div>
+            </div>
+        </section>
+
+        <!-- Cách Thưởng Thức -->
+        <section id="tasting">
+            <div class="container">
+                <h2>Cách Thưởng Thức & Văn Hóa Trà Xanh</h2>
+
+                <p>Kẹo Cu Đơ hiếm khi được thưởng thức một mình, mà chỉ thực sự trọn vẹn khi được kết hợp với một bát nước chè xanh đặc, nóng hổi và mang vị chát đặc trưng.</p>
+
+                <div class="two-column">
+                    <div class="text-column">
+                        <h3>Bản "Hòa Tấu" của Các Vị</h3>
+                        <p>Sự kết hợp giữa kẹo Cu Đơ và chè xanh là một bản "hòa tấu" của các vị đối lập:</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                            <li><strong>Vị ngọt:</strong> Đậm, sâu lắng của mật mía</li>
+                            <li><strong>Vị béo bùi:</strong> Từ lạc, tạo cảm giác no nê</li>
+                            <li><strong>Vị chát:</strong> Thanh tao của trà xanh, "rửa" đi cái ngọt gắt</li>
+                            <li><strong>Vị cay ấm:</strong> Từ gừng, kích thích vị giác</li>
+                        </ul>
+                        <p style="margin-top: 1rem;">Vị chát của trà có tác dụng "rửa" đi cái ngọt gắt, làm sạch vòm miệng và chuẩn bị cho miếng kẹo tiếp theo. Đó không phải là sự ngẫu nhiên, mà là kết quả của những kinh nghiệm lâu dài của người xưa.</p>
+                    </div>
+                    <div class="image-column">
+                        <img src="cudo2.jpg" alt="Thưởng thức kẹo với chè xanh">
+                        <p class="image-caption" style="text-align: center;">Kẹo Cu Đơ kết hợp hoàn hảo với chè xanh nóng</p>
+                    </div>
+                </div>
+
+                <h3>Hiếu Khách Hà Tĩnh – Mời Khách Kẹo Và Chè</h3>
+                <p>Trong đời sống xã hội của người Hà Tĩnh, việc mời khách một miếng Cu Đơ cùng bát chè xanh là cử chỉ hiếu khách cao nhất, thể hiện sự trân trọng và tấm lòng rộng mở.</p>
+
+                <div class="quote-box">
+                    Nghi thức thưởng thức này mang ý nghĩa biểu tượng sâu sắc, ẩn dụ về con người và mảnh đất Hà Tĩnh: vượt lên sự khắc nghiệt của "nắng và gió" (vị chát của chè xanh) là "tình người" nồng hậu, sự ngọt ngào, kiên cường của tâm hồn (vị ngọt đậm đà của miếng kẹo).
+                </div>
+
+                <h3>Cách Thưởng Thức Chuẩn Mực</h3>
+                <div class="feature-item" style="background: white;">
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Trà:</strong> Pha từ lá chè xanh tươi, có độ chát nhất định, để ấm 70-80°C</li>
+                        <li><strong>Kẹo:</strong> Lấy một miếng, để vào miệng, từ từ cắn và nhai</li>
+                        <li><strong>Thứ tự:</strong> Cắn kẹo, nuốt từng chút, giữa các miếng hãy uống chè để cân bằng vị</li>
+                        <li><strong>Tốc độ:</strong> Thưởng thức chậm rãi, tận hưởng từng lớp vị, đừng vội vàng</li>
+                        <li><strong>Không kết:</strong> Không nên ăn kẹo Cu Đơ với các đồ uống có gas hoặc nước quá lạnh, sẽ phá hủy hương vị</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phát Triển & Ý Nghĩa Văn Hóa -->
+        <section id="culture">
+            <div class="container">
+                <h2>Ý Nghĩa Văn Hóa & Phát Triển Bền Vững</h2>
+
+                <h3>Di Sản Văn Hóa Bị Lãng Quên?</h3>
+                <p>Không phải. Kẹo Cu Đơ đã có một hành trình phát triển ngoạn mục, từ một món quà quê dân dã trở thành một động lực kinh tế quan trọng của tỉnh Hà Tĩnh. Hiện nay, Hà Tĩnh có hàng trăm cơ sở sản xuất lớn nhỏ, từ các hộ gia đình đến các doanh nghiệp quy mô, tạo việc làm cho hàng ngàn lao động địa phương.</p>
+
+                <div class="image-section">
+                    <img src="cudo5.jpg" alt="Hội chợ OCOP kẹo Cu Đơ">
+                    <p class="image-caption">Các sản phẩm kẹo Cu Đơ đạt chứng nhận OCOP được giới thiệu tại hội chợ thương mại</p>
+                </div>
+
+                <h3>Chương Trình OCOP – Nâng Tầm Sản Phẩm Truyền Thống</h3>
+                <p>Chương trình "Mỗi xã một sản phẩm" (OCOP) đã tạo cú hích lớn, giúp các cơ sở sản xuất nâng tầm sản phẩm thông qua việc:</p>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>Chuẩn Hóa Quy Trình</h4>
+                        <p>Từ sản xuất thủ công ngẫu hứng sang quy trình chuẩn, kiểm soát chất lượng khắt khe, đảm bảo mỗi miếng kẹo đều đạt tiêu chuẩn cao.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>An Toàn Thực Phẩm</h4>
+                        <p>Đảm bảo an toàn vệ sinh, sử dụng nguyên liệu sạch, không chất bảo quản độc hại, phù hợp với các tiêu chuẩn quốc tế.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>Xây Dựng Thương Hiệu</h4>
+                        <p>Từ "kẹo của ông Hai" thành các thương hiệu nổi tiếng như Phong Nga, Bà Hường, có nhận diện riêng, story riêng.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>Thiết Kế Bao Bì</h4>
+                        <p>Bao bì chuyên nghiệp, đẹp mắt, có giá trị thẩm mỹ, phù hợp làm quà tặng cao cấp cho du khách.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>Mở Rộng Thị Trường</h4>
+                        <p>Từ bán tại chợ địa phương sang các hệ thống siêu thị lớn, chuỗi bán lẻ, thương mại điện tử, xuất khẩu.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>Kỹ Năng Kinh Doanh</h4>
+                        <p>Đào tạo người sản xuất và bán hàng về marketing, quản lý bán hàng, phục vụ khách hàng.</p>
+                    </div>
+                </div>
+
+                <h3>Những Câu Chuyện Thành Công</h3>
+                <p style="margin-top: 2rem;"><strong>Thương hiệu Phong Nga:</strong> Đạt chứng nhận OCOP 4 sao, đã thành công trong việc đưa sản phẩm vào các hệ thống siêu thị lớn trên toàn quốc như Big C, Metro, Vinmart+.</p>
+
+                <p><strong>Thương hiệu Bà Hường:</strong> Với chứng nhận OCOP 3 sao, không chỉ chinh phục thị trường trong nước mà còn thành công xuất khẩu sang các thị trường khó tính như New Zealand, Canada, Úc.</p>
+
+                <p><strong>Nghề Truyền Thống:</strong> "Nghề sản xuất kẹo cu đơ Cầu Phủ" đã được tỉnh công nhận là nghề truyền thống, được bảo vệ và phát triển bền vững.</p>
+
+                <div class="quote-box">
+                    Câu chuyện của Cu Đơ là một hình mẫu điển hình về việc hiện đại hóa một sản phẩm thủ công truyền thống một cách bền vững – không mất đi chất thủ công, hương vị truyền thống, mà lại được chuẩn hóa, nâng tầm, mở rộng thị trường.
+                </div>
+
+                <h3 class="mt-4">Những Danh Hiệu Uy Tín</h3>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li>Lọt vào <strong>"Top 100 Đặc sản Quà tặng Việt Nam"</strong></li>
+                    <li>Được vinh danh tại các hội chợ thương mại quốc tế (VMIT, Diễn Biên, v.v.)</li>
+                    <li>Nhận chứng nhận OCOP 3 sao, 4 sao từ các cơ sở sản xuất khác nhau</li>
+                    <li>Được công nhận là sản phẩm đặc trưng của du lịch Hà Tĩnh</li>
+                    <li>Có xuất khẩu sang các quốc gia Đông Nam Á, Úc, New Zealand, Canada</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- So Sánh -->
+        <section id="comparison">
+            <div class="container">
+                <h2>So Sánh Cu Đơ với Các Loại Kẹo Khác</h2>
+
+                <p>Để hiểu rõ vị trí và tính đặc thù của kẹo Cu Đơ, chúng ta hãy so sánh với các loại kẹo truyền thống khác của Việt Nam:</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Đặc Điểm</th>
+                            <th>Kẹo Cu Đơ (Hà Tĩnh)</th>
+                            <th>Kẹo Lạc Miền Bắc</th>
+                            <th>Kẹo Gương Quảng Ngãi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nguyên Liệu Chính</strong></td>
+                            <td>Mật mía, lạc, gừng, bánh tráng</td>
+                            <td>Đường trắng, lạc, được rang hoặc không</td>
+                            <td>Mật mía hoặc đường caramel, được tráng mỏng</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hình Dáng</strong></td>
+                            <td>Hình vuông hoặc chữ nhật, được kẹp giữa hai miếng bánh tráng</td>
+                            <td>Hình thanh dài, mặt bằng</td>
+                            <td>Hình tròn bằng phẳng, mỏng, suốt như thủy tinh</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Màu Sắc</strong></td>
+                            <td>Hổ phách sáng hoặc cánh gián, không quá đen</td>
+                            <td>Nâu nhạt hoặc vàng nhạt</td>
+                            <td>Trong suốt, như thủy tinh, có thể có sắc thái hổ phách</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kết Cấu</strong></td>
+                            <td>Dẻo nhưng không cứng, bánh tráng giòn, tạo độ cắn gần gũi</td>
+                            <td>Giòn tan, dễ nhai, đôi khi dính là dấu hiệu bị ẩm</td>
+                            <td>Giòn rụm, tan ngay trong miệng, vô cùng mềm mại</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hương Vị</strong></td>
+                            <td>Ngọt sâu (từ mật), cay ấm (từ gừng), cân bằng, phức tạp, lâu cơm</td>
+                            <td>Ngọt đơn giản, vị lạc béo bùi, có đôi khi hơi gắt</td>
+                            <td>Ngọt tinh tế, nhẹ nhàng, lâu cơm, hương vị thanh tao</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cách Thưởng Thức</strong></td>
+                            <td>Kết hợp với chè xanh nóng, tạo bản hòa tấu vị</td>
+                            <td>Ăn trực tiếp, thường không kết hợp với đồ uống</td>
+                            <td>Ăn trực tiếp hoặc kết hợp với cà phê, trà đen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bảo Quản</strong></td>
+                            <td>Tối đa 12-18 tháng nếu bảo quản kỹ lưỡng, không ẩm</td>
+                            <td>Tối đa 6-12 tháng, dễ bị ẩm và dính</td>
+                            <td>Tối đa 24 tháng, bền lâu hơn do cấu trúc giòn</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ý Nghĩa Văn Hóa</strong></td>
+                            <td>Biểu tượng của giao thoa văn hóa Việt-Pháp, hiếu khách Hà Tĩnh, di sản ngôn ngữ học xã hội</td>
+                            <td>Kẹo dân dã của miền Bắc, mang ý nghĩa gia đình, ấm cúng</td>
+                            <td>Đặc sản truyền thống, biểu tượng của Quảng Ngãi, tinh tế, phù hợp tặng quà sang trọng</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="mt-4">Nhận Định Nổi Bật</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>Cu Đơ - Sự Cân Bằng Độc Đáo</h4>
+                        <p>Không giòn tan quá như kẹo gương, không đơn giản như kẹo lạc miền Bắc, Cu Đơ tìm ra sự cân bằng hoàn hảo giữa kết cấu dẻo và giòn, giữa vị ngọt sâu và vị cay ấm, giữa truyền thống thủ công và hiện đại hóa.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>Thích Hợp Cho Ai?</h4>
+                        <p>Cu Đơ phù hợp nhất cho những ai yêu thích kẹo có kết cấu dẻo, hương vị phức tạp, và thích sự kết hợp hoàn hảo giữa thực phẩm và đồ uống. Đặc biệt là những du khách muốn trải nghiệm nét văn hóa ẩm thực thực sự của Hà Tĩnh.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>Giá Trị Quà Tặng</h4>
+                        <p>Với story phong phú, hương vị độc đáo, và đóng gói chuyên nghiệp (đặc biệt các sản phẩm OCOP 4 sao), kẹo Cu Đơ là lựa chọn quà tặng sang trọng, có giá trị, thích hợp cho các dịp quan trọng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kết Luận & CTA -->
+        <section>
+            <div class="container">
+                <h2>Kết Luận & Lời Mời Gọi</h2>
+
+                <p>Ngày nay, kẹo Cu Đơ không còn là một món ngọt đơn thuần. Nó là:</p>
+
+                <ul style="margin-left: 1.5rem; font-size: 1.05rem; line-height: 2;">
+                    <li><strong>Một di chỉ ngôn ngữ</strong> về lịch sử giao thoa văn hóa Việt - Pháp</li>
+                    <li><strong>Một bản đồ ẩm thực</strong> của thổ nhưỡng địa phương Hà Tĩnh</li>
+                    <li><strong>Một sản phẩm thủ công tinh hoa</strong>, được trân quý và phát triển bền vững</li>
+                    <li><strong>Một tâm điểm của nghi thức văn hóa</strong> sâu sắc, thể hiện tình người và tâm hồn Hà Tĩnh</li>
+                </ul>
+
+                <div class="quote-box" style="margin-top: 2rem;">
+                    Vẻ ngoài mộc mạc, thô ráp của chiếc kẹo ẩn chứa một thế giới nội tâm phong phú về hương vị và ý nghĩa. Nó chính là biểu tượng hoàn hảo cho con người Hà Tĩnh: vẻ ngoài có thể lam lũ, khắc khổ nhưng bên trong là một tinh thần kiên cường, một tấm lòng nồng hậu và một vị ngọt của tình người bền bỉ, đậm đà.
+                </div>
+
+                <h3 class="mt-4">Mời Bạn Thưởng Thức & Khám Phá</h3>
+                <p>Thưởng thức Cu Đơ không chỉ là nếm một món đặc sản, mà là cảm nhận tinh thần của cả một vùng đất. Hãy đến Hà Tĩnh, tìm kiếm những cơ sở sản xuất uy tín, hãy nếm những miếng kẹo, hãy uống chè xanh nóng hổi, và cảm nhận tình người Hà Tĩnh qua từng hương vị.</p>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="cta-button">Tìm Nơi Mua Kẹo Cu Đơ Chính Hãng</button>
+                </div>
+
+                <h3 class="mt-4" style="padding-top: 2rem;">Các Điểm Mua & Khám Phá Được Đề Xuất</h3>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Tại các hội chợ du lịch:</strong> VMIT (Hà Nội), các hội chợ thương mại quốc tế</li>
+                    <li><strong>Các thương hiệu OCOP nổi tiếng:</strong> Phong Nga, Bà Hường, và các thương hiệu địa phương khác</li>
+                    <li><strong>Tại các siêu thị lớn:</strong> Big C, Vinmart+, Metro, các chuỗi bán lẻ uy tín</li>
+                    <li><strong>Mua trực tuyến:</strong> Các sàn thương mại điện tử như Lazada, Shopee, Tiki</li>
+                    <li><strong>Du lịch Hà Tĩnh:</strong> Tham quan các cơ sở sản xuất, tìm hiểu quy trình làm kẹo truyền thống</li>
+                </ul>
+
+                <p style="margin-top: 2rem; text-align: center; font-style: italic; color: #c62828; font-size: 1.1rem;">
+                    Chè xanh thêm chút gừng cay,<br>
+                    Cu đơ Hà Tĩnh làm say lòng người.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>© 2025 Kẹo Cu Đơ Hà Tĩnh</strong> – Đặc sản ẩm thực truyền thống Việt Nam</p>
+        <p>Tham khảo từ: Văn Hóa Du Lịch Hà Tĩnh, Nông Thôn Mới Hà Tĩnh, và các nghiên cứu về đặc sản địa phương</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Trang web này được xây dựng với mục đích quảng bá và giáo dục về kẹo Cu Đơ – một đặc sản quý giá của Hà Tĩnh.</p>
+    </footer>
+
+    <script src="../shared/app.js"></script>
+</body>
+</html>
+</body>
+</html>

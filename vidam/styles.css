@@ -1,0 +1,936 @@
+/* Custom CSS for Can Loc Heritage Page */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animation for pulse effect */
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ec1313;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b91c1c;
+}
+
+/* Hover effect for cards */
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(236, 19, 19, 0.2);
+}
+
+/* Custom button animations */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Text gradient effect */
+.gradient-text {
+    background: linear-gradient(135deg, #d4af37, #ec1313, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.8s ease-out;
+}
+
+/* Music Visualizer Animation */
+@keyframes musicPulse {
+    0%, 100% {
+        transform: scaleY(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scaleY(2);
+        opacity: 1;
+    }
+}
+
+.visualizer-bar {
+    animation: musicPulse 1s ease-in-out infinite;
+}
+
+.visualizer-bar:nth-child(2) { animation-delay: 0.1s; }
+.visualizer-bar:nth-child(3) { animation-delay: 0.2s; }
+.visualizer-bar:nth-child(4) { animation-delay: 0.3s; }
+.visualizer-bar:nth-child(5) { animation-delay: 0.4s; }
+
+/* Playing animation for audio items */
+.audio-item.playing {
+    border-color: #ec1313;
+    background: linear-gradient(135deg, rgba(236, 19, 19, 0.1), rgba(212, 175, 55, 0.1));
+}
+
+.audio-item.playing h6 {
+    color: #ec1313;
+}
+
+.audio-item.playing .audio-play-btn {
+    color: #ec1313 !important;
+}
+
+/* Beat animation for play button */
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.beat-animation {
+    animation: beat 0.6s ease-in-out;
+}
+
+/* Wave animation */
+@keyframes wave {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.wave-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    animation: wave 2s linear infinite;
+}
+
+/* Notification toast styles */
+.notification-toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background: white;
+    color: #333;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.notification-toast.show {
+    transform: translateX(0);
+}
+
+.notification-toast.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.notification-toast.error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.notification-toast.info {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.notification-toast.warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+/* Music player glow effect */
+.music-playing-glow {
+    box-shadow: 0 0 20px rgba(236, 19, 19, 0.5), 
+                0 0 40px rgba(212, 175, 55, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #mini-music-player {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        border-radius: 12px;
+    }
+}
+
+/* Loading spinner for audio */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.audio-loading {
+    animation: spin 1s linear infinite;
+}
+
+/* Audio progress wave */
+.audio-progress-wave {
+    height: 4px;
+    background: linear-gradient(90deg, #ec1313, #d4af37);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Custom CSS for Can Loc Heritage Page */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animation for pulse effect */
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ec1313;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b91c1c;
+}
+
+/* Hover effect for cards */
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(236, 19, 19, 0.2);
+}
+
+/* Custom button animations */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Text gradient effect */
+.gradient-text {
+    background: linear-gradient(135deg, #d4af37, #ec1313, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.8s ease-out;
+}
+
+/* ================== MUSIC PLAYER STYLES ================== */
+
+/* Nút Nghe Ngay */
+.music-btn {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.music-btn:hover {
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+}
+
+.music-btn.playing {
+    animation: music-pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+}
+
+@keyframes music-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+/* Hiệu ứng sóng âm thanh */
+#sound-waves {
+    pointer-events: none;
+}
+
+.music-btn.playing #sound-waves {
+    opacity: 1;
+}
+
+.music-btn.playing #music-text,
+.music-btn.playing #music-icon {
+    opacity: 0;
+}
+
+.sound-bar {
+    animation: sound-wave 1.2s ease-in-out infinite;
+    transform-origin: bottom;
+}
+
+.sound-bar:nth-child(1) { animation-delay: 0.1s; }
+.sound-bar:nth-child(2) { animation-delay: 0.2s; }
+.sound-bar:nth-child(3) { animation-delay: 0.3s; }
+.sound-bar:nth-child(4) { animation-delay: 0.4s; }
+.sound-bar:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes sound-wave {
+    0%, 100% {
+        transform: scaleY(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scaleY(1.8);
+        opacity: 1;
+    }
+}
+
+/* Glow effect */
+.music-glow {
+    background: radial-gradient(circle at center, 
+        rgba(212, 175, 55, 0.4) 0%, 
+        rgba(212, 175, 55, 0.2) 30%, 
+        transparent 70%);
+    filter: blur(5px);
+    z-index: 1;
+}
+
+.music-btn.playing .music-glow {
+    opacity: 0.8;
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Mini Player */
+#mini-player.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Volume slider custom style */
+#volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #d4af37, #ec1313);
+    border-radius: 2px;
+    outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #d4af37;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #d4af37;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Visualizer bars */
+.visualizer-bar {
+    width: 3px;
+    background: linear-gradient(to top, #d4af37, #ec1313);
+    border-radius: 2px;
+    transition: height 0.1s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #mini-player {
+        width: calc(100% - 2rem);
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+    
+    .music-btn {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Volume slider container animation */
+#volume-slider-container {
+    animation: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Loop button active state */
+#loop-toggle.active {
+    color: #d4af37;
+}
+
+/* Traditional pattern */
+.traditional-pattern {
+    background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+}
+
+/* Music Play Button Styles */
+.music-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.music-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.music-btn:hover::before {
+    left: 100%;
+}
+
+.music-btn.playing {
+    animation: pulse-beat 0.6s ease-out;
+}
+
+@keyframes pulse-beat {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+#sound-waves {
+    animation: wave-pulse 0.8s ease-in-out;
+}
+
+@keyframes wave-pulse {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.sound-bar {
+    animation: bar-bounce 0.6s ease-in-out infinite;
+}
+
+.sound-bar:nth-child(1) { animation-delay: 0s; }
+.sound-bar:nth-child(2) { animation-delay: 0.15s; }
+.sound-bar:nth-child(3) { animation-delay: 0.3s; }
+.sound-bar:nth-child(4) { animation-delay: 0.15s; }
+.sound-bar:nth-child(5) { animation-delay: 0s; }
+
+@keyframes bar-bounce {
+    0%, 100% {
+        height: 0.5rem;
+    }
+    50% {
+        height: 1rem;
+    }
+}
+
+.music-glow {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+}
+
+#mini-player.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#music-notification {
+    animation: notification-slide-in 0.3s ease-out;
+}
+
+@keyframes notification-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== DARK MODE STYLING FOR VIDAM ===== */
+
+/* Global dark mode background */
+html.dark,
+html.dark body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+}
+
+/* Dark mode headings */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+    color: #ffffff;
+}
+
+/* Dark mode for all text elements */
+html.dark p,
+html.dark span,
+html.dark li,
+html.dark div,
+html.dark label {
+    color: #e0e0e0;
+}
+
+/* Dark mode for input fields */
+html.dark input,
+html.dark textarea,
+html.dark select {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+    background-color: #3a3a3a;
+    border-color: #d4af37;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #909090;
+}
+
+/* Dark mode for cards and containers */
+html.dark .card,
+html.dark .container,
+html.dark .section {
+    background-color: #1a1a1a;
+    border-color: #3d3d3d;
+}
+
+/* Dark mode for buttons */
+html.dark button {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+html.dark button:hover {
+    background-color: #3a3a3a;
+    border-color: #4d4d4d;
+}
+
+/* Dark mode for links */
+html.dark a {
+    color: #90caf9;
+}
+
+html.dark a:hover {
+    color: #bbdefb;
+}
+
+/* Dark mode for borders and dividers */
+html.dark hr,
+html.dark .border {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode for tables */
+html.dark table {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+html.dark table th {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: #3d3d3d;
+}
+
+html.dark table td {
+    border-color: #3d3d3d;
+}
+
+html.dark table tbody tr:hover {
+    background-color: #252525;
+}
+
+/* Dark mode for header and footer */
+html.dark header {
+    background-color: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+html.dark footer {
+    background-color: #0d0d0d;
+    border-color: #2a2a2a;
+}
+
+/* Dark mode for all backgrounds with Tailwind classes */
+html.dark .bg-white,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100,
+html.dark .bg-gray-light {
+    background-color: #1a1a1a;
+}
+
+html.dark .bg-background-light {
+    background-color: #0d0d0d;
+}
+
+/* Dark mode for text colors */
+html.dark .text-gray-700,
+html.dark .text-gray-800,
+html.dark .text-gray-900 {
+    color: #e0e0e0;
+}
+
+html.dark .text-gray-600 {
+    color: #b0b0b0;
+}
+
+html.dark .text-gray-500 {
+    color: #909090;
+}
+
+html.dark .text-gray-400 {
+    color: #707070;
+}
+
+/* Dark mode for borders */
+html.dark .border-gray-300,
+html.dark .border-gray-200,
+html.dark .border-gray-100 {
+    border-color: #3d3d3d;
+}
+
+/* Dark mode for focus states */
+html.dark *:focus-visible {
+    outline-color: #d4af37;
+    outline-offset: 2px;
+}
+
+/* Dark mode for code blocks */
+html.dark code,
+html.dark pre {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-color: #3d3d3d;
+}
+
+/* Dark mode scrollbars */
+html.dark * {
+    scrollbar-color: rgba(212, 175, 55, 0.4) rgba(26, 26, 26, 0.8);
+}
+
+html.dark ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 5px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 5px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+}
+
+/* Dark mode for badges and tags */
+html.dark .badge,
+html.dark .tag {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+/* Dark mode for alerts */
+html.dark .alert {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+/* Dark mode for modals and dialogs */
+html.dark .modal,
+html.dark .dialog {
+    background-color: #1a1a1a;
+    border-color: #3a3a3a;
+}
+
+/* Dark mode for custom scrollbar in styles.css */
+html.dark ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 5px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+}
+
+/* Dark mode for all elements that might have light backgrounds */
+html.dark [style*="background: white"],
+html.dark [style*="background:#fff"],
+html.dark [style*="background: #fff"] {
+    background-color: #1a1a1a !important;
+}
+
+/* Dark mode for all elements with light text */
+html.dark [style*="color: #333"],
+html.dark [style*="color: black"] {
+    color: #e0e0e0 !important;
+}
+
+/* Override any remaining light colors */
+html.dark .bg-gradient-to-r,
+html.dark .bg-gradient-to-b,
+html.dark .bg-gradient-to-l,
+html.dark .bg-gradient-to-t {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+}
+
+/* Ensure all visible text has good contrast */
+html.dark,
+html.dark * {
+    color-scheme: dark;
+}
+
+/* Dark mode for music player styling */
+html.dark .music-player {
+    background-color: #1a1a1a;
+    border-color: #3d3d3d;
+}
+
+html.dark .player-button {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+html.dark .player-button:hover {
+    background-color: #3a3a3a;
+}
+
+/* Dark mode for video player */
+html.dark .video-player {
+    background-color: #0d0d0d;
+}
+
+/* Dark mode for image containers */
+html.dark .image-container {
+    background-color: #1a1a1a;
+    border-color: #3d3d3d;
+}
+
+/* Dark mode gradient text adjustment */
+html.dark .gradient-text {
+    background: linear-gradient(135deg, #d4af37 0%, #ec1313 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
